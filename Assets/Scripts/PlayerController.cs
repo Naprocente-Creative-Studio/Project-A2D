@@ -12,14 +12,21 @@ public class PlayerController : MonoBehaviour
     public TouchPadScript touchPad;
     public int score;
     public Text txt;
+    private GameController _gameController;
+
+    private void Start()
+    {
+        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    }
 
     private void FixedUpdate()
     {
-        if(!gameIsOver)
+        if(!gameIsOver && !_gameController.gameIsPaused)
         {
             if (hp <= 0)
             {
                 gameIsOver = true;
+                Destroy(gameObject);
             }
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
@@ -28,9 +35,10 @@ public class PlayerController : MonoBehaviour
             score++;
             txt.text = "Score: " + score;
         }
+        if(gameIsOver) _gameController.EndGame(score);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Asteroids"))
         {

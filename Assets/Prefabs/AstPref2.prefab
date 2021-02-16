@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 657914188707257680}
   m_Layer: 0
   m_Name: AstPref2
-  m_TagString: Untagged
+  m_TagString: Asteroids
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657914188707257683}
-  m_LocalRotation: {x: -0.8300352, y: -0.39174816, z: -0.15097465, w: 0.3671261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2342, y: 0.2342, z: 0.2342}
   m_Children: []
