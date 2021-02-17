@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] asteroidPrefabs;
+    public GameObject[] asteroidShardsPrefabs;
     private float spawnPosX = 3;
     private float spawnPosY = 6;
     private float startDelay = 2;
@@ -38,5 +39,26 @@ public class SpawnManager : MonoBehaviour
     public void ResumeSpawnAsteroids()
     {
         InvokeRepeating("spawnRandomAsteroid", startDelay, spawnInterval);
+    }
+
+    public void SpawnShardsAsteroids(Vector2 crashPos)
+    {
+        float countShards = Random.Range(1, 5);
+        switch (countShards)
+        {
+            case(1):
+                break;
+            case(2):
+                break;
+            case(3):
+                break;
+            case(4):
+                break;
+            case(5):
+                break;
+            default:
+                Debug.Log("Shards spawn error");
+                break;
+        }
     }
 }
