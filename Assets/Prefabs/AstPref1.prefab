@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5910256873331035437}
   - component: {fileID: 580003640891597224}
   - component: {fileID: 4073109237454795551}
-  - component: {fileID: -2714456649835537193}
+  - component: {fileID: -2445619919658373501}
   m_Layer: 0
   m_Name: AstPref1
   m_TagString: Asteroids
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2326104412729412430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.057085857, y: 0.057085857, z: 0.057085857}
+  m_LocalScale: {x: 0.025054982, y: 0.025054982, z: 0.025054982}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -138,14 +138,14 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9c217a8688c904f42a09a1b57b9336cd, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &-2714456649835537193
+--- !u!50 &-2445619919658373501
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -153,11 +153,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2326104412729412430}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.01
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -165,4 +165,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0

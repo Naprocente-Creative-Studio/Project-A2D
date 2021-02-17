@@ -9,6 +9,7 @@ public class MoveDown : MonoBehaviour
     public float damage = 25;
     private float downBorder = -6;
     private float sideBorder = 3;
+    private float upperBorder = 10;
     private PlayerController playerScript;
     private GameController _gameController;
     private SpawnManager _spawnManager;
@@ -26,8 +27,8 @@ public class MoveDown : MonoBehaviour
     {
         if (!playerScript.gameIsOver && !_gameController.gameIsPaused)
         {
-            rb.velocity = transform.up * -speed;
-            if (gameObject.transform.position.y < downBorder || gameObject.transform.position.x < sideBorder || gameObject.transform.position.x < -sideBorder) Destroy(gameObject);
+            gameObject.transform.Translate(0, -speed * Time.deltaTime, 0);
+            if (gameObject.transform.position.y < downBorder || gameObject.transform.position.x > sideBorder || gameObject.transform.position.x < -sideBorder || gameObject.transform.position.y > upperBorder) Destroy(gameObject);
         }
     }
     

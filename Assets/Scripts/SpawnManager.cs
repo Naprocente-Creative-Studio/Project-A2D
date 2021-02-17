@@ -43,22 +43,14 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnShardsAsteroids(Vector2 crashPos)
     {
-        float countShards = Random.Range(1, 5);
-        switch (countShards)
+        int countShards = Random.Range(1, 5);
+        for (int i = 0; i <= countShards; i++)
         {
-            case(1):
-                break;
-            case(2):
-                break;
-            case(3):
-                break;
-            case(4):
-                break;
-            case(5):
-                break;
-            default:
-                Debug.Log("Shards spawn error");
-                break;
+            int astIndex = Random.Range(0, asteroidShardsPrefabs.Length);
+            Vector2 startPos = new Vector2(crashPos.x + Random.Range(-0.5f, 0.5f), crashPos.y + Random.Range(-0.5f, 0.5f));
+            Quaternion startRot = Quaternion.Euler(0, 0, Random.Range(0, 180));
+            Instantiate(asteroidShardsPrefabs[astIndex], startPos, transform.rotation * startRot);
         }
+       
     }
 }

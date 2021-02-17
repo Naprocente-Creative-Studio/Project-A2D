@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Asteroids"))
+        if (other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("SharpAst"))
         {
             hp -= other.gameObject.GetComponent<MoveDown>().damage;
             Destroy(other.gameObject);

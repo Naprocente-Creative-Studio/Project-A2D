@@ -826,7 +826,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.3704097}
-  m_AnchoredPosition: {x: -0.000030518, y: 0.00010681}
+  m_AnchoredPosition: {x: 0, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0.00012207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028761297
@@ -1776,7 +1776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.581163, y: 0.9203849}
   m_AnchorMax: {x: 0.95500004, y: 0.9766414}
-  m_AnchoredPosition: {x: -0.00054932, y: 0}
+  m_AnchoredPosition: {x: -0.0005493164, y: 0}
   m_SizeDelta: {x: 0.0010376, y: -0.0003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864654372
@@ -2025,6 +2025,8 @@ MonoBehaviour:
   - {fileID: 657914188707257683, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
   - {fileID: 355494728742547026, guid: 3530be481c191ac4fac6779d2fdd990f, type: 3}
   - {fileID: 8258255016809894337, guid: 5378cf4c9aed5da4b834a7a65a7d49f2, type: 3}
+  asteroidShardsPrefabs:
+  - {fileID: 2170276528244630725, guid: b77f1e570d1ceb242babceb7eb84804a, type: 3}
 --- !u!4 &2077213781
 Transform:
   m_ObjectHideFlags: 0
