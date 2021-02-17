@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             Vector2 direction = touchPad.GetDirection();
-            GetComponent<Rigidbody2D>().velocity = new Vector3(moveHorizontal, moveVertical, 0f) * trust;
+            GetComponent<Rigidbody2D>().velocity = new Vector3(direction.x, direction.y, 0f) * trust;
             score++;
             txt.text = "Score: " + score;
         }
