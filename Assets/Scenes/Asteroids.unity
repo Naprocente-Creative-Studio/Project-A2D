@@ -2021,12 +2021,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefabs:
-  - {fileID: 2326104412729412430, guid: f02ce5ccd80d4794dad960ea8b366b5d, type: 3}
-  - {fileID: 657914188707257683, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
-  - {fileID: 355494728742547026, guid: 3530be481c191ac4fac6779d2fdd990f, type: 3}
-  - {fileID: 8258255016809894337, guid: 5378cf4c9aed5da4b834a7a65a7d49f2, type: 3}
+  - {fileID: 1389319635581857324, guid: f02ce5ccd80d4794dad960ea8b366b5d, type: 3}
+  - {fileID: 6009422155881944823, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
+  - {fileID: 2440153453422853921, guid: 3530be481c191ac4fac6779d2fdd990f, type: 3}
+  - {fileID: 2606804151103606093, guid: 5378cf4c9aed5da4b834a7a65a7d49f2, type: 3}
   asteroidShardsPrefabs:
-  - {fileID: 2170276528244630725, guid: b77f1e570d1ceb242babceb7eb84804a, type: 3}
+  - {fileID: 7809466590831435513, guid: b77f1e570d1ceb242babceb7eb84804a, type: 3}
 --- !u!4 &2077213781
 Transform:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class MoveDown : MonoBehaviour
 {
     public float speed = 6.0f;
     public float damage = 25;
+    public bool isSharp;
     private float downBorder = -6;
     private float sideBorder = 3;
     private float upperBorder = 10;
@@ -34,7 +35,7 @@ public class MoveDown : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Asteroids"))
+        if (other.gameObject.CompareTag("Asteroids") && !isSharp)
         {
             Destroy(gameObject);
             Destroy(other.gameObject);

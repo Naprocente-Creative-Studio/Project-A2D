@@ -48,7 +48,7 @@ public class SpawnManager : MonoBehaviour
         {
             int astIndex = Random.Range(0, asteroidShardsPrefabs.Length);
             Vector2 startPos = new Vector2(crashPos.x + Random.Range(-0.5f, 0.5f), crashPos.y + Random.Range(-0.5f, 0.5f));
-            Quaternion startRot = Quaternion.Euler(0, 0, Random.Range(0, 180));
+            Quaternion startRot = Quaternion.Euler(0, 0, Random.Range(-180, 180));
             Instantiate(asteroidShardsPrefabs[astIndex], startPos, transform.rotation * startRot);
         }
        
