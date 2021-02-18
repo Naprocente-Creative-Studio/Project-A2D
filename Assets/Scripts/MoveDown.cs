@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveDown : MonoBehaviour
 {
@@ -14,14 +11,12 @@ public class MoveDown : MonoBehaviour
     private PlayerController playerScript;
     private GameController _gameController;
     private SpawnManager _spawnManager;
-    private Rigidbody2D rb;
 
     private void Start()
     {
         playerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()

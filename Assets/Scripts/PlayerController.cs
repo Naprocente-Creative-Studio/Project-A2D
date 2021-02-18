@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -28,8 +25,8 @@ public class PlayerController : MonoBehaviour
                 gameIsOver = true;
                 Destroy(gameObject);
             }
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
+            //float moveHorizontal = Input.GetAxis("Horizontal");
+            //float moveVertical = Input.GetAxis("Vertical");
             Vector2 direction = touchPad.GetDirection();
             GetComponent<Rigidbody2D>().velocity = new Vector3(direction.x, direction.y, 0f) * trust;
             score++;

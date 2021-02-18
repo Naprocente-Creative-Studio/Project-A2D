@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
@@ -30,7 +27,6 @@ public class SpawnManager : MonoBehaviour
     void spawnRandomAsteroid()
     {
         int astIndex = Random.Range(0, asteroidPrefabs.Length);
-        float rotZ = Random.Range(0f, 180f);
         Vector2 spawnPos = new Vector2(Random.Range(-spawnPosX, spawnPosX), spawnPosY);
 
         Instantiate(asteroidPrefabs[astIndex], spawnPos, asteroidPrefabs[astIndex].transform.rotation);
