@@ -91,11 +91,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3150}
+      Script: {instanceID: 3152}
     - Class: 114
-      Script: {instanceID: 4064}
+      Script: {instanceID: 4066}
     - Class: 114
-      Script: {instanceID: 4162}
+      Script: {instanceID: 4164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -440,7 +440,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 92ff69f895ec74f79ba44133af0f2182
+      Hash: c8158c53f5b9dae4c3f8e023f14dcbda
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnManager
@@ -620,7 +620,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: cb61b3d480b93c45dcbe8c5bd8fe2aae
+      Hash: 1cdcd1bd7240a0b43b01d211144b79dd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MoveDown
@@ -706,4 +706,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Asteroids.unity
-  playerPath: D:/Unity Projects/Project A/Build 0.1.1.apk
+  playerPath: D:/Unity Projects/Project A/Build 0.1.2.apk
