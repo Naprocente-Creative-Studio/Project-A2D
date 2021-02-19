@@ -14,7 +14,6 @@ public class GameController : MonoBehaviour
     public GameObject endGameMenu;
 
     public Text txt;
-    // Start is called before the first frame update
 
     private void Start()
     {

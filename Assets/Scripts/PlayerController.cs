@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -6,10 +7,10 @@ public class PlayerController : MonoBehaviour
     public float trust = 1.0f;
     public float hp = 100;
     public bool gameIsOver = false;
-    public TouchPadScript touchPad;
     public int score;
     public Text txt;
     private GameController _gameController;
+    private Vector2 startPos;
 
     private void Start()
     {
@@ -25,10 +26,23 @@ public class PlayerController : MonoBehaviour
                 gameIsOver = true;
                 Destroy(gameObject);
             }
-            //float moveHorizontal = Input.GetAxis("Horizontal");
-            //float moveVertical = Input.GetAxis("Vertical");
-            Vector2 direction = touchPad.GetDirection();
-            GetComponent<Rigidbody2D>().velocity = new Vector3(direction.x, direction.y, 0f) * trust;
+            if (Input.touchCount > 0) {
+                var touch = Input.GetTouch(0);
+
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                        startPos = touch.position;
+                        break;
+
+                    case TouchPhase.Moved:
+                        Vector2 dir = touch.position - startPos;
+                        Vector3 pos = transform.position + new Vector3(dir.x, dir.y, transform.position.z);
+                        pos.Normalize();
+                        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime * trust);
+                        break;
+                }
+            }
             score++;
             txt.text = "Score: " + score;
         }
