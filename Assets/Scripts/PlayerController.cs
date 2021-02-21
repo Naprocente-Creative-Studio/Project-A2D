@@ -4,11 +4,13 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float trust = 1.0f;
+    public float trust = 2.0f;
     public float hp = 100;
     public bool gameIsOver = false;
     public int score;
     public Text txt;
+    public float smoothing;
+    private Vector3 smoothPos;
     private GameController _gameController;
     private Vector2 startPos;
 
@@ -38,13 +40,14 @@ public class PlayerController : MonoBehaviour
                     case TouchPhase.Moved:
                         Vector2 dir = touch.position - startPos;
                         Vector3 pos = transform.position + new Vector3(dir.x, dir.y, transform.position.z);
-                        pos.Normalize();
-                        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime * trust);
+                        pos = pos.normalized;
+                        smoothPos = Vector3.MoveTowards(smoothPos, pos, smoothing);
+                        transform.position = Vector3.Lerp(transform.position, smoothPos, Time.deltaTime * trust);
                         break;
                 }
             }
             score++;
-            txt.text = "Score: " + score;
+            txt.text = "" + score;
         }
         if(gameIsOver) _gameController.EndGame(score);
     }

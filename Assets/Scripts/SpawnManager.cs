@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnShardsAsteroids(Vector2 crashPos)
     {
-        int countShards = Random.Range(1, 5);
+        int countShards = Random.Range(1, 2);
         for (int i = 0; i <= countShards; i++)
         {
             int astIndex = Random.Range(0, asteroidShardsPrefabs.Length);

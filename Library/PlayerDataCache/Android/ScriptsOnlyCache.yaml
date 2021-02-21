@@ -5,11 +5,11 @@ ScriptsOnlyBuild:
     - MoveDown
     - PlayerController
     - SpawnManager
-    - TouchPadScript
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -72,29 +72,27 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1486}
+      Script: {instanceID: 1582}
     - Class: 114
-      Script: {instanceID: 1850}
+      Script: {instanceID: 2162}
     - Class: 114
-      Script: {instanceID: 2068}
+      Script: {instanceID: 2526}
     - Class: 114
-      Script: {instanceID: 2432}
-    - Class: 114
-      Script: {instanceID: 2578}
-    - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2672}
     - Class: 114
       Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 2958}
+      Script: {instanceID: 2934}
     - Class: 114
-      Script: {instanceID: 3060}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3152}
+      Script: {instanceID: 3154}
     - Class: 114
-      Script: {instanceID: 4066}
+      Script: {instanceID: 3244}
     - Class: 114
-      Script: {instanceID: 4164}
+      Script: {instanceID: 4158}
+    - Class: 114
+      Script: {instanceID: 4256}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -127,19 +125,19 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1486}
+      Script: {instanceID: 1582}
     - Class: 114
-      Script: {instanceID: 2432}
+      Script: {instanceID: 2526}
     - Class: 114
-      Script: {instanceID: 2578}
-    - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2672}
     - Class: 114
       Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 2958}
+      Script: {instanceID: 2934}
     - Class: 114
-      Script: {instanceID: 3060}
+      Script: {instanceID: 3052}
+    - Class: 114
+      Script: {instanceID: 3154}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -239,12 +237,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 349a29f631977e0d310d8cd655eacad4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TouchPadScript
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -583,7 +575,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: a599079af8f60b2e3f6b5baed9923635
+      Hash: 1f4ba6162761fca79fe6c74db8575bb2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -705,4 +697,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Asteroids.unity
-  playerPath: D:/Unity Projects/Project A/Build 0.1.3.1.apk
+  playerPath: D:/Unity Projects/Project A/Build 0.1.4.apk
