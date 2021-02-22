@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2af71b8703ecfb4998b30b93c137f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trust: 7
+  trust: 0.001
   hp: 100
   gameIsOver: 0
   score: 0
