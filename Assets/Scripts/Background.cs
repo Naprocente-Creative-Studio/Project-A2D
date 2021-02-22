@@ -8,6 +8,7 @@ public class Background : MonoBehaviour
 
     public float speed;
 
+        
     private void FixedUpdate()
     {
         if (!gameController.gameIsPaused || !playerController.gameIsOver)
