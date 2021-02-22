@@ -1,4 +1,0 @@
-#Mon Feb 22 13:09:55 EET 2021
-base.0=D\:\\Unity Projects\\Project A\\Temp\\gradleOut\\launcher\\build\\intermediates\\dex\\release\\out\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
