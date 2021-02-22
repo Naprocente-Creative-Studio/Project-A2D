@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] asteroidPrefabs;
     public GameObject[] asteroidShardsPrefabs;
     private float spawnPosX = 3;
-    private float spawnPosY = 6;
+    private float spawnPosY = 11;
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
     private PlayerController playerScript;

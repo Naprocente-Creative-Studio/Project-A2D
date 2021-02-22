@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
                     case TouchPhase.Moved:
                         Vector2 dir = touch.position - startPos;
                         Vector3 pos = transform.position + new Vector3(dir.x, dir.y, transform.position.z);
-                        pos = pos.normalized;
+                        pos.Normalize();
                         smoothPos = Vector3.MoveTowards(smoothPos, pos, smoothing);
                         transform.position = Vector3.Lerp(transform.position, smoothPos, Time.deltaTime * trust);
                         break;

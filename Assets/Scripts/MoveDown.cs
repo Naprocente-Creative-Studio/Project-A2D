@@ -5,9 +5,9 @@ public class MoveDown : MonoBehaviour
     public float speed = 6.0f;
     public float damage = 25;
     public bool isSharp;
-    private float downBorder = -6;
+    private float downBorder = -1;
     private float sideBorder = 3;
-    private float upperBorder = 10;
+    private float upperBorder = 12;
     private PlayerController playerScript;
     private GameController _gameController;
     private SpawnManager _spawnManager;
