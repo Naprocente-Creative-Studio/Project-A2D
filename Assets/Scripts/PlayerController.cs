@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -40,37 +39,6 @@ public class PlayerController : MonoBehaviour
                         transform.position.z);
                 }
             }
-            /*
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Began)
-                    startPos = (Vector2)Camera.main.ScreenToWorldPoint(touch.position);
-            }
-
-            transform.position = Vector3.Lerp(transform.position, startPos, 5.0f * Time.deltaTime);
-            
-            if (Input.touchCount > 0) {
-                var touch = Input.GetTouch(0);
-                
-                switch (touch.phase)
-                {
-                    case TouchPhase.Began:
-                        startPos = Camera.main.ScreenToWorldPoint(touch.position);
-                        break;
-
-                    case TouchPhase.Moved:
-                        Vector2 dir = touch.position - startPos;
-                        Vector3 pos = transform.position + new Vector3(dir.x, dir.y, transform.position.z);
-                        //pos.Normalize();
-                        smoothPos = Vector3.MoveTowards(smoothPos, pos, smoothing);
-                        transform.position = Vector3.Lerp(transform.position, startPos, Time.deltaTime * trust);
-                        break;
-                }
-                
-            }
-            */
             score++;
             txt.text = "" + score;
         }

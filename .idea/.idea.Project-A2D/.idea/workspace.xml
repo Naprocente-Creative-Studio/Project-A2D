@@ -13,6 +13,7 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Background.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oqpW3MV9hcxNa3mmpWCsGNmL4f" />
@@ -56,6 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614024021227</updated>
       <workItem from="1614024066095" duration="761000" />
+      <workItem from="1614203835160" duration="660000" />
     </task>
     <servers />
   </component>
