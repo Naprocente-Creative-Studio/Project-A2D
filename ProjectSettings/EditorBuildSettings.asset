@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Asteroids.unity
     guid: 0caa92d6b7c2f4149a14bc7054bf4a21
+  - enabled: 1
+    path: Assets/Scenes/MapSystem.unity
+    guid: 4f7750d797e2f1c418554b615aa98114
   m_configObjects: {}
