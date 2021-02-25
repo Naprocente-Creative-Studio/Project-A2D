@@ -14,6 +14,7 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Background.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SystemGenerator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oqpW3MV9hcxNa3mmpWCsGNmL4f" />
@@ -26,6 +27,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -58,6 +65,7 @@
       <updated>1614024021227</updated>
       <workItem from="1614024066095" duration="761000" />
       <workItem from="1614203835160" duration="660000" />
+      <workItem from="1614236721864" duration="1685000" />
     </task>
     <servers />
   </component>
