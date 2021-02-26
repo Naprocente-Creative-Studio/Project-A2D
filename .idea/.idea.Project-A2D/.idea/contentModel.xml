@@ -6,6 +6,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Background.cs" t="Include" />
+          <e p="CameraScript.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="MoveDown.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />

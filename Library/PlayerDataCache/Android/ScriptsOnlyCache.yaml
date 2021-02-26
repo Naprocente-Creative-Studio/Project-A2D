@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CameraScript
     - GameController
     - MoveDown
     - PlayerController
@@ -139,6 +140,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6738}
     - Class: 114
       Script: {instanceID: 6806}
+    - Class: 114
+      Script: {instanceID: 19180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -194,6 +197,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2682}
     - Class: 114
       Script: {instanceID: 3082}
+    - Class: 114
+      Script: {instanceID: 3146}
     - Class: 114
       Script: {instanceID: 3200}
     - Class: 114
@@ -258,6 +263,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7014}
     - Class: 114
       Script: {instanceID: 7218}
+    - Class: 114
+      Script: {instanceID: 19180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -309,6 +316,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5746}
     - Class: 114
       Script: {instanceID: 5846}
+    - Class: 114
+      Script: {instanceID: 19180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1274,9 +1283,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: a61e78a78f07f79732ae8c13799c9bc4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Asteroids.unity
   - Assets/Scenes/MapSystem.unity
-  playerPath: C:/Unity Projects/Project-A2D/Build 0.1.6.apk
+  playerPath: C:/Unity Projects/Project-A2D/Build 0.1.7.apk
