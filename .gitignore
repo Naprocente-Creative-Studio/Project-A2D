@@ -3,3 +3,7 @@ Temp/UnityLockfile
 *.log
 Library/ShaderCache.db
 Library/ShaderCache.db
+*.so
+*.o
+Library/ShaderCache.db
+Library/ShaderCache.db

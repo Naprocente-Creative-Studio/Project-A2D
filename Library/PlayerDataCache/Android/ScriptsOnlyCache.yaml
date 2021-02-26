@@ -123,25 +123,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1770}
     - Class: 114
-      Script: {instanceID: 2682}
+      Script: {instanceID: 1826}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 2684}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 5432}
+      Script: {instanceID: 3148}
     - Class: 114
-      Script: {instanceID: 5746}
+      Script: {instanceID: 5434}
     - Class: 114
-      Script: {instanceID: 5846}
+      Script: {instanceID: 5748}
     - Class: 114
-      Script: {instanceID: 6026}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6738}
+      Script: {instanceID: 6028}
     - Class: 114
-      Script: {instanceID: 6806}
+      Script: {instanceID: 6740}
     - Class: 114
-      Script: {instanceID: 19180}
+      Script: {instanceID: 6808}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -188,83 +188,83 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1776}
     - Class: 114
-      Script: {instanceID: 1890}
+      Script: {instanceID: 1826}
     - Class: 114
-      Script: {instanceID: 2402}
+      Script: {instanceID: 1892}
     - Class: 114
-      Script: {instanceID: 2480}
+      Script: {instanceID: 2404}
     - Class: 114
-      Script: {instanceID: 2682}
+      Script: {instanceID: 2482}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 2684}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3200}
+      Script: {instanceID: 3148}
     - Class: 114
-      Script: {instanceID: 3224}
+      Script: {instanceID: 3202}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3226}
     - Class: 114
-      Script: {instanceID: 3388}
+      Script: {instanceID: 3282}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3390}
     - Class: 114
-      Script: {instanceID: 3748}
+      Script: {instanceID: 3488}
     - Class: 114
-      Script: {instanceID: 3844}
+      Script: {instanceID: 3750}
     - Class: 114
-      Script: {instanceID: 4120}
+      Script: {instanceID: 3846}
     - Class: 114
-      Script: {instanceID: 4836}
+      Script: {instanceID: 4122}
     - Class: 114
-      Script: {instanceID: 4846}
+      Script: {instanceID: 4838}
     - Class: 114
-      Script: {instanceID: 4902}
+      Script: {instanceID: 4848}
     - Class: 114
-      Script: {instanceID: 5064}
+      Script: {instanceID: 4904}
     - Class: 114
       Script: {instanceID: 5066}
     - Class: 114
-      Script: {instanceID: 5086}
+      Script: {instanceID: 5068}
     - Class: 114
-      Script: {instanceID: 5324}
+      Script: {instanceID: 5088}
     - Class: 114
-      Script: {instanceID: 5432}
+      Script: {instanceID: 5326}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 5434}
     - Class: 114
-      Script: {instanceID: 5622}
+      Script: {instanceID: 5564}
     - Class: 114
-      Script: {instanceID: 5628}
+      Script: {instanceID: 5624}
     - Class: 114
-      Script: {instanceID: 5712}
+      Script: {instanceID: 5630}
     - Class: 114
-      Script: {instanceID: 5746}
+      Script: {instanceID: 5714}
     - Class: 114
       Script: {instanceID: 5748}
     - Class: 114
-      Script: {instanceID: 5792}
+      Script: {instanceID: 5750}
     - Class: 114
-      Script: {instanceID: 5846}
+      Script: {instanceID: 5794}
     - Class: 114
-      Script: {instanceID: 5854}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 5946}
+      Script: {instanceID: 5856}
     - Class: 114
-      Script: {instanceID: 6064}
+      Script: {instanceID: 5948}
     - Class: 114
-      Script: {instanceID: 6164}
+      Script: {instanceID: 6066}
     - Class: 114
-      Script: {instanceID: 6210}
+      Script: {instanceID: 6166}
     - Class: 114
-      Script: {instanceID: 6748}
+      Script: {instanceID: 6212}
     - Class: 114
-      Script: {instanceID: 7014}
+      Script: {instanceID: 6750}
     - Class: 114
-      Script: {instanceID: 7218}
+      Script: {instanceID: 7016}
     - Class: 114
-      Script: {instanceID: 19180}
+      Script: {instanceID: 7220}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -303,21 +303,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1770}
     - Class: 114
-      Script: {instanceID: 2682}
+      Script: {instanceID: 1826}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 2684}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 5432}
+      Script: {instanceID: 3148}
     - Class: 114
-      Script: {instanceID: 5738}
+      Script: {instanceID: 5434}
     - Class: 114
-      Script: {instanceID: 5746}
+      Script: {instanceID: 5740}
     - Class: 114
-      Script: {instanceID: 5846}
+      Script: {instanceID: 5748}
     - Class: 114
-      Script: {instanceID: 19180}
+      Script: {instanceID: 5848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -371,6 +371,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering
     className: FreeCamera
+  - hash:
+      serializedVersion: 2
+      Hash: a61e78a78f07f79732ae8c13799c9bc4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraScript
   - hash:
       serializedVersion: 2
       Hash: 71b711096c6c32621c1d4c02310898b7
@@ -1283,15 +1289,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: a61e78a78f07f79732ae8c13799c9bc4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CameraScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Asteroids.unity
   - Assets/Scenes/MapSystem.unity
-  playerPath: C:/Unity Projects/Project-A2D/Build 0.1.7.apk
+  playerPath: C:/Unity Projects/Project-A2D/Test 1.0.aab
