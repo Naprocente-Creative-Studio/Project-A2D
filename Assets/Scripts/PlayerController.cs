@@ -8,14 +8,19 @@ public class PlayerController : MonoBehaviour
     public bool gameIsOver = false;
     public int score;
     public Text txt;
-    public float smoothing;
     private Vector3 smoothPos;
     private GameController _gameController;
     private Vector2 startPos;
+    public GameObject Buttons;
 
     private void Start()
     {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        if (_gameController.ketIsNew)
+        {
+            trust = 1.0f;
+            Buttons.SetActive(true);
+        }
     }
 
     private void FixedUpdate()
@@ -28,19 +33,23 @@ public class PlayerController : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            if (Input.touchCount > 0)
+            if (!_gameController.ketIsNew)
             {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Moved)
+                if (Input.touchCount > 0)
                 {
-                    transform.position = new Vector3(
-                        transform.position.x + touch.deltaPosition.x * trust,
-                        transform.position.y + touch.deltaPosition.y * trust,
-                        transform.position.z);
+                    Touch touch = Input.GetTouch(0);
+                    if (touch.phase == TouchPhase.Moved)
+                    {
+                        transform.position = new Vector3(
+                            transform.position.x + touch.deltaPosition.x * trust,
+                            transform.position.y + touch.deltaPosition.y * trust,
+                            transform.position.z);
+                    }
                 }
+
+                score++;
+                txt.text = "" + score;
             }
-            score++;
-            txt.text = "" + score;
         }
         if(gameIsOver) _gameController.EndGame(score);
     }
@@ -52,6 +61,16 @@ public class PlayerController : MonoBehaviour
             hp -= other.gameObject.GetComponent<MoveDown>().damage;
             Destroy(other.gameObject);
         }
+    }
+
+    public void GoLeft()
+    {
+        transform.Translate(Vector3.right * trust * Time.deltaTime);
+    }
+
+    public void GoRight()
+    {
+        transform.Translate(Vector3.left * trust * Time.deltaTime);
     }
     
 }

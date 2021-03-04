@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public bool gameIsPaused = false;
+    public bool ketIsNew = true;
     private SpawnManager _spawnManager;
 
     public GameObject pauseMenu;
@@ -65,5 +66,10 @@ public class GameController : MonoBehaviour
         txt.text = "Your score: " + score;
         gameMenu.SetActive(false);
         endGameMenu.SetActive(true);
+    }
+
+    public void ChangeKer()
+    {
+        ketIsNew = !ketIsNew;
     }
 }
