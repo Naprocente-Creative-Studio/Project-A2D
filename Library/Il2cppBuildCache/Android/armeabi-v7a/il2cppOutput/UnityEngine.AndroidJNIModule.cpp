@@ -9773,6 +9773,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidJavaClass__AndroidJavaClass_mD69A
 		GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 * L_7 = (GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 *)il2cpp_codegen_object_new(GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289_il2cpp_TypeInfo_var);
 		GlobalJavaObjectRef__ctor_mC4872ABD6EDA3531D1012C2FB7B73EE2B1652C5D(L_7, (intptr_t)(0), /*hidden argument*/NULL);
 		((AndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E *)__this)->set_m_jobject_1(L_7);
+		intptr_t L_8 = V_0;
+		AndroidJNISafe_DeleteLocalRef_m7AB242A76D13A3BF4C04831D77960C020D6ADA39((intptr_t)L_8, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -10357,58 +10359,60 @@ IL_0023:
 		GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 * L_9 = (GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 *)il2cpp_codegen_object_new(GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289_il2cpp_TypeInfo_var);
 		GlobalJavaObjectRef__ctor_mC4872ABD6EDA3531D1012C2FB7B73EE2B1652C5D(L_9, (intptr_t)L_8, /*hidden argument*/NULL);
 		__this->set_m_jclass_2(L_9);
-		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_10 = ___args1;
-		jvalueU5BU5D_t0F8734CC5E629CAA0CBCB817A913EC6B9220EE99* L_11;
-		L_11 = AndroidJNIHelper_CreateJNIArgArray_m3B928C14D5B3E86B38331427E0605478402DFDCE(L_10, /*hidden argument*/NULL);
-		V_1 = L_11;
+		intptr_t L_10 = V_0;
+		AndroidJNISafe_DeleteLocalRef_m7AB242A76D13A3BF4C04831D77960C020D6ADA39((intptr_t)L_10, /*hidden argument*/NULL);
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_11 = ___args1;
+		jvalueU5BU5D_t0F8734CC5E629CAA0CBCB817A913EC6B9220EE99* L_12;
+		L_12 = AndroidJNIHelper_CreateJNIArgArray_m3B928C14D5B3E86B38331427E0605478402DFDCE(L_11, /*hidden argument*/NULL);
+		V_1 = L_12;
 	}
 
-IL_0046:
+IL_004d:
 	try
 	{ // begin try (depth: 1)
-		GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 * L_12 = __this->get_m_jclass_2();
-		intptr_t L_13;
-		L_13 = GlobalJavaObjectRef_op_Implicit_m7A992ACF399BAD3EFC96D88CE00B235D8B669B33(L_12, /*hidden argument*/NULL);
-		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_14 = ___args1;
-		intptr_t L_15;
-		L_15 = AndroidJNIHelper_GetConstructorID_mDC08F55A8FFF5D4E2B6CB5FB6808935EC8211007((intptr_t)L_13, L_14, /*hidden argument*/NULL);
-		V_3 = (intptr_t)L_15;
-		GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 * L_16 = __this->get_m_jclass_2();
-		intptr_t L_17;
-		L_17 = GlobalJavaObjectRef_op_Implicit_m7A992ACF399BAD3EFC96D88CE00B235D8B669B33(L_16, /*hidden argument*/NULL);
-		intptr_t L_18 = V_3;
-		jvalueU5BU5D_t0F8734CC5E629CAA0CBCB817A913EC6B9220EE99* L_19 = V_1;
-		intptr_t L_20;
-		L_20 = AndroidJNISafe_NewObject_m8B3CE344FE9144B92096F0A36CF75DA56C380BF7((intptr_t)L_17, (intptr_t)L_18, L_19, /*hidden argument*/NULL);
-		V_4 = (intptr_t)L_20;
-		intptr_t L_21 = V_4;
-		GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 * L_22 = (GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 *)il2cpp_codegen_object_new(GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289_il2cpp_TypeInfo_var);
-		GlobalJavaObjectRef__ctor_mC4872ABD6EDA3531D1012C2FB7B73EE2B1652C5D(L_22, (intptr_t)L_21, /*hidden argument*/NULL);
-		__this->set_m_jobject_1(L_22);
-		intptr_t L_23 = V_4;
-		AndroidJNISafe_DeleteLocalRef_m7AB242A76D13A3BF4C04831D77960C020D6ADA39((intptr_t)L_23, /*hidden argument*/NULL);
-		IL2CPP_LEAVE(0x90, FINALLY_0085);
+		GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 * L_13 = __this->get_m_jclass_2();
+		intptr_t L_14;
+		L_14 = GlobalJavaObjectRef_op_Implicit_m7A992ACF399BAD3EFC96D88CE00B235D8B669B33(L_13, /*hidden argument*/NULL);
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_15 = ___args1;
+		intptr_t L_16;
+		L_16 = AndroidJNIHelper_GetConstructorID_mDC08F55A8FFF5D4E2B6CB5FB6808935EC8211007((intptr_t)L_14, L_15, /*hidden argument*/NULL);
+		V_3 = (intptr_t)L_16;
+		GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 * L_17 = __this->get_m_jclass_2();
+		intptr_t L_18;
+		L_18 = GlobalJavaObjectRef_op_Implicit_m7A992ACF399BAD3EFC96D88CE00B235D8B669B33(L_17, /*hidden argument*/NULL);
+		intptr_t L_19 = V_3;
+		jvalueU5BU5D_t0F8734CC5E629CAA0CBCB817A913EC6B9220EE99* L_20 = V_1;
+		intptr_t L_21;
+		L_21 = AndroidJNISafe_NewObject_m8B3CE344FE9144B92096F0A36CF75DA56C380BF7((intptr_t)L_18, (intptr_t)L_19, L_20, /*hidden argument*/NULL);
+		V_4 = (intptr_t)L_21;
+		intptr_t L_22 = V_4;
+		GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 * L_23 = (GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289 *)il2cpp_codegen_object_new(GlobalJavaObjectRef_t04A7D04EB0317C286F089E4DB4444EC4F2D78289_il2cpp_TypeInfo_var);
+		GlobalJavaObjectRef__ctor_mC4872ABD6EDA3531D1012C2FB7B73EE2B1652C5D(L_23, (intptr_t)L_22, /*hidden argument*/NULL);
+		__this->set_m_jobject_1(L_23);
+		intptr_t L_24 = V_4;
+		AndroidJNISafe_DeleteLocalRef_m7AB242A76D13A3BF4C04831D77960C020D6ADA39((intptr_t)L_24, /*hidden argument*/NULL);
+		IL2CPP_LEAVE(0x97, FINALLY_008c);
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0085;
+		goto FINALLY_008c;
 	}
 
-FINALLY_0085:
+FINALLY_008c:
 	{ // begin finally (depth: 1)
-		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_24 = ___args1;
-		jvalueU5BU5D_t0F8734CC5E629CAA0CBCB817A913EC6B9220EE99* L_25 = V_1;
-		AndroidJNIHelper_DeleteJNIArgArray_mF43CDD1F690C9E843FE622B9A5F7B21F7556408A(L_24, L_25, /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(133)
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_25 = ___args1;
+		jvalueU5BU5D_t0F8734CC5E629CAA0CBCB817A913EC6B9220EE99* L_26 = V_1;
+		AndroidJNIHelper_DeleteJNIArgArray_mF43CDD1F690C9E843FE622B9A5F7B21F7556408A(L_25, L_26, /*hidden argument*/NULL);
+		IL2CPP_END_FINALLY(140)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(133)
+	IL2CPP_CLEANUP(140)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x90, IL_0090)
+		IL2CPP_JUMP_TBL(0x97, IL_0097)
 	}
 
-IL_0090:
+IL_0097:
 	{
 		return;
 	}

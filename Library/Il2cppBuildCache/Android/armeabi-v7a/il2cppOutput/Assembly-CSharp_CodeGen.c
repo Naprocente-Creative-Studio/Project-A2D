@@ -42,47 +42,53 @@ extern void GameController_Pause_mF6FCFD1C244F2FD91A652F9D9A6ED07C9AD0DC2B (void
 extern void GameController_UnPause_m2242C8B454AE371BDE482EA1F76C7372544DF5CF (void);
 // 0x0000000F System.Void GameController::EndGame(System.Int32)
 extern void GameController_EndGame_m568376F954B45F2DCE0DE706C02C762B388CFC12 (void);
-// 0x00000010 System.Void GameController::.ctor()
+// 0x00000010 System.Void GameController::ChangeKer()
+extern void GameController_ChangeKer_m8B137766FA5A0C55C9698CE14307476DF95771AA (void);
+// 0x00000011 System.Void GameController::.ctor()
 extern void GameController__ctor_m9D952052C0A7234373FA5531292FCA8855BE2643 (void);
-// 0x00000011 System.Void MoveDown::Start()
+// 0x00000012 System.Void MoveDown::Start()
 extern void MoveDown_Start_mBEC2FCC5B49DAC5A1217C5BE1F6514EFEFDA62C8 (void);
-// 0x00000012 System.Void MoveDown::FixedUpdate()
+// 0x00000013 System.Void MoveDown::FixedUpdate()
 extern void MoveDown_FixedUpdate_mE9A07D8A64705056D0AB304CD6804447B649366B (void);
-// 0x00000013 System.Void MoveDown::OnCollisionEnter2D(UnityEngine.Collision2D)
+// 0x00000014 System.Void MoveDown::OnCollisionEnter2D(UnityEngine.Collision2D)
 extern void MoveDown_OnCollisionEnter2D_mF2B9A4D6463AD495CF0EDE5D6D55A0D0AC67BC38 (void);
-// 0x00000014 System.Void MoveDown::.ctor()
+// 0x00000015 System.Void MoveDown::.ctor()
 extern void MoveDown__ctor_m09A2E9DF59E0CCBEFD0914F039B2E75CA8954B88 (void);
-// 0x00000015 System.Void PlayerController::Start()
+// 0x00000016 System.Void PlayerController::Start()
 extern void PlayerController_Start_m9531F30EC892BDD1758A2EEC724E86EFBDA150A3 (void);
-// 0x00000016 System.Void PlayerController::FixedUpdate()
+// 0x00000017 System.Void PlayerController::FixedUpdate()
 extern void PlayerController_FixedUpdate_m54EE3ADAA7597303B1F69849B233D1A68D880B14 (void);
-// 0x00000017 System.Void PlayerController::OnCollisionEnter2D(UnityEngine.Collision2D)
+// 0x00000018 System.Void PlayerController::OnCollisionEnter2D(UnityEngine.Collision2D)
 extern void PlayerController_OnCollisionEnter2D_m9A113567D03E9BFF74D8D1959B8C88124E03BBDE (void);
-// 0x00000018 System.Void PlayerController::.ctor()
+// 0x00000019 System.Void PlayerController::GoLeft()
+extern void PlayerController_GoLeft_mEB45E7651DFEC21B0C3D301FBB5A2EA8211140DF (void);
+// 0x0000001A System.Void PlayerController::GoRight()
+extern void PlayerController_GoRight_m2FF8D1B5EEAFBB49C8E3BD0576F7DAB808C454CB (void);
+// 0x0000001B System.Void PlayerController::.ctor()
 extern void PlayerController__ctor_mF30385729DAFDFCB895C4939F6051DCE6C0327FB (void);
-// 0x00000019 System.Void SpawnManager::Start()
+// 0x0000001C System.Void SpawnManager::Start()
 extern void SpawnManager_Start_mFA050B5C59C7CC47F4430CA0F5A646051D5442CB (void);
-// 0x0000001A System.Void SpawnManager::FixedUpdate()
+// 0x0000001D System.Void SpawnManager::FixedUpdate()
 extern void SpawnManager_FixedUpdate_m8DA4C5F2CAB82FC64DCF84D4583864E07A6848B7 (void);
-// 0x0000001B System.Void SpawnManager::spawnRandomAsteroid()
+// 0x0000001E System.Void SpawnManager::spawnRandomAsteroid()
 extern void SpawnManager_spawnRandomAsteroid_mFF8263CC642136F153FEA5128654A229CD79081F (void);
-// 0x0000001C System.Void SpawnManager::ResumeSpawnAsteroids()
+// 0x0000001F System.Void SpawnManager::ResumeSpawnAsteroids()
 extern void SpawnManager_ResumeSpawnAsteroids_m2374A3227EBA94F346CD8D7C213F9B5D1CE47F1D (void);
-// 0x0000001D System.Void SpawnManager::SpawnShardsAsteroids(UnityEngine.Vector2)
+// 0x00000020 System.Void SpawnManager::SpawnShardsAsteroids(UnityEngine.Vector2)
 extern void SpawnManager_SpawnShardsAsteroids_m7085E07692693E6AD21ACD0694D4AAE73D7AE251 (void);
-// 0x0000001E System.Void SpawnManager::.ctor()
+// 0x00000021 System.Void SpawnManager::.ctor()
 extern void SpawnManager__ctor_mBCD48EEAB1EB733A88D47C85ACC373C796F20E59 (void);
-// 0x0000001F System.Void SystemGenerator::Awake()
+// 0x00000022 System.Void SystemGenerator::Awake()
 extern void SystemGenerator_Awake_m0CC205D5CA07BA4F7474ABA1F07EAF0511678C73 (void);
-// 0x00000020 System.Void SystemGenerator::SpawnStarOnStart()
+// 0x00000023 System.Void SystemGenerator::SpawnStarOnStart()
 extern void SystemGenerator_SpawnStarOnStart_m077F16A8B9E6E21658E3CA7521D0B550799549B8 (void);
-// 0x00000021 System.Void SystemGenerator::SpawnPlanetSystem()
+// 0x00000024 System.Void SystemGenerator::SpawnPlanetSystem()
 extern void SystemGenerator_SpawnPlanetSystem_mA4B146A2FFDF19202F8DC30C58ABD3BDDCE065D8 (void);
-// 0x00000022 UnityEngine.Vector3 SystemGenerator::RandomCircle(UnityEngine.Vector3,System.Single)
+// 0x00000025 UnityEngine.Vector3 SystemGenerator::RandomCircle(UnityEngine.Vector3,System.Single)
 extern void SystemGenerator_RandomCircle_mC8A0F0860E08D778018C70A2BB4D6033F98D0FA9 (void);
-// 0x00000023 System.Void SystemGenerator::.ctor()
+// 0x00000026 System.Void SystemGenerator::.ctor()
 extern void SystemGenerator__ctor_mF53E4F70DE1F63D81F9083072AD227AE8029FAB1 (void);
-static Il2CppMethodPointer s_methodPointers[35] = 
+static Il2CppMethodPointer s_methodPointers[38] = 
 {
 	Background_FixedUpdate_mDE953196A44B930017E8DED530D93E377355071C,
 	Background__ctor_mEC9A50E3A2C20E886BD7FA5D93F73FF0CC9E7B38,
@@ -99,6 +105,7 @@ static Il2CppMethodPointer s_methodPointers[35] =
 	GameController_Pause_mF6FCFD1C244F2FD91A652F9D9A6ED07C9AD0DC2B,
 	GameController_UnPause_m2242C8B454AE371BDE482EA1F76C7372544DF5CF,
 	GameController_EndGame_m568376F954B45F2DCE0DE706C02C762B388CFC12,
+	GameController_ChangeKer_m8B137766FA5A0C55C9698CE14307476DF95771AA,
 	GameController__ctor_m9D952052C0A7234373FA5531292FCA8855BE2643,
 	MoveDown_Start_mBEC2FCC5B49DAC5A1217C5BE1F6514EFEFDA62C8,
 	MoveDown_FixedUpdate_mE9A07D8A64705056D0AB304CD6804447B649366B,
@@ -107,6 +114,8 @@ static Il2CppMethodPointer s_methodPointers[35] =
 	PlayerController_Start_m9531F30EC892BDD1758A2EEC724E86EFBDA150A3,
 	PlayerController_FixedUpdate_m54EE3ADAA7597303B1F69849B233D1A68D880B14,
 	PlayerController_OnCollisionEnter2D_m9A113567D03E9BFF74D8D1959B8C88124E03BBDE,
+	PlayerController_GoLeft_mEB45E7651DFEC21B0C3D301FBB5A2EA8211140DF,
+	PlayerController_GoRight_m2FF8D1B5EEAFBB49C8E3BD0576F7DAB808C454CB,
 	PlayerController__ctor_mF30385729DAFDFCB895C4939F6051DCE6C0327FB,
 	SpawnManager_Start_mFA050B5C59C7CC47F4430CA0F5A646051D5442CB,
 	SpawnManager_FixedUpdate_m8DA4C5F2CAB82FC64DCF84D4583864E07A6848B7,
@@ -120,7 +129,7 @@ static Il2CppMethodPointer s_methodPointers[35] =
 	SystemGenerator_RandomCircle_mC8A0F0860E08D778018C70A2BB4D6033F98D0FA9,
 	SystemGenerator__ctor_mF53E4F70DE1F63D81F9083072AD227AE8029FAB1,
 };
-static const int32_t s_InvokerIndices[35] = 
+static const int32_t s_InvokerIndices[38] = 
 {
 	1965,
 	1965,
@@ -140,11 +149,14 @@ static const int32_t s_InvokerIndices[35] =
 	1965,
 	1965,
 	1965,
+	1965,
+	1644,
+	1965,
+	1965,
+	1965,
 	1644,
 	1965,
 	1965,
-	1965,
-	1644,
 	1965,
 	1965,
 	1965,
@@ -163,7 +175,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	35,
+	38,
 	s_methodPointers,
 	0,
 	NULL,
