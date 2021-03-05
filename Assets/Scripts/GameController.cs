@@ -71,5 +71,6 @@ public class GameController : MonoBehaviour
     public void ChangeKer()
     {
         ketIsNew = !ketIsNew;
+        
     }
 }

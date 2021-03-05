@@ -12,13 +12,16 @@ public class PlayerController : MonoBehaviour
     private GameController _gameController;
     private Vector2 startPos;
     public GameObject Buttons;
+    private bool goLeft = false;
+    private bool goRight = false;
+    private float sideBorder = 2.5f;
 
     private void Start()
     {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         if (_gameController.ketIsNew)
         {
-            trust = 1.0f;
+            trust = 3.0f;
             Buttons.SetActive(true);
         }
     }
@@ -35,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
             if (!_gameController.ketIsNew)
             {
+                Buttons.SetActive(false);
                 if (Input.touchCount > 0)
                 {
                     Touch touch = Input.GetTouch(0);
@@ -49,6 +53,12 @@ public class PlayerController : MonoBehaviour
 
                 score++;
                 txt.text = "" + score;
+            }
+            else
+            {
+                if (goLeft && transform.position.x < sideBorder) transform.Translate(Vector3.right * trust * Time.deltaTime);
+                if (goRight && transform.position.x > -sideBorder) transform.Translate(Vector3.left * trust * Time.deltaTime);
+                
             }
         }
         if(gameIsOver) _gameController.EndGame(score);
@@ -65,12 +75,12 @@ public class PlayerController : MonoBehaviour
 
     public void GoLeft()
     {
-        transform.Translate(Vector3.right * trust * Time.deltaTime);
+        goLeft = !goLeft;
     }
 
     public void GoRight()
     {
-        transform.Translate(Vector3.left * trust * Time.deltaTime);
+        goRight = !goRight;
     }
     
 }
