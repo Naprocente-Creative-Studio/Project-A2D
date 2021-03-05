@@ -50,9 +50,6 @@ public class PlayerController : MonoBehaviour
                             transform.position.z);
                     }
                 }
-
-                score++;
-                txt.text = "" + score;
             }
             else
             {
@@ -60,6 +57,8 @@ public class PlayerController : MonoBehaviour
                 if (goRight && transform.position.x > -sideBorder) transform.Translate(Vector3.left * trust * Time.deltaTime);
                 
             }
+            score++;
+            txt.text = "" + score;
         }
         if(gameIsOver) _gameController.EndGame(score);
     }
