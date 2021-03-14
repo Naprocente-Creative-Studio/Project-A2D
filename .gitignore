@@ -1,11 +1,64 @@
 
-Temp/UnityLockfile
-*.log
-Library/ShaderCache.db
-Library/ShaderCache.db
-*.so
-*.o
-Library/ShaderCache.db
-Library/ShaderCache.db
-Library/ShaderCache.db
-*.db
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+
+/[Mm]emoryCaptures/
+
+
+!/[Aa]ssets/**/*.meta
+
+
+# /[Aa]ssets/AssetStoreTools*
+
+
+/[Aa]ssets/Plugins/Editor/JetBrains*
+
+
+
+# Gradle cache directory
+.gradle/
+
+
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+# Builds
+*.unitypackage
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
