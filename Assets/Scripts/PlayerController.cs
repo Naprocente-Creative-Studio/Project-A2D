@@ -19,15 +19,15 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    }
+
+    private void FixedUpdate()
+    {
         if (_gameController.ketIsNew)
         {
             trust = 3.0f;
             Buttons.SetActive(true);
         }
-    }
-
-    private void FixedUpdate()
-    {
         if(!gameIsOver && !_gameController.gameIsPaused)
         {
             if (hp <= 0)

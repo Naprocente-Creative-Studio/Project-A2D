@@ -5,7 +5,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] asteroidPrefabs;
     public GameObject[] asteroidShardsPrefabs;
-    private float spawnPosX = 3;
+    private readonly float[] spawnFixPosX = {-1.8f, -0.6f, 0.6f, 1.8f};
     private float spawnPosY = 11;
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
     void spawnRandomAsteroid()
     {
         int astIndex = Random.Range(0, asteroidPrefabs.Length);
-        Vector2 spawnPos = new Vector2(Random.Range(-spawnPosX, spawnPosX), spawnPosY);
+        Vector2 spawnPos = new Vector2(spawnFixPosX[Random.Range(0, spawnFixPosX.Length)], spawnPosY);
 
         Instantiate(asteroidPrefabs[astIndex], spawnPos, asteroidPrefabs[astIndex].transform.rotation);
     }
