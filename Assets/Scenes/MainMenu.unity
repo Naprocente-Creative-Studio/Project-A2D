@@ -650,11 +650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8040486896994404116, guid: ebcf4e7386581a34ba986571560c8d25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.64
+      value: -3.34
       objectReference: {fileID: 0}
     - target: {fileID: 8040486896994404116, guid: ebcf4e7386581a34ba986571560c8d25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.6741434
       objectReference: {fileID: 0}
     - target: {fileID: 8040486896994404116, guid: ebcf4e7386581a34ba986571560c8d25, type: 3}
       propertyPath: m_LocalRotation.w
@@ -662,15 +662,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8040486896994404116, guid: ebcf4e7386581a34ba986571560c8d25, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8040486896994404116, guid: ebcf4e7386581a34ba986571560c8d25, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8040486896994404116, guid: ebcf4e7386581a34ba986571560c8d25, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8040486896994404116, guid: ebcf4e7386581a34ba986571560c8d25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -714,18 +714,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1057777006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057777004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de32b30156dc5c4d8797ea08d6bf9e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1873810912
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de32b30156dc5c4d8797ea08d6bf9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1057777004}
 --- !u!4 &1963963296
 Transform:
   m_ObjectHideFlags: 0
@@ -895,7 +884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963963294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 617.1262, y: 1816.0885, z: -327.88547}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
