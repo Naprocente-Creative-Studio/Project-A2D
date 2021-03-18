@@ -78,17 +78,25 @@ extern void SpawnManager_ResumeSpawnAsteroids_m2374A3227EBA94F346CD8D7C213F9B5D1
 extern void SpawnManager_SpawnShardsAsteroids_m7085E07692693E6AD21ACD0694D4AAE73D7AE251 (void);
 // 0x00000021 System.Void SpawnManager::.ctor()
 extern void SpawnManager__ctor_mBCD48EEAB1EB733A88D47C85ACC373C796F20E59 (void);
-// 0x00000022 System.Void SystemGenerator::Awake()
+// 0x00000022 System.Void SwipeToStart::Start()
+extern void SwipeToStart_Start_mCB1EFB1F8304A9300C9BDCF012ED57C51E969038 (void);
+// 0x00000023 System.Void SwipeToStart::Update()
+extern void SwipeToStart_Update_m0899157BD12610A2D77C11FF91ADB0F0AFBC01B0 (void);
+// 0x00000024 System.Void SwipeToStart::startPlayerAnim()
+extern void SwipeToStart_startPlayerAnim_m7B42C7E531A9FA5BCBC4FDC2E75C2173B7350E4A (void);
+// 0x00000025 System.Void SwipeToStart::.ctor()
+extern void SwipeToStart__ctor_m4BE84C500BC417749D30AA345A38E17EB5967736 (void);
+// 0x00000026 System.Void SystemGenerator::Awake()
 extern void SystemGenerator_Awake_m0CC205D5CA07BA4F7474ABA1F07EAF0511678C73 (void);
-// 0x00000023 System.Void SystemGenerator::SpawnStarOnStart()
+// 0x00000027 System.Void SystemGenerator::SpawnStarOnStart()
 extern void SystemGenerator_SpawnStarOnStart_m077F16A8B9E6E21658E3CA7521D0B550799549B8 (void);
-// 0x00000024 System.Void SystemGenerator::SpawnPlanetSystem()
+// 0x00000028 System.Void SystemGenerator::SpawnPlanetSystem()
 extern void SystemGenerator_SpawnPlanetSystem_mA4B146A2FFDF19202F8DC30C58ABD3BDDCE065D8 (void);
-// 0x00000025 UnityEngine.Vector3 SystemGenerator::RandomCircle(UnityEngine.Vector3,System.Single)
+// 0x00000029 UnityEngine.Vector3 SystemGenerator::RandomCircle(UnityEngine.Vector3,System.Single)
 extern void SystemGenerator_RandomCircle_mC8A0F0860E08D778018C70A2BB4D6033F98D0FA9 (void);
-// 0x00000026 System.Void SystemGenerator::.ctor()
+// 0x0000002A System.Void SystemGenerator::.ctor()
 extern void SystemGenerator__ctor_mF53E4F70DE1F63D81F9083072AD227AE8029FAB1 (void);
-static Il2CppMethodPointer s_methodPointers[38] = 
+static Il2CppMethodPointer s_methodPointers[42] = 
 {
 	Background_FixedUpdate_mDE953196A44B930017E8DED530D93E377355071C,
 	Background__ctor_mEC9A50E3A2C20E886BD7FA5D93F73FF0CC9E7B38,
@@ -123,59 +131,67 @@ static Il2CppMethodPointer s_methodPointers[38] =
 	SpawnManager_ResumeSpawnAsteroids_m2374A3227EBA94F346CD8D7C213F9B5D1CE47F1D,
 	SpawnManager_SpawnShardsAsteroids_m7085E07692693E6AD21ACD0694D4AAE73D7AE251,
 	SpawnManager__ctor_mBCD48EEAB1EB733A88D47C85ACC373C796F20E59,
+	SwipeToStart_Start_mCB1EFB1F8304A9300C9BDCF012ED57C51E969038,
+	SwipeToStart_Update_m0899157BD12610A2D77C11FF91ADB0F0AFBC01B0,
+	SwipeToStart_startPlayerAnim_m7B42C7E531A9FA5BCBC4FDC2E75C2173B7350E4A,
+	SwipeToStart__ctor_m4BE84C500BC417749D30AA345A38E17EB5967736,
 	SystemGenerator_Awake_m0CC205D5CA07BA4F7474ABA1F07EAF0511678C73,
 	SystemGenerator_SpawnStarOnStart_m077F16A8B9E6E21658E3CA7521D0B550799549B8,
 	SystemGenerator_SpawnPlanetSystem_mA4B146A2FFDF19202F8DC30C58ABD3BDDCE065D8,
 	SystemGenerator_RandomCircle_mC8A0F0860E08D778018C70A2BB4D6033F98D0FA9,
 	SystemGenerator__ctor_mF53E4F70DE1F63D81F9083072AD227AE8029FAB1,
 };
-static const int32_t s_InvokerIndices[38] = 
+static const int32_t s_InvokerIndices[42] = 
 {
-	1965,
-	1965,
-	1965,
-	1965,
+	1970,
+	1970,
+	1970,
+	1970,
 	835,
-	1965,
-	1965,
-	1965,
-	1965,
-	1965,
-	1965,
-	1965,
-	1965,
-	1965,
-	1631,
-	1965,
-	1965,
-	1965,
-	1965,
-	1644,
-	1965,
-	1965,
-	1965,
-	1644,
-	1965,
-	1965,
-	1965,
-	1965,
-	1965,
-	1965,
-	1965,
-	1690,
-	1965,
-	1965,
-	1965,
-	1965,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1634,
+	1970,
+	1970,
+	1970,
+	1970,
+	1647,
+	1970,
+	1970,
+	1970,
+	1647,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1694,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
+	1970,
 	842,
-	1965,
+	1970,
 };
 extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	38,
+	42,
 	s_methodPointers,
 	0,
 	NULL,
