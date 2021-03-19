@@ -82,21 +82,33 @@ extern void SpawnManager__ctor_mBCD48EEAB1EB733A88D47C85ACC373C796F20E59 (void);
 extern void SwipeToStart_Start_mCB1EFB1F8304A9300C9BDCF012ED57C51E969038 (void);
 // 0x00000023 System.Void SwipeToStart::Update()
 extern void SwipeToStart_Update_m0899157BD12610A2D77C11FF91ADB0F0AFBC01B0 (void);
-// 0x00000024 System.Void SwipeToStart::startPlayerAnim()
-extern void SwipeToStart_startPlayerAnim_m7B42C7E531A9FA5BCBC4FDC2E75C2173B7350E4A (void);
+// 0x00000024 System.Collections.IEnumerator SwipeToStart::startPlayerAnim()
+extern void SwipeToStart_startPlayerAnim_mA60FB08BA5CAFAC1669541C2F8BFACF8E9D46FA3 (void);
 // 0x00000025 System.Void SwipeToStart::.ctor()
 extern void SwipeToStart__ctor_m4BE84C500BC417749D30AA345A38E17EB5967736 (void);
-// 0x00000026 System.Void SystemGenerator::Awake()
+// 0x00000026 System.Void SwipeToStart/<startPlayerAnim>d__11::.ctor(System.Int32)
+extern void U3CstartPlayerAnimU3Ed__11__ctor_m133E4BFF561623FF35A0FA2869FB92E8FC56D991 (void);
+// 0x00000027 System.Void SwipeToStart/<startPlayerAnim>d__11::System.IDisposable.Dispose()
+extern void U3CstartPlayerAnimU3Ed__11_System_IDisposable_Dispose_mA6026E13304C604C1FD4099DA928152F575164EE (void);
+// 0x00000028 System.Boolean SwipeToStart/<startPlayerAnim>d__11::MoveNext()
+extern void U3CstartPlayerAnimU3Ed__11_MoveNext_m255EDF896E551BB31718E9065255AE96EC148C30 (void);
+// 0x00000029 System.Object SwipeToStart/<startPlayerAnim>d__11::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CstartPlayerAnimU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m16ACF4B752A289CFA7F1BBC89B509A21B7BF97C7 (void);
+// 0x0000002A System.Void SwipeToStart/<startPlayerAnim>d__11::System.Collections.IEnumerator.Reset()
+extern void U3CstartPlayerAnimU3Ed__11_System_Collections_IEnumerator_Reset_m9FC3D09EC984A0FBEE4DB55C8DF7671AB72E4A31 (void);
+// 0x0000002B System.Object SwipeToStart/<startPlayerAnim>d__11::System.Collections.IEnumerator.get_Current()
+extern void U3CstartPlayerAnimU3Ed__11_System_Collections_IEnumerator_get_Current_m29A4BE8BF6917E785B72E57A583EF0A87722A354 (void);
+// 0x0000002C System.Void SystemGenerator::Awake()
 extern void SystemGenerator_Awake_m0CC205D5CA07BA4F7474ABA1F07EAF0511678C73 (void);
-// 0x00000027 System.Void SystemGenerator::SpawnStarOnStart()
+// 0x0000002D System.Void SystemGenerator::SpawnStarOnStart()
 extern void SystemGenerator_SpawnStarOnStart_m077F16A8B9E6E21658E3CA7521D0B550799549B8 (void);
-// 0x00000028 System.Void SystemGenerator::SpawnPlanetSystem()
+// 0x0000002E System.Void SystemGenerator::SpawnPlanetSystem()
 extern void SystemGenerator_SpawnPlanetSystem_mA4B146A2FFDF19202F8DC30C58ABD3BDDCE065D8 (void);
-// 0x00000029 UnityEngine.Vector3 SystemGenerator::RandomCircle(UnityEngine.Vector3,System.Single)
+// 0x0000002F UnityEngine.Vector3 SystemGenerator::RandomCircle(UnityEngine.Vector3,System.Single)
 extern void SystemGenerator_RandomCircle_mC8A0F0860E08D778018C70A2BB4D6033F98D0FA9 (void);
-// 0x0000002A System.Void SystemGenerator::.ctor()
+// 0x00000030 System.Void SystemGenerator::.ctor()
 extern void SystemGenerator__ctor_mF53E4F70DE1F63D81F9083072AD227AE8029FAB1 (void);
-static Il2CppMethodPointer s_methodPointers[42] = 
+static Il2CppMethodPointer s_methodPointers[48] = 
 {
 	Background_FixedUpdate_mDE953196A44B930017E8DED530D93E377355071C,
 	Background__ctor_mEC9A50E3A2C20E886BD7FA5D93F73FF0CC9E7B38,
@@ -133,15 +145,21 @@ static Il2CppMethodPointer s_methodPointers[42] =
 	SpawnManager__ctor_mBCD48EEAB1EB733A88D47C85ACC373C796F20E59,
 	SwipeToStart_Start_mCB1EFB1F8304A9300C9BDCF012ED57C51E969038,
 	SwipeToStart_Update_m0899157BD12610A2D77C11FF91ADB0F0AFBC01B0,
-	SwipeToStart_startPlayerAnim_m7B42C7E531A9FA5BCBC4FDC2E75C2173B7350E4A,
+	SwipeToStart_startPlayerAnim_mA60FB08BA5CAFAC1669541C2F8BFACF8E9D46FA3,
 	SwipeToStart__ctor_m4BE84C500BC417749D30AA345A38E17EB5967736,
+	U3CstartPlayerAnimU3Ed__11__ctor_m133E4BFF561623FF35A0FA2869FB92E8FC56D991,
+	U3CstartPlayerAnimU3Ed__11_System_IDisposable_Dispose_mA6026E13304C604C1FD4099DA928152F575164EE,
+	U3CstartPlayerAnimU3Ed__11_MoveNext_m255EDF896E551BB31718E9065255AE96EC148C30,
+	U3CstartPlayerAnimU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m16ACF4B752A289CFA7F1BBC89B509A21B7BF97C7,
+	U3CstartPlayerAnimU3Ed__11_System_Collections_IEnumerator_Reset_m9FC3D09EC984A0FBEE4DB55C8DF7671AB72E4A31,
+	U3CstartPlayerAnimU3Ed__11_System_Collections_IEnumerator_get_Current_m29A4BE8BF6917E785B72E57A583EF0A87722A354,
 	SystemGenerator_Awake_m0CC205D5CA07BA4F7474ABA1F07EAF0511678C73,
 	SystemGenerator_SpawnStarOnStart_m077F16A8B9E6E21658E3CA7521D0B550799549B8,
 	SystemGenerator_SpawnPlanetSystem_mA4B146A2FFDF19202F8DC30C58ABD3BDDCE065D8,
 	SystemGenerator_RandomCircle_mC8A0F0860E08D778018C70A2BB4D6033F98D0FA9,
 	SystemGenerator__ctor_mF53E4F70DE1F63D81F9083072AD227AE8029FAB1,
 };
-static const int32_t s_InvokerIndices[42] = 
+static const int32_t s_InvokerIndices[48] = 
 {
 	1970,
 	1970,
@@ -178,8 +196,14 @@ static const int32_t s_InvokerIndices[42] =
 	1970,
 	1970,
 	1970,
+	1918,
 	1970,
+	1634,
 	1970,
+	1945,
+	1918,
+	1970,
+	1918,
 	1970,
 	1970,
 	1970,
@@ -191,7 +215,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	42,
+	48,
 	s_methodPointers,
 	0,
 	NULL,

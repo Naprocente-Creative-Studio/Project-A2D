@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SwipeToStart : MonoBehaviour
@@ -10,10 +11,12 @@ public class SwipeToStart : MonoBehaviour
     Vector2 starPos;
     float startTime;
     private GameController _game;
+    private Animation anim;
 
     private void Start()
     {
         _game = GameObject.Find("GameController").GetComponent<GameController>();
+        anim = player.GetComponent<Animation>();
     }
 
     void Update()
@@ -33,17 +36,20 @@ public class SwipeToStart : MonoBehaviour
                 if (swipe.magnitude < minDistanceSwipe) return;
                 if (Mathf.Abs(swipe.x) < Mathf.Abs(swipe.y))
                 {
-                    if (swipe.y > 0) startPlayerAnim();
+                    if (swipe.y > 0) StartCoroutine(startPlayerAnim());
                 }
             }
         }
-        if(Input.GetKeyDown (KeyCode.UpArrow)) startPlayerAnim();
+        if(Input.GetKeyDown (KeyCode.UpArrow)) StartCoroutine(startPlayerAnim());
     }
 
-    void startPlayerAnim()
+    IEnumerator startPlayerAnim()
     {
-        Animator anim = GameObject.Find("Player").GetComponent<Animator>();
-        anim.SetBool("isStarted", true);
-        if(player.transform.position.y > upBorder) _game.StartGame();
+        anim.Play("StartAnim");
+        while (anim.isPlaying)
+        {
+            yield return null;
+        }
+        _game.StartGame();
     }
 }
