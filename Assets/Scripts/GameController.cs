@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        if(SceneManager.GetActiveScene().buildIndex == 1) _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
 
     public void StartGame()

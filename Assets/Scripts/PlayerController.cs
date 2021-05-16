@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -23,12 +24,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_gameController.ketIsNew)
+        if (_gameController.ketIsNew && SceneManager.GetActiveScene().buildIndex == 1)
         {
             trust = 3.0f;
             Buttons.SetActive(true);
         }
-        if(!gameIsOver && !_gameController.gameIsPaused)
+        if(!gameIsOver && !_gameController.gameIsPaused && SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (hp <= 0)
             {
