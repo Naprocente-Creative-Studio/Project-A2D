@@ -56,7 +56,7 @@ public class GameController : MonoBehaviour
     public void UnPause()
     {
         gameIsPaused = false;
-        _spawnManager.ResumeSpawnAsteroids();
+        _spawnManager.ResumeSpawn();
         pauseMenu.SetActive(false);
         gameMenu.SetActive(true);
     }

@@ -72,24 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\HardLight2D\ReadMe - FAQ.txt" />
-    <None Include="Assets\Parse\Plugins\Unity.Compat.dll" />
-    <None Include="Assets\Firebase\Plugins\Firebase.Analytics.dll" />
     <None Include="Assets\HardLight2D\Scripts\HardLight2D.dll" />
-    <None Include="Assets\Firebase\Plugins\iOS\Firebase.Analytics.dll" />
-    <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
-    <None Include="Assets\Parse\Plugins\Unity.Tasks.dll" />
-    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAnalytics.dll" />
-    <None Include="Assets\Firebase\Plugins\Firebase.TaskExtension.dll" />
-    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-7_2_0.dll" />
-    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\Lean\READ ME.txt" />
-    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-analytics-unity\maven-metadata.xml" />
     <None Include="Assets\HardLight2D\Material\AdditiveShader.shader" />
-    <None Include="Assets\Parse\Plugins\dotNet45\Unity.Compat.dll" />
-    <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
-    <None Include="Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll" />
-    <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
-    <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -305,29 +290,8 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.6f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.Analytics">
-      <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.TaskExtension">
-      <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.MiniJson">
-      <HintPath>Assets\Firebase\Plugins\Google.MiniJson.dll</HintPath>
-    </Reference>
     <Reference Include="HardLight2D">
       <HintPath>Assets\HardLight2D\Scripts\HardLight2D.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.Platform">
-      <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Compat">
-      <HintPath>Assets\Parse\Plugins\Unity.Compat.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.App">
-      <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Tasks">
-      <HintPath>Assets\Parse\Plugins\Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.6f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

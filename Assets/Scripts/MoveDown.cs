@@ -4,7 +4,8 @@ public class MoveDown : MonoBehaviour
 {
     public float speed = 6.0f;
     public bool isSharp;
-    private float downBorder = -1;
+    public bool isLight;
+    private float downBorder = -1, downBorderL = -8;
     private float sideBorder = 3;
     private float upperBorder = 12;
     private PlayerController playerScript;
@@ -23,7 +24,9 @@ public class MoveDown : MonoBehaviour
         if (!playerScript.gameIsOver && !_gameController.gameIsPaused)
         {
             gameObject.transform.Translate(0, -speed * Time.deltaTime, 0);
-            if (gameObject.transform.position.y < downBorder || gameObject.transform.position.x > sideBorder || gameObject.transform.position.x < -sideBorder || gameObject.transform.position.y > upperBorder) Destroy(gameObject);
+            if (gameObject.transform.position.y < downBorder && !isLight && !isSharp) Destroy(gameObject);
+            if(isSharp && (gameObject.transform.position.x > sideBorder || gameObject.transform.position.x < -sideBorder || gameObject.transform.position.y > upperBorder || gameObject.transform.position.y < downBorder)) Destroy(gameObject);
+            if (isLight && gameObject.transform.position.y < downBorderL) Destroy(gameObject);
         }
     }
     
