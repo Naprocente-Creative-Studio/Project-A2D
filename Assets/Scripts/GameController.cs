@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     public GameObject endGameMenu;
 
     public Text txt;
+    public Text txt1;
 
     private void Start()
     {
@@ -24,11 +25,6 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
-    }
-
-    public void ChangeLanguage()
-    {
-        
     }
 
     public void OpenMap()
@@ -61,9 +57,10 @@ public class GameController : MonoBehaviour
         gameMenu.SetActive(true);
     }
 
-    public void EndGame(int score)
+    public void EndGame(int score, int bestScore)
     {
         txt.text = "Your score: " + score;
+        txt1.text = "Your best score: " + bestScore;
         gameMenu.SetActive(false);
         endGameMenu.SetActive(true);
     }
@@ -71,6 +68,5 @@ public class GameController : MonoBehaviour
     public void ChangeKer()
     {
         ketIsNew = !ketIsNew;
-        
     }
 }

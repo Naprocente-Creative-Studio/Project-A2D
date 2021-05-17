@@ -61,7 +61,12 @@ public class PlayerController : MonoBehaviour
             score++;
             txt.text = "" + score;
         }
-        if(gameIsOver) _gameController.EndGame(score);
+        if (gameIsOver)
+        {
+            PlayerData data = SaveSystem.LoadPlayer();
+            _gameController.EndGame(score, data.score);
+            if (score > data.score) SaveSystem.SavePlayer(this);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
