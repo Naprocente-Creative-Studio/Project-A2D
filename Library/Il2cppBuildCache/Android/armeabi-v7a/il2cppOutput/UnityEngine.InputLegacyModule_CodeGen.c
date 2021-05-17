@@ -16,10 +16,10 @@
 extern void Touch_get_fingerId_mCED0E66949120E69BFE9294DC0A11A6F9FDBD129 (void);
 // 0x00000002 UnityEngine.Vector2 UnityEngine.Touch::get_position()
 extern void Touch_get_position_mE32B04C6DA32A0965C403A31847ED7F1725EA1DE (void);
-// 0x00000003 UnityEngine.Vector2 UnityEngine.Touch::get_deltaPosition()
-extern void Touch_get_deltaPosition_mF9D60C253E41DC4E4F832F88A1041BE8A9E7C0FB (void);
-// 0x00000004 UnityEngine.TouchPhase UnityEngine.Touch::get_phase()
+// 0x00000003 UnityEngine.TouchPhase UnityEngine.Touch::get_phase()
 extern void Touch_get_phase_m576EA3F4FE1D12EB85510326AD8EC3C2EB267257 (void);
+// 0x00000004 System.Single UnityEngine.Touch::get_pressure()
+extern void Touch_get_pressure_mD9B5B0AE17E051F0273CF1155998BC2342035CD4 (void);
 // 0x00000005 UnityEngine.TouchType UnityEngine.Touch::get_type()
 extern void Touch_get_type_m33FB24B6A53A307E8AC9881ED3B483DD4B44C050 (void);
 // 0x00000006 UnityEngine.GameObject UnityEngine.CameraRaycastHelper::RaycastTry(UnityEngine.Camera,UnityEngine.Ray,System.Single,System.Int32)
@@ -110,8 +110,8 @@ static Il2CppMethodPointer s_methodPointers[47] =
 {
 	Touch_get_fingerId_mCED0E66949120E69BFE9294DC0A11A6F9FDBD129,
 	Touch_get_position_mE32B04C6DA32A0965C403A31847ED7F1725EA1DE,
-	Touch_get_deltaPosition_mF9D60C253E41DC4E4F832F88A1041BE8A9E7C0FB,
 	Touch_get_phase_m576EA3F4FE1D12EB85510326AD8EC3C2EB267257,
+	Touch_get_pressure_mD9B5B0AE17E051F0273CF1155998BC2342035CD4,
 	Touch_get_type_m33FB24B6A53A307E8AC9881ED3B483DD4B44C050,
 	CameraRaycastHelper_RaycastTry_m8AA2714ED46E79851C77B83A3916C515D7280FD1,
 	CameraRaycastHelper_RaycastTry2D_mAA0B0BAC7BE8A2F640A236BB6655EB47E5408C9D,
@@ -158,68 +158,68 @@ static Il2CppMethodPointer s_methodPointers[47] =
 };
 extern void Touch_get_fingerId_mCED0E66949120E69BFE9294DC0A11A6F9FDBD129_AdjustorThunk (void);
 extern void Touch_get_position_mE32B04C6DA32A0965C403A31847ED7F1725EA1DE_AdjustorThunk (void);
-extern void Touch_get_deltaPosition_mF9D60C253E41DC4E4F832F88A1041BE8A9E7C0FB_AdjustorThunk (void);
 extern void Touch_get_phase_m576EA3F4FE1D12EB85510326AD8EC3C2EB267257_AdjustorThunk (void);
+extern void Touch_get_pressure_mD9B5B0AE17E051F0273CF1155998BC2342035CD4_AdjustorThunk (void);
 extern void Touch_get_type_m33FB24B6A53A307E8AC9881ED3B483DD4B44C050_AdjustorThunk (void);
 extern void HitInfo_SendMessage_m2D813691948EAB9CDA487A3B8668678EABFCFA62_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[6] = 
 {
 	{ 0x06000001, Touch_get_fingerId_mCED0E66949120E69BFE9294DC0A11A6F9FDBD129_AdjustorThunk },
 	{ 0x06000002, Touch_get_position_mE32B04C6DA32A0965C403A31847ED7F1725EA1DE_AdjustorThunk },
-	{ 0x06000003, Touch_get_deltaPosition_mF9D60C253E41DC4E4F832F88A1041BE8A9E7C0FB_AdjustorThunk },
-	{ 0x06000004, Touch_get_phase_m576EA3F4FE1D12EB85510326AD8EC3C2EB267257_AdjustorThunk },
+	{ 0x06000003, Touch_get_phase_m576EA3F4FE1D12EB85510326AD8EC3C2EB267257_AdjustorThunk },
+	{ 0x06000004, Touch_get_pressure_mD9B5B0AE17E051F0273CF1155998BC2342035CD4_AdjustorThunk },
 	{ 0x06000005, Touch_get_type_m33FB24B6A53A307E8AC9881ED3B483DD4B44C050_AdjustorThunk },
 	{ 0x0600002D, HitInfo_SendMessage_m2D813691948EAB9CDA487A3B8668678EABFCFA62_AdjustorThunk },
 };
 static const int32_t s_InvokerIndices[47] = 
 {
-	1904,
-	1964,
-	1964,
-	1904,
-	1904,
-	2381,
-	2381,
-	2368,
-	2368,
-	3211,
-	3211,
-	3211,
-	3229,
-	3229,
-	3214,
-	3214,
-	3214,
-	3211,
-	3211,
-	3211,
-	3237,
-	3211,
-	3211,
-	3211,
-	3317,
-	3315,
-	3290,
-	3257,
-	3296,
-	3315,
-	3266,
-	3308,
-	3290,
-	3308,
-	3296,
-	2980,
-	3255,
-	3255,
-	3255,
-	3255,
-	3319,
-	3257,
-	2986,
-	3319,
-	1647,
-	3219,
-	2924,
+	2334,
+	2399,
+	2334,
+	2386,
+	2334,
+	2932,
+	2932,
+	2919,
+	2919,
+	3993,
+	3993,
+	3993,
+	4016,
+	4016,
+	3996,
+	3996,
+	3996,
+	3993,
+	3993,
+	3993,
+	4024,
+	3993,
+	3993,
+	3993,
+	4124,
+	4122,
+	4093,
+	4049,
+	4100,
+	4122,
+	4059,
+	4113,
+	4093,
+	4113,
+	4100,
+	3688,
+	4042,
+	4042,
+	4042,
+	4042,
+	4126,
+	4049,
+	3696,
+	4126,
+	1985,
+	4006,
+	3612,
 };
 extern const CustomAttributesCacheGenerator g_UnityEngine_InputLegacyModule_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_InputLegacyModule_CodeGenModule;

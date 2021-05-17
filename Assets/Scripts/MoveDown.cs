@@ -3,7 +3,6 @@
 public class MoveDown : MonoBehaviour
 {
     public float speed = 6.0f;
-    public float damage = 25;
     public bool isSharp;
     private float downBorder = -1;
     private float sideBorder = 3;

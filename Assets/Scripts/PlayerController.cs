@@ -5,17 +5,18 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float trust = 2.0f;
-    public float hp = 100;
+    public float hp = 3;
     public bool gameIsOver = false;
     public int score;
     public Text txt;
-    private Vector3 smoothPos;
     private GameController _gameController;
-    private Vector2 startPos;
     public GameObject Buttons;
     private bool goLeft = false;
     private bool goRight = false;
     private float sideBorder = 2.5f;
+    public GameObject touch;
+    public GameObject shield;
+    public Color color3, color2, color1;
 
     private void Start()
     {
@@ -28,29 +29,28 @@ public class PlayerController : MonoBehaviour
         {
             trust = 3.0f;
             Buttons.SetActive(true);
+            touch.SetActive(false);
         }
         if(!gameIsOver && !_gameController.gameIsPaused && SceneManager.GetActiveScene().buildIndex == 1)
         {
-            if (hp <= 0)
+            if (hp < 0)
             {
                 gameIsOver = true;
                 Destroy(gameObject);
             }
 
+            if (hp == 3) shield.GetComponent<SpriteRenderer>().color = color3;
+
+            if(hp == 2) shield.GetComponent<SpriteRenderer>().color = color2;
+
+            if(hp == 1) shield.GetComponent<SpriteRenderer>().color = color1;
+
+            if (hp == 0) shield.SetActive(false);
+
             if (!_gameController.ketIsNew)
             {
                 Buttons.SetActive(false);
-                if (Input.touchCount > 0)
-                {
-                    Touch touch = Input.GetTouch(0);
-                    if (touch.phase == TouchPhase.Moved)
-                    {
-                        transform.position = new Vector3(
-                            transform.position.x + touch.deltaPosition.x * trust,
-                            transform.position.y + touch.deltaPosition.y * trust,
-                            transform.position.z);
-                    }
-                }
+                touch.SetActive(true);
             }
             else
             {
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("SharpAst"))
         {
-            hp -= other.gameObject.GetComponent<MoveDown>().damage;
+            hp--;
             Destroy(other.gameObject);
         }
     }

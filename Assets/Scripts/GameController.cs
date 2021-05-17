@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public bool gameIsPaused = false;
-    public bool ketIsNew = true;
+    public bool ketIsNew = false;
     private SpawnManager _spawnManager;
 
     public GameObject pauseMenu;
