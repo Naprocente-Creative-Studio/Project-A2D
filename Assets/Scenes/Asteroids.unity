@@ -255,7 +255,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32363463}
   m_CullTransparentMesh: 1
---- !u!43 &193272697
+--- !u!43 &230117438
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2428,7 +2428,7 @@ GameObject:
   - component: {fileID: 1697493504}
   - component: {fileID: 1697493503}
   - component: {fileID: 1697493502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Starfield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2451,7 +2451,7 @@ VFXRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 0}
@@ -2459,7 +2459,7 @@ VFXRenderer:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 1666381372}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_ReceiveGI: 1
@@ -3227,7 +3227,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278962375281180840}
-  m_Mesh: {fileID: 193272697}
+  m_Mesh: {fileID: 230117438}
 --- !u!1 &1278962375281180840
 GameObject:
   m_ObjectHideFlags: 0

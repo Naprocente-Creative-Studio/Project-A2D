@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
             Buttons.SetActive(true);
             touch.SetActive(false);
         }
+
+        if (SceneManager.GetActiveScene().buildIndex == 1 && !_gameController.ketIsNew && _gameController.gameIsPaused && touch.activeInHierarchy) touch.SetActive(false);
         if(!gameIsOver && !_gameController.gameIsPaused && SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (hp < 0)
@@ -38,6 +40,8 @@ public class PlayerController : MonoBehaviour
                 gameIsOver = true;
                 Destroy(gameObject);
             }
+
+            if (!touch.activeInHierarchy) touch.SetActive(true);
 
             if (hp == 3) shield.GetComponent<SpriteRenderer>().color = color3;
 
