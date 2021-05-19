@@ -3304,14 +3304,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SubsystemManager_RemoveDeprecatedSubsyst
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Boolean UnityEngine.SubsystemsImplementation.SubsystemProvider::get_running()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SubsystemProvider_get_running_mFD43A48A7084B69948769514F710A6EB51FE615B (SubsystemProvider_t39E89FB8DB1EF1D2B0AF93796AEDB19D76A665F9 * __this, const RuntimeMethod* method)
-{
-	{
-		bool L_0 = __this->get_m_Running_0();
-		return L_0;
-	}
-}
 // System.Void UnityEngine.SubsystemsImplementation.SubsystemProvider::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubsystemProvider__ctor_m2CE89B46251DEF756241F4339D1B3C97585C40D5 (SubsystemProvider_t39E89FB8DB1EF1D2B0AF93796AEDB19D76A665F9 * __this, const RuntimeMethod* method)
 {

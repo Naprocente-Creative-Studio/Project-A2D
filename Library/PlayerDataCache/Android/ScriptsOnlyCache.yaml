@@ -68,8 +68,6 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.ARCore.Editor.dll:
     - UnityEditor.XR.ARCore.ARCoreSettings
-    Unity.XR.ARCore.dll:
-    - UnityEngine.XR.ARCore.ARCoreLoader
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
     Unity.XR.Management.dll:
@@ -153,29 +151,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3626}
+      Script: {instanceID: 3624}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3704}
     - Class: 114
-      Script: {instanceID: 5536}
+      Script: {instanceID: 5538}
     - Class: 114
-      Script: {instanceID: 6660}
+      Script: {instanceID: 6662}
     - Class: 114
-      Script: {instanceID: 6764}
+      Script: {instanceID: 6766}
     - Class: 114
-      Script: {instanceID: 7178}
+      Script: {instanceID: 7180}
     - Class: 114
-      Script: {instanceID: 7524}
+      Script: {instanceID: 7526}
     - Class: 114
-      Script: {instanceID: 8100}
+      Script: {instanceID: 8104}
     - Class: 114
-      Script: {instanceID: 8490}
+      Script: {instanceID: 8494}
     - Class: 114
-      Script: {instanceID: 8580}
+      Script: {instanceID: 8584}
     - Class: 114
-      Script: {instanceID: 8860}
+      Script: {instanceID: 8864}
     - Class: 114
-      Script: {instanceID: 9028}
+      Script: {instanceID: 9032}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -260,77 +258,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3626}
+      Script: {instanceID: 3624}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3704}
     - Class: 114
-      Script: {instanceID: 3782}
+      Script: {instanceID: 3780}
     - Class: 114
-      Script: {instanceID: 3812}
+      Script: {instanceID: 3810}
     - Class: 114
-      Script: {instanceID: 3894}
+      Script: {instanceID: 3892}
     - Class: 114
-      Script: {instanceID: 4046}
+      Script: {instanceID: 4044}
     - Class: 114
-      Script: {instanceID: 4178}
+      Script: {instanceID: 4176}
     - Class: 114
-      Script: {instanceID: 4532}
+      Script: {instanceID: 4530}
     - Class: 114
-      Script: {instanceID: 4670}
+      Script: {instanceID: 4668}
     - Class: 114
-      Script: {instanceID: 5046}
+      Script: {instanceID: 5044}
     - Class: 114
-      Script: {instanceID: 5532}
+      Script: {instanceID: 5534}
     - Class: 114
-      Script: {instanceID: 5998}
+      Script: {instanceID: 6000}
     - Class: 114
-      Script: {instanceID: 6012}
+      Script: {instanceID: 6014}
     - Class: 114
-      Script: {instanceID: 6090}
-    - Class: 114
-      Script: {instanceID: 6308}
+      Script: {instanceID: 6092}
     - Class: 114
       Script: {instanceID: 6310}
     - Class: 114
-      Script: {instanceID: 6334}
+      Script: {instanceID: 6312}
     - Class: 114
-      Script: {instanceID: 6630}
+      Script: {instanceID: 6336}
     - Class: 114
-      Script: {instanceID: 6764}
+      Script: {instanceID: 6632}
     - Class: 114
-      Script: {instanceID: 6920}
+      Script: {instanceID: 6766}
     - Class: 114
-      Script: {instanceID: 7012}
+      Script: {instanceID: 6922}
     - Class: 114
-      Script: {instanceID: 7020}
+      Script: {instanceID: 7014}
     - Class: 114
-      Script: {instanceID: 7136}
+      Script: {instanceID: 7022}
     - Class: 114
-      Script: {instanceID: 7178}
+      Script: {instanceID: 7138}
     - Class: 114
       Script: {instanceID: 7180}
     - Class: 114
-      Script: {instanceID: 7226}
+      Script: {instanceID: 7182}
     - Class: 114
-      Script: {instanceID: 7308}
+      Script: {instanceID: 7228}
     - Class: 114
-      Script: {instanceID: 7432}
+      Script: {instanceID: 7310}
     - Class: 114
-      Script: {instanceID: 7574}
+      Script: {instanceID: 7434}
     - Class: 114
-      Script: {instanceID: 7710}
+      Script: {instanceID: 7578}
     - Class: 114
-      Script: {instanceID: 7772}
+      Script: {instanceID: 7714}
     - Class: 114
-      Script: {instanceID: 8490}
+      Script: {instanceID: 7776}
     - Class: 114
-      Script: {instanceID: 8504}
+      Script: {instanceID: 8494}
     - Class: 114
-      Script: {instanceID: 8864}
+      Script: {instanceID: 8508}
     - Class: 114
-      Script: {instanceID: 9028}
+      Script: {instanceID: 8868}
     - Class: 114
-      Script: {instanceID: 9148}
+      Script: {instanceID: 9032}
+    - Class: 114
+      Script: {instanceID: 9152}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -393,17 +391,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3626}
+      Script: {instanceID: 3624}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3704}
     - Class: 114
-      Script: {instanceID: 6764}
+      Script: {instanceID: 6766}
     - Class: 114
-      Script: {instanceID: 7166}
+      Script: {instanceID: 7168}
     - Class: 114
-      Script: {instanceID: 7178}
+      Script: {instanceID: 7180}
     - Class: 114
-      Script: {instanceID: 9028}
+      Script: {instanceID: 9032}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1153,6 +1151,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX
     className: SetSpawnTime
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.U2D.Animation
+    className: BufferManager
   - hash:
       serializedVersion: 2
       Hash: d5630f96bd5a6a6eed7e1754c3fb8703
@@ -1980,4 +1984,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Asteroids.unity
   - Assets/Scenes/MapSystem.unity
-  playerPath: C:/Users/Savhe/Desktop/Dream Project/Project-A2D/AAB Builds/Test 2.1.aab
+  playerPath: C:/Users/Savhe/Desktop/Dream Project/Project-A2D/APK Builds/2.2.apk

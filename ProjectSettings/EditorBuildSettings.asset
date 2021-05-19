@@ -15,5 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/MapSystem.unity
     guid: 4f7750d797e2f1c418554b615aa98114
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 24791de065235214c918eda6c2f54e9e, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 89a9b98a195958441a04836823b0ec6c, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 7aa413a78e64b7e4f9a714b5769feb34, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c073e7f85d42e164ebebb452bd846758, type: 2}
