@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("SharpAst"))
+        if (other.gameObject.CompareTag("Asteroids"))
         {
             hp--;
             Destroy(other.gameObject);

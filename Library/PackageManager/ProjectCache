@@ -1809,6 +1809,7 @@ m_PackageAssets:
         - 4.2.0-pre.3
         - 4.2.0-pre.4
         - 4.2.0-pre.5
+        - 4.2.0-pre.7
         compatible:
         - 1.0.0-preview.24
         - 2.0.2
@@ -1872,6 +1873,7 @@ m_PackageAssets:
         - 4.2.0-pre.3
         - 4.2.0-pre.4
         - 4.2.0-pre.5
+        - 4.2.0-pre.7
         verified: 4.1.7
       dependencies:
       - name: com.unity.xr.arsubsystems
