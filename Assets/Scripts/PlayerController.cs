@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,6 +40,11 @@ public class PlayerController : MonoBehaviour
             {
                 gameIsOver = true;
                 Destroy(gameObject);
+            }
+
+            if (hp < 4)
+            {
+                StartCoroutine(HealthAdd());
             }
 
             if (!touch.activeInHierarchy) touch.SetActive(true);
@@ -90,6 +96,13 @@ public class PlayerController : MonoBehaviour
     public void GoRight()
     {
         goRight = !goRight;
+    }
+
+    IEnumerator HealthAdd()
+    {
+        yield return new WaitForSeconds(5);
+        hp++;
+        StopCoroutine("HealthAdd");
     }
     
 }
