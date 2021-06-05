@@ -16,12 +16,19 @@ public class GameController : MonoBehaviour
 
     public GameObject endGameMenu;
 
+    public static PlayGamesPlatform platform;
+
     public Text txt;
     public Text txt1;
 
     private void Start()
     {
         if(SceneManager.GetActiveScene().buildIndex == 1) _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            PlayGamesPlatform.Activate();
+            Social.Active.localUser.Authenticate(success => { });
+        }
     }
 
     public void StartGame()

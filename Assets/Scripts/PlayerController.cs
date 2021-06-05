@@ -45,12 +45,12 @@ public class PlayerController : MonoBehaviour
                 gameIsOver = true;
                 Destroy(gameObject);
             }
-
+            /*
             if (hp < 4)
             {
                 StartCoroutine(HealthAdd());
             }
-
+            */
             if (!touch.activeInHierarchy) touch.SetActive(true);
 
             if (hp == 3) shield.GetComponent<SpriteRenderer>().color = color3;

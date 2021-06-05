@@ -2,7 +2,6 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CameraScript
-    - GPGSAuth
     - GameController
     - MoveDown
     - PlayerController
@@ -19,10 +18,13 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -171,7 +173,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9172}
     - Class: 114
-      Script: {instanceID: 9350}
+      Script: {instanceID: 9348}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -328,11 +330,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9176}
     - Class: 114
-      Script: {instanceID: 9272}
+      Script: {instanceID: 9348}
     - Class: 114
-      Script: {instanceID: 9350}
-    - Class: 114
-      Script: {instanceID: 9470}
+      Script: {instanceID: 9468}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -409,7 +409,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7436}
     - Class: 114
-      Script: {instanceID: 9350}
+      Script: {instanceID: 9348}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1917,12 +1917,6 @@ ScriptsOnlyBuild:
     className: LeanFingerSwipe
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GPGSAuth
-  - hash:
-      serializedVersion: 2
       Hash: 2078720c69e8d5757058a91beaa4f339
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
@@ -2010,4 +2004,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Asteroids.unity
   - Assets/Scenes/MapSystem.unity
-  playerPath: C:/Users/Savhe/Desktop/Dream Project/Project-A2D/APK Builds/2.3.apk
+  playerPath: C:/Users/Savhe/Desktop/Dream Project/Project-A2D/AAB Builds/2.4.aab
