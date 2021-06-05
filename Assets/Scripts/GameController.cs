@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 
 public class GameController : MonoBehaviour
 {
@@ -68,5 +70,15 @@ public class GameController : MonoBehaviour
     public void ChangeKer()
     {
         ketIsNew = !ketIsNew;
+    }
+
+    public void ShowLeaderBoard()
+    {
+        Social.ShowLeaderboardUI();
+    }
+
+    public void ExitFromGPS()
+    {
+        PlayGamesPlatform.Instance.SignOut();
     }
 }

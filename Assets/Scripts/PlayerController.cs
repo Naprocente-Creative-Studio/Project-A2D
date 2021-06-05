@@ -2,6 +2,9 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
+using UnityEngine.SocialPlatforms;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public GameObject touch;
     public GameObject shield;
     public Color color3, color2, color1;
+    [HideInInspector] private const string leaderBoard = "CgkI64T-2s8EEAIQAQ";
 
     private void Start()
     {
@@ -75,7 +79,11 @@ public class PlayerController : MonoBehaviour
         {
             PlayerData data = SaveSystem.LoadPlayer();
             _gameController.EndGame(score, data.score);
-            if (score > data.score) SaveSystem.SavePlayer(this);
+            if (score > data.score)
+            {
+                SaveSystem.SavePlayer(this);
+                Social.ReportScore(score, leaderBoard, (bool success) => { });
+            }
         }
     }
 
