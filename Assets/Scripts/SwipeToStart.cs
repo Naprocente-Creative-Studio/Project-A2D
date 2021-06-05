@@ -3,13 +3,9 @@ using UnityEngine;
 
 public class SwipeToStart : MonoBehaviour
 {
-    private const float minTimeSwipe = 0.5f;
     private const float minDistanceSwipe = 0.17f;
-    private float speed = 25;
-    private float upBorder =6.0f;
     public GameObject player;
     Vector2 starPos;
-    float startTime;
     private GameController _game;
     private Animation anim;
 
@@ -27,7 +23,6 @@ public class SwipeToStart : MonoBehaviour
             if (t.phase == TouchPhase.Began)
             {
                 starPos = new Vector2(t.position.x / (float) Screen.width, t.position.y / (float) Screen.width);
-                startTime = Time.time;
             }
             if (t.phase == TouchPhase.Ended)
             {
@@ -37,6 +32,11 @@ public class SwipeToStart : MonoBehaviour
                 if (Mathf.Abs(swipe.x) < Mathf.Abs(swipe.y))
                 {
                     if (swipe.y > 0) StartCoroutine(startPlayerAnim());
+                }
+                if (Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
+                {
+                    if (swipe.x > 0) _game.ShowLeaderBoard();
+                    if (swipe.x < 0) _game.OpenSettings();
                 }
             }
         }

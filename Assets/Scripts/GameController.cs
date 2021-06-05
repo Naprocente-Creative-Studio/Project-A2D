@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
 
     public GameObject endGameMenu;
 
+    public GameObject txt2;
+
     public static PlayGamesPlatform platform;
 
     public Text txt;
@@ -27,7 +29,8 @@ public class GameController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             PlayGamesPlatform.Activate();
-            Social.Active.localUser.Authenticate(success => { });
+            PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => { });
+            //Social.Active.localUser.Authenticate(success => { });
         }
     }
 
@@ -48,7 +51,7 @@ public class GameController : MonoBehaviour
 
     public void OpenSettings()
     {
-        
+        txt2.SetActive(false);   
     }
 
     public void Pause()
