@@ -86,9 +86,4 @@ public class GameController : MonoBehaviour
     {
         Social.ShowLeaderboardUI();
     }
-
-    public void ExitFromGPS()
-    {
-        PlayGamesPlatform.Instance.SignOut();
-    }
 }
