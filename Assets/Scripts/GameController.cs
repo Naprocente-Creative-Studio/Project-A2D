@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
 
     public GameObject endGameMenu;
 
+    public GameObject particle;
+
     public GameObject txt2;
 
     public static PlayGamesPlatform platform;
@@ -57,6 +59,7 @@ public class GameController : MonoBehaviour
     public void Pause()
     {
         gameIsPaused = true;
+        particle.GetComponent<ParticleSystem>().Pause();
         pauseMenu.SetActive(true);
         gameMenu.SetActive(false);
     }
@@ -64,6 +67,7 @@ public class GameController : MonoBehaviour
     public void UnPause()
     {
         gameIsPaused = false;
+        particle.GetComponent<ParticleSystem>().Play();
         _spawnManager.ResumeSpawn();
         pauseMenu.SetActive(false);
         gameMenu.SetActive(true);
