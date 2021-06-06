@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Asteroids
   - SharpAst
+  - PlanetMap
   layers:
   - Default
   - TransparentFX
