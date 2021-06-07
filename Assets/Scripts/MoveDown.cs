@@ -28,7 +28,7 @@ public class MoveDown : MonoBehaviour
             if (isSharp && (gameObject.transform.position.x > sideBorder || gameObject.transform.position.x < -sideBorder || gameObject.transform.position.y > upperBorder || gameObject.transform.position.y < downBorder)) Destroy(gameObject);
             if (isLight && gameObject.transform.position.y < downBorderL) Destroy(gameObject);
         }
-        else gameObject.GetComponent<Animator>().StopPlayback();
+       // else gameObject.GetComponentInChildren<Animator>().StopPlayback();
     }
     
     private void OnCollisionEnter2D(Collision2D other)

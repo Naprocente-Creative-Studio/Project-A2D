@@ -38,21 +38,25 @@ public class PlayerController : MonoBehaviour
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 1 && !_gameController.ketIsNew && _gameController.gameIsPaused && touch.activeInHierarchy) touch.SetActive(false);
-        if(!gameIsOver && !_gameController.gameIsPaused && SceneManager.GetActiveScene().buildIndex == 1)
+        if (!gameIsOver && !_gameController.gameIsPaused && SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (hp < 0)
             {
                 gameIsOver = true;
                 Destroy(gameObject);
             }
-         
+
             if (!touch.activeInHierarchy) touch.SetActive(true);
 
             if (hp == 3) shield.GetComponent<SpriteRenderer>().color = color3;
 
-            if(hp == 2) shield.GetComponent<SpriteRenderer>().color = color2;
+            if (hp == 2) shield.GetComponent<SpriteRenderer>().color = color2;
 
-            if(hp == 1) shield.GetComponent<SpriteRenderer>().color = color1;
+            if (hp == 1)
+            {
+                if (!shield.activeSelf) shield.SetActive(true);
+                shield.GetComponent<SpriteRenderer>().color = color1;
+            }
 
             if (hp == 0) shield.SetActive(false);
 
@@ -65,7 +69,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (goLeft && transform.position.x < sideBorder) transform.Translate(Vector3.right * trust * Time.deltaTime);
                 if (goRight && transform.position.x > -sideBorder) transform.Translate(Vector3.left * trust * Time.deltaTime);
-                
+
             }
             score++;
             txt.text = "" + score;
@@ -89,9 +93,22 @@ public class PlayerController : MonoBehaviour
             hp--;
             Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("Comet"))
+        {
+            if (other.contacts[0].collider.gameObject.CompareTag("addHp"))
+            {
+                if (hp < 3) hp++;
+                Destroy(other.gameObject);
+            }
+            else if (other.contacts[0].collider.gameObject.CompareTag("Asteroids"))
+                {
+                    hp--;
+                    Destroy(other.gameObject);
+                }
+        }
     }
 
-    public void GoLeft()
+	public void GoLeft()
     {
         goLeft = !goLeft;
     }

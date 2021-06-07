@@ -7,6 +7,8 @@ TagManager:
   - Asteroids
   - SharpAst
   - PlanetMap
+  - Comet
+  - addHp
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - Background
   - 1
   - PostProcessing
-  - 
+  - collid
   - 
   - 
   - 

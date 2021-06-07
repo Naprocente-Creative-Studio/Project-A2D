@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4268017683214192139}
   m_Layer: 0
   m_Name: AstPref2Texture
-  m_TagString: Untagged
+  m_TagString: Asteroids
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,9 +153,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8752052770084265137}
   - component: {fileID: 9151415490786155692}
-  m_Layer: 0
+  - component: {fileID: 6080555559558714702}
+  m_Layer: 9
   m_Name: AstSmallTallPref
-  m_TagString: Untagged
+  m_TagString: addHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,6 +226,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6080555559558714702
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314607760361867148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3.3415174}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.51, y: 14.38}
+    newSize: {x: 7.51, y: 14.38}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.020772, y: 10.889669}
+  m_EdgeRadius: 0
 --- !u!1 &6009422155881944823
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +265,7 @@ GameObject:
   - component: {fileID: 7016282771460224121}
   m_Layer: 0
   m_Name: AstPref2
-  m_TagString: Asteroids
+  m_TagString: Comet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   isSharp: 0
+  isLight: 0
 --- !u!50 &7016282771460224121
 Rigidbody2D:
   serializedVersion: 4
