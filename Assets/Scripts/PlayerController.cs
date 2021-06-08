@@ -20,12 +20,15 @@ public class PlayerController : MonoBehaviour
     private float sideBorder = 2.5f;
     public GameObject touch;
     public GameObject shield;
+    public Material engineMat;
     public Color color3, color2, color1;
+    private Vector4[] flameColors = { new Vector4(0.07453719f, 0.1432364f, 0.6320754f, 1.0f), new Vector4(0.8679245f, 0.6567881f, 0.06140975f, 1.0f), new Vector4(0.8666667f, 0.1587057f, 0.06274509f, 1.0f)};
     [HideInInspector] private const string leaderBoard = "CgkI64T-2s8EEAIQAQ";
 
     private void Start()
     {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        engineMat.color = flameColors[Random.Range(0, flameColors.Length)];
     }
 
     private void FixedUpdate()
