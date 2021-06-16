@@ -2,7 +2,6 @@
 
 public class MoveDown : MonoBehaviour
 {
-    public float speed = 6.0f;
     public bool isSharp;
     public bool isLight;
     private float downBorder = -1, downBorderL = -8;
@@ -23,12 +22,11 @@ public class MoveDown : MonoBehaviour
     {
         if (!playerScript.gameIsOver && !_gameController.gameIsPaused)
         {
-            gameObject.transform.Translate(0, -speed * Time.deltaTime, 0);
+            gameObject.transform.Translate(0, -playerScript.speed * Time.deltaTime, 0);
             if (gameObject.transform.position.y < downBorder && !isLight && !isSharp) Destroy(gameObject);
             if (isSharp && (gameObject.transform.position.x > sideBorder || gameObject.transform.position.x < -sideBorder || gameObject.transform.position.y > upperBorder || gameObject.transform.position.y < downBorder)) Destroy(gameObject);
             if (isLight && gameObject.transform.position.y < downBorderL) Destroy(gameObject);
         }
-       // else gameObject.GetComponentInChildren<Animator>().StopPlayback();
     }
     
     private void OnCollisionEnter2D(Collision2D other)

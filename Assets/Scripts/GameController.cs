@@ -32,7 +32,6 @@ public class GameController : MonoBehaviour
         {
             PlayGamesPlatform.Activate();
             PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => { });
-            //Social.Active.localUser.Authenticate(success => { });
         }
     }
 

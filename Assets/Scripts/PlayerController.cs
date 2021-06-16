@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float hp = 3;
     public bool gameIsOver = false;
     public int score;
+    public float speed;
     public Text txt;
     private GameController _gameController;
     public GameObject Buttons;
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
     {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         engineMat.color = flameColors[Random.Range(0, flameColors.Length)];
+        speed = 3f;
+        InvokeRepeating("IncreaseSpeed", 8, 10);
     }
 
     private void FixedUpdate()
@@ -48,6 +51,10 @@ public class PlayerController : MonoBehaviour
                 gameIsOver = true;
                 Destroy(gameObject);
             }
+
+            if(!IsInvoking("IncreaseSpeed") && !_gameController.gameIsPaused && speed < 7) InvokeRepeating("IncreaseSpeed", 8, 10);
+
+            if (_gameController.gameIsPaused || speed > 7) CancelInvoke("IncreaseSpeed");
 
             if (!touch.activeInHierarchy) touch.SetActive(true);
 
@@ -79,6 +86,7 @@ public class PlayerController : MonoBehaviour
         }
         if (gameIsOver)
         {
+            CancelInvoke("IncreaseSpeed");
             PlayerData data = SaveSystem.LoadPlayer();
             _gameController.EndGame(score, data.score);
             if (score > data.score)
@@ -109,6 +117,11 @@ public class PlayerController : MonoBehaviour
                     Destroy(other.gameObject);
                 }
         }
+    }
+
+    private void IncreaseSpeed()
+    {
+        speed += 0.05f;
     }
 
 	public void GoLeft()
