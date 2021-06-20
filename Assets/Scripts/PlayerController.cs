@@ -5,6 +5,7 @@ using System.Collections;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
+using GoogleMobileAds.Api;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public Color color3, color2, color1;
     private Vector4[] flameColors = { new Vector4(0.07453719f, 0.1432364f, 0.6320754f, 1.0f), new Vector4(0.8679245f, 0.6567881f, 0.06140975f, 1.0f), new Vector4(0.8666667f, 0.1587057f, 0.06274509f, 1.0f)};
     [HideInInspector] private const string leaderBoard = "CgkI64T-2s8EEAIQAQ";
+    [HideInInspector] private const string adScreen = "ca-app-pub-2619136704947934/2527301585";
+    public InterstitialAd interstitialAd;
 
     private void Start()
     {
@@ -86,6 +89,10 @@ public class PlayerController : MonoBehaviour
         }
         if (gameIsOver)
         {
+            interstitialAd = new InterstitialAd(adScreen);
+            AdRequest request = new AdRequest.Builder().Build();
+            interstitialAd.LoadAd(request);
+            interstitialAd.OnAdLoaded += OnAddLoaded;
             CancelInvoke("IncreaseSpeed");
             PlayerData data = SaveSystem.LoadPlayer();
             _gameController.EndGame(score, data.score);
@@ -95,6 +102,11 @@ public class PlayerController : MonoBehaviour
                 Social.ReportScore(score, leaderBoard, (bool success) => { });
             }
         }
+    }
+
+    public void OnAddLoaded(object sender, System.EventArgs args)
+    {
+        interstitialAd.Show();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
