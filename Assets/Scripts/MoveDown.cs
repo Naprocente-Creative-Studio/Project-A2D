@@ -4,6 +4,7 @@ public class MoveDown : MonoBehaviour
 {
     public bool isSharp;
     public bool isLight;
+    public float speed;
     private float downBorder = -1, downBorderL = -8;
     private float sideBorder = 3;
     private float upperBorder = 12;
@@ -22,15 +23,15 @@ public class MoveDown : MonoBehaviour
     {
         if (!playerScript.gameIsOver && !_gameController.gameIsPaused)
         {
-            gameObject.transform.Translate(0, -playerScript.speed * Time.deltaTime, 0);
+            gameObject.transform.Translate(0, -speed * Time.deltaTime, 0);
             if (gameObject.transform.position.y < downBorder && !isLight && !isSharp) Destroy(gameObject);
             if (isSharp && (gameObject.transform.position.x > sideBorder || gameObject.transform.position.x < -sideBorder || gameObject.transform.position.y > upperBorder || gameObject.transform.position.y < downBorder)) Destroy(gameObject);
             if (isLight && gameObject.transform.position.y < downBorderL) Destroy(gameObject);
         }
     }
-    
-    private void OnCollisionEnter2D(Collision2D other)
-    {
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
         if (other.gameObject.CompareTag("Asteroids") && !isSharp)
         {
             Destroy(gameObject);

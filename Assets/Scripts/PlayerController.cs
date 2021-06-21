@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public float hp = 3;
     public bool gameIsOver = false;
     public int score;
-    public float speed;
     public Text txt;
     private GameController _gameController;
     public GameObject Buttons;
@@ -32,9 +31,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        engineMat.color = flameColors[Random.Range(0, flameColors.Length)];
-        speed = 3f;
-        InvokeRepeating("IncreaseSpeed", 8, 10);
+        engineMat.color = flameColors[Random.Range(0, flameColors.Length)];        
     }
 
     private void FixedUpdate()
@@ -55,10 +52,6 @@ public class PlayerController : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            if(!IsInvoking("IncreaseSpeed") && !_gameController.gameIsPaused && speed < 7) InvokeRepeating("IncreaseSpeed", 8, 10);
-
-            if (_gameController.gameIsPaused || speed > 7) CancelInvoke("IncreaseSpeed");
-
             if (!touch.activeInHierarchy) touch.SetActive(true);
 
             if (hp == 3) shield.GetComponent<SpriteRenderer>().color = color3;
@@ -67,11 +60,11 @@ public class PlayerController : MonoBehaviour
 
             if (hp == 1)
             {
-                if (!shield.activeSelf) shield.SetActive(true);
+                if (!shield.GetComponent<SpriteRenderer>().enabled) shield.GetComponent<SpriteRenderer>().enabled = true;
                 shield.GetComponent<SpriteRenderer>().color = color1;
             }
 
-            if (hp == 0) shield.SetActive(false);
+            if (hp == 0) shield.GetComponent<SpriteRenderer>().enabled = false;
 
             if (!_gameController.ketIsNew)
             {
@@ -93,7 +86,6 @@ public class PlayerController : MonoBehaviour
             AdRequest request = new AdRequest.Builder().Build();
             interstitialAd.LoadAd(request);
             interstitialAd.OnAdLoaded += OnAddLoaded;
-            CancelInvoke("IncreaseSpeed");
             PlayerData data = SaveSystem.LoadPlayer();
             _gameController.EndGame(score, data.score);
             if (score > data.score)
@@ -114,26 +106,28 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Asteroids"))
         {
             hp--;
+            shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Comet"))
         {
             if (other.contacts[0].collider.gameObject.CompareTag("addHp"))
             {
-                if (hp < 3) hp++;
+                //other.contacts[0].collider.gameObject.GetComponent<ParticleSystem>().Play();
+                if (hp < 3)
+                {
+                    hp++;
+                    shield.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                }
                 Destroy(other.gameObject);
             }
             else if (other.contacts[0].collider.gameObject.CompareTag("Asteroids"))
                 {
                     hp--;
+                    shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
                     Destroy(other.gameObject);
                 }
         }
-    }
-
-    private void IncreaseSpeed()
-    {
-        speed += 0.05f;
     }
 
 	public void GoLeft()

@@ -10,9 +10,10 @@ public class SpawnManager : MonoBehaviour
     private float[] spawnLightPosX = { -3f, 3f };
     private float spawnPosY = 11, spawnPosYL = 17;
     private float startDelay = 2, startDelayL = 8;
-    private float spawnInterval = 1.5f, spawnIntervalL = 18;
+    public float spawnInterval = 1.5f, spawnIntervalL = 18;
     private PlayerController playerScript;
     private GameController _gameController;
+    public float speed;
     
     private void Start()
     {
@@ -20,6 +21,8 @@ public class SpawnManager : MonoBehaviour
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         InvokeRepeating("spawnRandomAsteroid", startDelay, spawnInterval);
         InvokeRepeating("spawnLights", startDelayL, spawnIntervalL);
+        InvokeRepeating("decreaseDelay", 10, 1);
+        InvokeRepeating("IncreaseSpeed", 8, 10);
     }
 
     private void FixedUpdate()
@@ -28,7 +31,11 @@ public class SpawnManager : MonoBehaviour
         {
             CancelInvoke("spawnRandomAsteroid");
             CancelInvoke("spawnLights");
+            CancelInvoke("decreaseDelay");
+            CancelInvoke("IncreaseSpeed");
         }
+        if (!playerScript.gameIsOver && !_gameController.gameIsPaused && IsInvoking("IncreaseSpeed") && speed > 10) CancelInvoke("IncreaseSpeed");
+        if (!playerScript.gameIsOver && !_gameController.gameIsPaused && IsInvoking("decreaseDelay") && spawnInterval < 0.5f) CancelInvoke("decreaseDelay");
     }
 
     void spawnRandomAsteroid()
@@ -36,7 +43,8 @@ public class SpawnManager : MonoBehaviour
         int astIndex = Random.Range(0, asteroidPrefabs.Length);
         Vector2 spawnPos = new Vector2(spawnFixPosX[Random.Range(0, spawnFixPosX.Length)], spawnPosY);
 
-        Instantiate(asteroidPrefabs[astIndex], spawnPos, asteroidPrefabs[astIndex].transform.rotation);
+        GameObject ast = Instantiate(asteroidPrefabs[astIndex], spawnPos, asteroidPrefabs[astIndex].transform.rotation);
+        ast.GetComponent<MoveDown>().speed += speed;
     }
 
     void spawnLights()
@@ -51,6 +59,8 @@ public class SpawnManager : MonoBehaviour
     {
         InvokeRepeating("spawnRandomAsteroid", startDelay, spawnInterval);
         InvokeRepeating("spawnLights", startDelayL, spawnIntervalL);
+        if (spawnInterval > 0.5f) InvokeRepeating("decreaseDelay", 10, 1);
+        if (speed < 10) InvokeRepeating("IncreaseSpeed", 8, 10);
     }
 
     public void SpawnShardsAsteroids(Vector2 crashPos)
@@ -64,5 +74,14 @@ public class SpawnManager : MonoBehaviour
             Instantiate(asteroidShardsPrefabs[astIndex], startPos, transform.rotation * startRot);
         }
        
+    }
+    public void decreaseDelay()
+    {
+        spawnInterval -= 0.01f;
+    }
+
+    private void IncreaseSpeed()
+    {
+        speed += 0.05f;
     }
 }
