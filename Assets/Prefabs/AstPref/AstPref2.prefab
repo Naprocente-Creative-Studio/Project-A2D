@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 543572916121787554}
   - component: {fileID: 3017129132978539034}
   - component: {fileID: 4268017683214192139}
-  - component: {fileID: 8081645923886893029}
   m_Layer: 0
   m_Name: AstPref2Texture
   m_TagString: Asteroids
@@ -115,46 +114,6 @@ PolygonCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.76, y: 3.75}
-    newSize: {x: 10.36, y: 10.34}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.089007854, y: -1.8630637}
-      - {x: 0.828148, y: -1.6767356}
-      - {x: 1.3328099, y: -1.3167207}
-      - {x: 1.8106207, y: -0.52276057}
-      - {x: 1.8707795, y: 0.22261718}
-      - {x: 1.5801376, y: 1.0230751}
-      - {x: 1.1471775, y: 1.48776}
-      - {x: 0.79852605, y: 1.6963811}
-      - {x: 0.29999998, y: 1.875}
-      - {x: -0.5112841, y: 1.8245637}
-      - {x: -1.294385, y: 1.3801731}
-      - {x: -1.7993217, y: 0.6195053}
-      - {x: -1.8909734, y: -0.26669064}
-      - {x: -1.5248331, y: -1.1247984}
-      - {x: -0.65308255, y: -1.7765949}
---- !u!60 &8081645923886893029
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543572916121787567}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -304,6 +263,7 @@ GameObject:
   - component: {fileID: 543572915903802559}
   - component: {fileID: 4951928776739384754}
   - component: {fileID: 7016282771460224121}
+  - component: {fileID: 7274605207971191862}
   m_Layer: 0
   m_Name: AstPref2
   m_TagString: Comet
@@ -363,3 +323,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &7274605207971191862
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009422155881944823}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.010706902, y: -4.464808}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.14785, y: 4.1050215}
+  m_EdgeRadius: 0

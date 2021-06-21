@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] asteroidShardsPrefabs;
     public GameObject[] lightPrefabs;
     private readonly float[] spawnFixPosX = {-1.8f, -0.6f, 0.6f, 1.8f};
+    public int[] Ratio_Chances;
     private float[] spawnLightPosX = { -3f, 3f };
     private float spawnPosY = 11, spawnPosYL = 17;
     private float startDelay = 2, startDelayL = 8;
@@ -14,9 +15,14 @@ public class SpawnManager : MonoBehaviour
     private PlayerController playerScript;
     private GameController _gameController;
     public float speed;
-    
+    private int Ratio_Final = 0;
+
     private void Start()
     {
+        for (int i = 0; i < Ratio_Chances.Length; i++)
+        {
+            Ratio_Final += Ratio_Chances[i];
+        }
         playerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         InvokeRepeating("spawnRandomAsteroid", startDelay, spawnInterval);
@@ -40,7 +46,7 @@ public class SpawnManager : MonoBehaviour
 
     void spawnRandomAsteroid()
     {
-        int astIndex = Random.Range(0, asteroidPrefabs.Length);
+        int astIndex = RandomAst();
         Vector2 spawnPos = new Vector2(spawnFixPosX[Random.Range(0, spawnFixPosX.Length)], spawnPosY);
 
         GameObject ast = Instantiate(asteroidPrefabs[astIndex], spawnPos, asteroidPrefabs[astIndex].transform.rotation);
@@ -83,5 +89,15 @@ public class SpawnManager : MonoBehaviour
     private void IncreaseSpeed()
     {
         speed += 0.05f;
+    }
+
+    public int RandomAst()
+    {
+        int x = Random.Range(0, Ratio_Final);
+        for (int i = 0; i < Ratio_Chances.Length; i++)
+        {
+            if ((x -= Ratio_Chances[i]) < 0) return i;
+        }
+        return 0;
     }
 }

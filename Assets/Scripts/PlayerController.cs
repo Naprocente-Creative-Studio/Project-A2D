@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] private const string leaderBoard = "CgkI64T-2s8EEAIQAQ";
     [HideInInspector] private const string adScreen = "ca-app-pub-2619136704947934/2527301585";
     public InterstitialAd interstitialAd;
+    public GameObject partcl, partcl2;
 
     private void Start()
     {
@@ -103,30 +104,36 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.CompareTag("Comet"))
+        {
+            if (other.contacts[0].collider.gameObject.CompareTag("addHp"))
+            {
+                if (hp < 3)
+                {
+                    hp++;
+                    shield.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                }
+                //Instantiate(partcl2, other.transform.parent.transform.position, other.transform.parent.transform.rotation);
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
         if (other.gameObject.CompareTag("Asteroids"))
         {
+            Instantiate(partcl, other.transform.position, other.transform.rotation);
             hp--;
             shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Comet"))
         {
-            if (other.contacts[0].collider.gameObject.CompareTag("addHp"))
-            {
-                //other.contacts[0].collider.gameObject.GetComponent<ParticleSystem>().Play();
-                if (hp < 3)
-                {
-                    hp++;
-                    shield.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
-                }
-                Destroy(other.gameObject);
-            }
-            else if (other.contacts[0].collider.gameObject.CompareTag("Asteroids"))
-                {
-                    hp--;
-                    shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
-                    Destroy(other.gameObject);
-                }
+            hp--;
+            shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+            Instantiate(partcl, other.transform.position, other.transform.rotation);
+            Destroy(other.gameObject);
         }
     }
 
