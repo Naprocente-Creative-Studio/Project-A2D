@@ -6,6 +6,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
 using GoogleMobileAds.Api;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        engineMat.color = flameColors[Random.Range(0, flameColors.Length)];        
+        engineMat.color = flameColors[Random.Range(0, flameColors.Length)];
     }
 
     private void FixedUpdate()
@@ -65,7 +66,10 @@ public class PlayerController : MonoBehaviour
                 shield.GetComponent<SpriteRenderer>().color = color1;
             }
 
-            if (hp == 0) shield.GetComponent<SpriteRenderer>().enabled = false;
+            if (hp == 0)
+            {
+                shield.GetComponent<SpriteRenderer>().enabled = false;
+            }
 
             if (!_gameController.ketIsNew)
             {
