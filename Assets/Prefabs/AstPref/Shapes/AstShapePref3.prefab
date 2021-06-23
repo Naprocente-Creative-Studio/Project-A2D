@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8547428948709358305}
   - component: {fileID: 2312688286565196423}
   - component: {fileID: -5743186106417669036}
+  - component: {fileID: 7359212384462693710}
   m_Layer: 0
   m_Name: AstShapePref3
-  m_TagString: Untagged
+  m_TagString: SharpAst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cce7265f395e441a95a9d2dec1cb92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  damage: 25
   isSharp: 1
+  isLight: 0
+  speed: 3
+  partcl: {fileID: 0}
+--- !u!58 &7359212384462693710
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816480178131721997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.056098793, y: -0.47282773}
+  serializedVersion: 2
+  m_Radius: 2.4272854

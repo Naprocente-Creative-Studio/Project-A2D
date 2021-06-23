@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
                     hp++;
                     shield.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
                 }
-                //Instantiate(partcl2, other.transform.parent.transform.position, other.transform.parent.transform.rotation);
+                Instantiate(partcl2, other.transform.position, other.transform.rotation);
                 Destroy(other.gameObject);
             }
         }
@@ -129,14 +129,24 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(partcl, other.transform.position, other.transform.rotation);
             hp--;
-            shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+            if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+            if (hp < 0) Instantiate(partcl, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Comet"))
         {
             hp--;
-            shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+            if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+            if (hp < 0) Instantiate(partcl, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(partcl2, other.transform.position, other.transform.rotation);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("SharpAst"))
+        {
             Instantiate(partcl, other.transform.position, other.transform.rotation);
+            hp--;
+            if(hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+            if (hp < 0) Instantiate(partcl, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(other.gameObject);
         }
     }

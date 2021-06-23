@@ -18,12 +18,13 @@ public class GameController : MonoBehaviour
 
     public GameObject particle;
 
-    public GameObject txt2;
-
     public static PlayGamesPlatform platform;
 
     public Text txt;
     public Text txt1;
+    public Text txtHi;
+    public Text txtBS;
+    public Text txtRat;
 
     private void Start()
     {
@@ -52,7 +53,7 @@ public class GameController : MonoBehaviour
 
     public void OpenSettings()
     {
-        txt2.SetActive(false);   
+        //txt2.SetActive(false);   
     }
 
     public void Pause()
@@ -76,6 +77,7 @@ public class GameController : MonoBehaviour
     {
         txt.text = "Your score: " + score;
         txt1.text = "Your best score: " + bestScore;
+        particle.GetComponent<ParticleSystem>().Pause();
         gameMenu.SetActive(false);
         endGameMenu.SetActive(true);
     }
@@ -88,5 +90,20 @@ public class GameController : MonoBehaviour
     public void ShowLeaderBoard()
     {
         Social.ShowLeaderboardUI();
+    }
+
+    public void MainMenuText()
+    {
+        txtHi.text = "Hi, " + Social.localUser.userName.ToString();
+        PlayGamesPlatform.Instance.LoadScores(
+             "CgkI64T - 2s8EEAIQAQ",
+             LeaderboardStart.PlayerCentered,
+             1,
+             LeaderboardCollection.Public,
+             LeaderboardTimeSpan.AllTime,
+         (LeaderboardScoreData data) => {
+             txtBS.text = "Best score: " + data.PlayerScore.formattedValue;
+             txtRat.text = "Rank: " + data.PlayerScore.rank;
+         });
     }
 }

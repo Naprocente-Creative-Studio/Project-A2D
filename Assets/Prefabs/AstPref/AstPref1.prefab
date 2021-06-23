@@ -224,6 +224,7 @@ MonoBehaviour:
   isSharp: 0
   isLight: 0
   speed: 3
+  partcl: {fileID: 4896373828683807368, guid: ed7b537bf65df4441b0e572c1e83f1a8, type: 3}
 --- !u!50 &1139158591794786679
 Rigidbody2D:
   serializedVersion: 4

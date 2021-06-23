@@ -11,6 +11,7 @@ public class MoveDown : MonoBehaviour
     private PlayerController playerScript;
     private GameController _gameController;
     private SpawnManager _spawnManager;
+    public GameObject partcl;
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class MoveDown : MonoBehaviour
 	{
         if (other.gameObject.CompareTag("Asteroids") && !isSharp)
         {
+            Instantiate(partcl, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
             Destroy(other.gameObject);
             _spawnManager.SpawnShardsAsteroids(gameObject.transform.position);
