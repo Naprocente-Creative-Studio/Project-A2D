@@ -10,15 +10,11 @@ using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
-    public float trust = 2.0f;
     public float hp = 3;
     public bool gameIsOver = false;
     public int score;
     public Text txt;
     private GameController _gameController;
-    public GameObject Buttons;
-    private bool goLeft = false;
-    private bool goRight = false;
     private float sideBorder = 2.5f;
     public GameObject touch;
     public GameObject shield;
@@ -29,6 +25,14 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] private const string adScreen = "ca-app-pub-2619136704947934/2527301585";
     public InterstitialAd interstitialAd;
     public GameObject partcl, partcl2;
+    public Text moneyTxt;
+    public int money;
+
+    public PlayerController(int score, int money)
+    {
+        this.money = money;
+        this.score = score;
+    }
 
     private void Start()
     {
@@ -38,14 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_gameController.ketIsNew && SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            trust = 3.0f;
-            Buttons.SetActive(true);
-            touch.SetActive(false);
-        }
-
-        if (SceneManager.GetActiveScene().buildIndex == 1 && !_gameController.ketIsNew && _gameController.gameIsPaused && touch.activeInHierarchy) touch.SetActive(false);
+        if (SceneManager.GetActiveScene().buildIndex == 1 && _gameController.gameIsPaused && touch.activeInHierarchy) touch.SetActive(false);
         if (!gameIsOver && !_gameController.gameIsPaused && SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (hp < 0)
@@ -69,21 +66,10 @@ public class PlayerController : MonoBehaviour
             if (hp == 0)
             {
                 shield.GetComponent<SpriteRenderer>().enabled = false;
-            }
-
-            if (!_gameController.ketIsNew)
-            {
-                Buttons.SetActive(false);
-                touch.SetActive(true);
-            }
-            else
-            {
-                if (goLeft && transform.position.x < sideBorder) transform.Translate(Vector3.right * trust * Time.deltaTime);
-                if (goRight && transform.position.x > -sideBorder) transform.Translate(Vector3.left * trust * Time.deltaTime);
-
-            }
+            }      
             score++;
             txt.text = "" + score;
+            moneyTxt.text = "" + money;
         }
         if (gameIsOver)
         {
@@ -92,11 +78,16 @@ public class PlayerController : MonoBehaviour
             interstitialAd.LoadAd(request);
             interstitialAd.OnAdLoaded += OnAddLoaded;
             PlayerData data = SaveSystem.LoadPlayer();
-            _gameController.EndGame(score, data.score);
+            money += data.money;
+            _gameController.EndGame(score, data.score, money);
             if (score > data.score)
             {
                 SaveSystem.SavePlayer(this);
                 Social.ReportScore(score, leaderBoard, (bool success) => { });
+            }
+            else
+            {
+                SaveSystem.SavePlayer(new PlayerController(data.score, money));
             }
         }
     }
@@ -112,6 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             if (other.contacts[0].collider.gameObject.CompareTag("addHp"))
             {
+                money++;
                 if (hp < 3)
                 {
                     hp++;
@@ -149,15 +141,5 @@ public class PlayerController : MonoBehaviour
             if (hp < 0) Instantiate(partcl, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(other.gameObject);
         }
-    }
-
-	public void GoLeft()
-    {
-        goLeft = !goLeft;
-    }
-
-    public void GoRight()
-    {
-        goRight = !goRight;
     }
 }

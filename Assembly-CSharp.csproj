@@ -84,9 +84,7 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\NearbyConnectionClientFactory.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidClient.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
-    <Compile Include="Assets\HardLight2D\Demo\DemoScripts\MeshCopy.cs" />
     <Compile Include="Assets\Scripts\SwipeToStart.cs" />
-    <Compile Include="Assets\Cool Visual Effects - Part 1\Scripts\ConstantRotation.cs" />
     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesUserProfile.cs" />
     <Compile Include="Assets\GooglePlayGames\OurUtils\PlatformUtils.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
@@ -115,11 +113,8 @@
     <Compile Include="Assets\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\LeaderboardScoreData.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerStats.cs" />
-    <Compile Include="Assets\HardLight2D\Demo\DemoScripts\Speen.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
-    <Compile Include="Assets\Cool Visual Effects - Part 1\Scripts\EffectManager.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\ConnectionResponse.cs" />
-    <Compile Include="Assets\HardLight2D\Demo\DemoScripts\PolyWobbler.cs" />
     <Compile Include="Assets\Scripts\ParticleScript.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\ConnectionRequest.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidEventsClient.cs" />

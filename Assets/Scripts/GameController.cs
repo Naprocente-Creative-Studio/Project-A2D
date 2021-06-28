@@ -7,7 +7,6 @@ using GooglePlayGames.BasicApi;
 public class GameController : MonoBehaviour
 {
     public bool gameIsPaused = false;
-    public bool ketIsNew = false;
     private SpawnManager _spawnManager;
 
     public GameObject pauseMenu;
@@ -25,6 +24,7 @@ public class GameController : MonoBehaviour
     public Text txtHi;
     public Text txtBS;
     public Text txtRat;
+    public Text txtMon;
 
     private void Start()
     {
@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
         {
             PlayGamesPlatform.Activate();
             PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => { });
+            MainMenuText();
         }
     }
 
@@ -73,18 +74,14 @@ public class GameController : MonoBehaviour
         gameMenu.SetActive(true);
     }
 
-    public void EndGame(int score, int bestScore)
+    public void EndGame(int score, int bestScore, int money)
     {
         txt.text = "Your score: " + score;
         txt1.text = "Your best score: " + bestScore;
+        txtMon.text = "" + money;
         particle.GetComponent<ParticleSystem>().Pause();
         gameMenu.SetActive(false);
         endGameMenu.SetActive(true);
-    }
-
-    public void ChangeKer()
-    {
-        ketIsNew = !ketIsNew;
     }
 
     public void ShowLeaderBoard()

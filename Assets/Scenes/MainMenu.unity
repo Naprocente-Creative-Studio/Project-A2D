@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
-  ketIsNew: 1
   pauseMenu: {fileID: 0}
   gameMenu: {fileID: 0}
   endGameMenu: {fileID: 0}
@@ -246,6 +245,7 @@ MonoBehaviour:
   txtHi: {fileID: 574614327}
   txtBS: {fileID: 338143332}
   txtRat: {fileID: 664128462}
+  txtMon: {fileID: 0}
 --- !u!4 &314895485
 Transform:
   m_ObjectHideFlags: 0
@@ -5592,7 +5592,6 @@ GameObject:
   m_Component:
   - component: {fileID: 732358874}
   - component: {fileID: 732358873}
-  - component: {fileID: 732358872}
   m_Layer: 3
   m_Name: BackgroundPlanet
   m_TagString: PlanetMap
@@ -5600,22 +5599,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &732358872
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732358871}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.50000006
 --- !u!212 &732358873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15746,7 +15729,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!43 &1476023310
+--- !u!43 &1639912970
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16227,7 +16210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4cd323dd15645c245aceb2345c8959ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2b0babd5ea4cf344b3f3f1fd7e030cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16512,7 +16495,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278962375087595075}
-  m_Mesh: {fileID: 1476023310}
+  m_Mesh: {fileID: 1639912970}
 --- !u!60 &3608579726665824156
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16530,7 +16513,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 38.16669, y: 41.27}
+    oldSize: {x: 38.206993, y: 41.27}
     newSize: {x: 38.56, y: 41.476303}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -16615,12 +16598,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2af71b8703ecfb4998b30b93c137f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trust: 1
   hp: 100
   gameIsOver: 0
   score: 0
   txt: {fileID: 0}
-  Buttons: {fileID: 0}
   touch: {fileID: 0}
   shield: {fileID: 0}
   engineMat: {fileID: 2100000, guid: c2cc3248260be9d4daa0bd77f5d9789f, type: 2}
@@ -16629,6 +16610,8 @@ MonoBehaviour:
   color1: {r: 0, g: 0, b: 0, a: 0}
   partcl: {fileID: 0}
   partcl2: {fileID: 0}
+  moneyTxt: {fileID: 0}
+  money: 0
 --- !u!212 &8040486897916879486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16745,7 +16728,7 @@ SpriteRenderer:
   m_Size: {x: 7.49, y: 4.99}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8040486898166600430
@@ -16843,7 +16826,7 @@ SpriteRenderer:
   m_Size: {x: 7.75, y: 5.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8040486898962209543
