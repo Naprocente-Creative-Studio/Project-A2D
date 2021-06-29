@@ -13,6 +13,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject player;
     public GameObject levelLoader;
     public GameObject mainMenu, shopMenu, authorMenu;
+    public GameObject swipeDetector;
 
     void Start()
     {
@@ -56,6 +57,7 @@ public class MainMenuController : MonoBehaviour
     public void OpenShop()
     {
         mainMenu.SetActive(false);
+        swipeDetector.SetActive(false);
         ShowMoney(moneyShopTxt);
         shopMenu.SetActive(true);
     }
@@ -63,6 +65,7 @@ public class MainMenuController : MonoBehaviour
     public void OpenAuthors()
     {
         mainMenu.SetActive(false);
+        swipeDetector.SetActive(false);
         authorMenu.SetActive(true);
     }
 
