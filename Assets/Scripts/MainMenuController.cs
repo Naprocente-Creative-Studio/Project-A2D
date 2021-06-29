@@ -13,16 +13,16 @@ public class MainMenuController : MonoBehaviour
     public GameObject player;
     public GameObject levelLoader;
     public GameObject mainMenu, shopMenu, authorMenu;
-    public GameObject swipeDetector;
+    public GameObject swipeDetector, starPartclObject;
 
     void Start()
     {
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         ShowMoney(moneyTxt);
-        Àuthentication();
+        ÀuthenticationGoogle();
     }
 
-    void Àuthentication()
+    void ÀuthenticationGoogle()
     {
         PlayGamesPlatform.Activate();
         PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => { });
@@ -58,7 +58,11 @@ public class MainMenuController : MonoBehaviour
     {
         mainMenu.SetActive(false);
         swipeDetector.SetActive(false);
+        player.GetComponent<Animation>().Stop();
+        player.transform.GetChild(0).gameObject.SetActive(false);
+        starPartclObject.GetComponent<ParticleSystem>().Pause();
         ShowMoney(moneyShopTxt);
+        shopMenu.GetComponent<ShopController>().ShowShopItems();
         shopMenu.SetActive(true);
     }
 
@@ -66,6 +70,9 @@ public class MainMenuController : MonoBehaviour
     {
         mainMenu.SetActive(false);
         swipeDetector.SetActive(false);
+        player.GetComponent<Animation>().Stop();
+        player.transform.GetChild(0).gameObject.SetActive(false);
+        starPartclObject.GetComponent<ParticleSystem>().Pause();
         authorMenu.SetActive(true);
     }
 
