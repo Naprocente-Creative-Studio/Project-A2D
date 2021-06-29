@@ -9,6 +9,7 @@ TagManager:
   - PlanetMap
   - Comet
   - addHp
+  - touch
   layers:
   - Default
   - TransparentFX

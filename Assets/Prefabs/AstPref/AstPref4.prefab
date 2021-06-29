@@ -70,7 +70,7 @@ MonoBehaviour:
   isSharp: 0
   isLight: 0
   speed: 3
-  partcl: {fileID: 4896373828683807368, guid: ed7b537bf65df4441b0e572c1e83f1a8, type: 3}
+  explPrefab: {fileID: 4896373828683807368, guid: ed7b537bf65df4441b0e572c1e83f1a8, type: 3}
 --- !u!70 &-9017337602803258473
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.87, y: 19.33}
+    oldSize: {x: 17.89535, y: 19.329998}
     newSize: {x: 17.87, y: 19.33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

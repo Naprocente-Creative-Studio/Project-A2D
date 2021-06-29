@@ -3,16 +3,15 @@ using UnityEngine;
 
 public class SwipeToStart : MonoBehaviour
 {
-    public GameObject player;
     Vector2 starPos;
-    private GameController _game;
+    public GameObject controller;
     private Animation anim;
-    public GameObject arrows;
+    private GameObject arrows;
 
     private void Start()
     {
-        _game = GameObject.Find("GameController").GetComponent<GameController>();
-        anim = player.GetComponent<Animation>();
+        anim = controller.GetComponent<MainMenuController>().player.GetComponent<Animation>();
+        arrows = controller.GetComponent<MainMenuController>().player.transform.GetChild(0).gameObject;
     }
 
     void Update()
@@ -33,34 +32,24 @@ public class SwipeToStart : MonoBehaviour
                     if (swipe.y > 0)
                     {
                         arrows.SetActive(false);
-                        StartCoroutine(startPlayerAnim());
+                        anim.Play("StartAnim");
                     }
                     if (swipe.y < 0)
                     {
-                        _game.OpenMap();
+                        controller.GetComponent<MainMenuController>().OpenAuthors();
                     }
                 }
                 else if (Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
                 {
-                    if (swipe.x > 0) _game.ShowLeaderBoard();
-                    if (swipe.x < 0) _game.OpenSettings();
+                    if (swipe.x > 0) controller.GetComponent<MainMenuController>().ShowLeaderBoard();
+                    if (swipe.x < 0) controller.GetComponent<MainMenuController>().OpenShop();
                 }
             }
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             arrows.SetActive(false);
-            StartCoroutine(startPlayerAnim());
+            anim.Play("StartAnim");
         }
-    }
-
-    IEnumerator startPlayerAnim()
-    {
-        anim.Play("StartAnim");
-        while (anim.isPlaying)
-        {
-            yield return null;
-        }
-        _game.StartGame();
     }
 }

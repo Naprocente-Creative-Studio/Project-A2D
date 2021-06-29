@@ -99,7 +99,7 @@ MonoBehaviour:
   isSharp: 1
   isLight: 0
   speed: 3
-  partcl: {fileID: 0}
+  explPrefab: {fileID: 4896373828683807368, guid: ed7b537bf65df4441b0e572c1e83f1a8, type: 3}
 --- !u!58 &-2807519533456914506
 CircleCollider2D:
   m_ObjectHideFlags: 0

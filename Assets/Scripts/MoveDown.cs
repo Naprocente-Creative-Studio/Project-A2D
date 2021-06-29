@@ -8,21 +8,19 @@ public class MoveDown : MonoBehaviour
     private float downBorder = -1, downBorderL = -8;
     private float sideBorder = 3;
     private float upperBorder = 12;
-    private PlayerController playerScript;
-    private GameController _gameController;
+    private GamePlayController playController;
     private SpawnManager _spawnManager;
-    public GameObject partcl;
+    public GameObject explPrefab;
 
     private void Start()
     {
-        playerScript = GameObject.Find("Player").GetComponent<PlayerController>();
-        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        playController = GameObject.Find("GameController").GetComponent<GamePlayController>();
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
 
     private void FixedUpdate()
     {
-        if (!playerScript.gameIsOver && !_gameController.gameIsPaused)
+        if (!playController.gameOverTrigger && !playController.pauseTrigger)
         {
             gameObject.transform.Translate(0, -speed * Time.deltaTime, 0);
             if (gameObject.transform.position.y < downBorder && !isLight && !isSharp) Destroy(gameObject);
@@ -35,7 +33,7 @@ public class MoveDown : MonoBehaviour
 	{
         if (other.gameObject.CompareTag("Asteroids") && !isSharp)
         {
-            Instantiate(partcl, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(explPrefab, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
             Destroy(other.gameObject);
             _spawnManager.SpawnShardsAsteroids(gameObject.transform.position);

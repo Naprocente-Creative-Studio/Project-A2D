@@ -120,7 +120,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.76, y: 3.75}
+    oldSize: {x: 3.7647057, y: 3.75}
     newSize: {x: 10.36, y: 10.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -243,7 +243,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.51, y: 14.38}
+    oldSize: {x: 7.5270314, y: 14.38}
     newSize: {x: 7.51, y: 14.38}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   isSharp: 0
   isLight: 0
   speed: 3
-  partcl: {fileID: 2424829779814608368, guid: 2d8837af7f158c24285f080464c48514, type: 3}
+  explPrefab: {fileID: 4896373828683807368, guid: ed7b537bf65df4441b0e572c1e83f1a8, type: 3}
 --- !u!50 &7016282771460224121
 Rigidbody2D:
   serializedVersion: 4

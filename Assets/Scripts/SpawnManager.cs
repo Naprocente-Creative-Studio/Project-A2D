@@ -12,8 +12,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnPosY = 11, spawnPosYL = 17;
     private float startDelay = 2, startDelayL = 8;
     public float spawnInterval = 1.5f, spawnIntervalL = 18;
-    private PlayerController playerScript;
-    private GameController _gameController;
+    public GameObject playController;
     public float speed;
     private int Ratio_Final = 0;
 
@@ -23,8 +22,6 @@ public class SpawnManager : MonoBehaviour
         {
             Ratio_Final += Ratio_Chances[i];
         }
-        playerScript = GameObject.Find("Player").GetComponent<PlayerController>();
-        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         InvokeRepeating("spawnRandomAsteroid", startDelay, spawnInterval);
         InvokeRepeating("spawnLights", startDelayL, spawnIntervalL);
         InvokeRepeating("decreaseDelay", 10, 1);
@@ -33,15 +30,15 @@ public class SpawnManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (playerScript.gameIsOver || _gameController.gameIsPaused)
+        if (playController.GetComponent<GamePlayController>().gameOverTrigger || playController.GetComponent<GamePlayController>().pauseTrigger)
         {
             CancelInvoke("spawnRandomAsteroid");
             CancelInvoke("spawnLights");
             CancelInvoke("decreaseDelay");
             CancelInvoke("IncreaseSpeed");
         }
-        if (!playerScript.gameIsOver && !_gameController.gameIsPaused && IsInvoking("IncreaseSpeed") && speed > 10) CancelInvoke("IncreaseSpeed");
-        if (!playerScript.gameIsOver && !_gameController.gameIsPaused && IsInvoking("decreaseDelay") && spawnInterval < 0.5f) CancelInvoke("decreaseDelay");
+        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("IncreaseSpeed") && speed > 10) CancelInvoke("IncreaseSpeed");
+        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("decreaseDelay") && spawnInterval < 0.5f) CancelInvoke("decreaseDelay");
     }
 
     void spawnRandomAsteroid()
