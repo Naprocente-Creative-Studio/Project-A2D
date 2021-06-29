@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GamePlayController : MonoBehaviour
 {
     public int hp = 3;
-    public bool gameOverTrigger = false, pauseTrigger = false;
+    public bool gameOverTrigger = false, pauseTrigger = false, endTrigger = false;
     public int score, money;
     public GameObject touchObject;
     private GameObject shield;
@@ -18,10 +18,11 @@ public class GamePlayController : MonoBehaviour
     public GameObject[] shipsPrefabs;
     public GameObject pauseMenu, gameMenu, endGameMenu, starfieldParticle;
     private GameObject player;
+    public GameObject levelLoader;
 
     void Start()
     {
-        player = Instantiate(shipsPrefabs[2], DataBase.spawnPos, transform.rotation);
+        player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         shield = player.transform.GetChild(0).gameObject;
     }
 
@@ -62,13 +63,15 @@ public class GamePlayController : MonoBehaviour
             scoreTxt.text = "" + score;
             moneyTxt.text = "" + money;
         }
-        if (gameOverTrigger) GameOverCycle();
+        if (gameOverTrigger && !endTrigger) GameOverCycle();
     }
 
     void GameOverCycle()
     {
+        endTrigger = true;
         GameEndAd();
-        money += PlayerPrefs.GetInt("Money", 0);
+        int tmpmoney = PlayerPrefs.GetInt("Money", 0);
+        money += tmpmoney;
         PlayerPrefs.SetInt("Money", money);
         EndGame(score, PlayerPrefs.GetInt("BestScore"), PlayerPrefs.GetInt("Money"));
         if (score > PlayerPrefs.GetInt("BestScore"))
@@ -158,11 +161,11 @@ public class GamePlayController : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(1);
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(0);
     }
 }

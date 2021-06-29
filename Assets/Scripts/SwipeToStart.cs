@@ -51,5 +51,17 @@ public class SwipeToStart : MonoBehaviour
             arrows.SetActive(false);
             anim.Play("StartAnim");
         }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            controller.GetComponent<MainMenuController>().OpenAuthors();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            controller.GetComponent<MainMenuController>().OpenShop();
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            controller.GetComponent<MainMenuController>().ShowLeaderBoard();
+        }
     }
 }

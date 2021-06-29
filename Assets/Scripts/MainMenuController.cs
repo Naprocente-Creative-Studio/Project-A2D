@@ -9,12 +9,15 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject[] shipsPrefabs;
-    public Text hiTxt, bestScoreTxt, rankTxt, moneyTxt;
+    public Text hiTxt, bestScoreTxt, rankTxt, moneyShopTxt, moneyTxt;
     public GameObject player;
+    public GameObject levelLoader;
+    public GameObject mainMenu, shopMenu, authorMenu;
 
     void Start()
     {
-        player = Instantiate(shipsPrefabs[2], DataBase.spawnPos, transform.rotation);
+        player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
+        ShowMoney(moneyTxt);
         Àuthentication();
     }
 
@@ -37,7 +40,12 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(1);
+    }
+
+    void ShowMoney(Text money)
+    {
+        money.text = "" + PlayerPrefs.GetInt("Money");
     }
 
     public void ShowLeaderBoard()
@@ -47,11 +55,19 @@ public class MainMenuController : MonoBehaviour
 
     public void OpenShop()
     {
-
+        mainMenu.SetActive(false);
+        ShowMoney(moneyShopTxt);
+        shopMenu.SetActive(true);
     }
 
     public void OpenAuthors()
     {
+        mainMenu.SetActive(false);
+        authorMenu.SetActive(true);
+    }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
