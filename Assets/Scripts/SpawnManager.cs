@@ -37,8 +37,8 @@ public class SpawnManager : MonoBehaviour
             CancelInvoke("decreaseDelay");
             CancelInvoke("IncreaseSpeed");
         }
-        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("IncreaseSpeed") && speed > 10) CancelInvoke("IncreaseSpeed");
-        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("decreaseDelay") && spawnInterval < 0.5f) CancelInvoke("decreaseDelay");
+        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("IncreaseSpeed") && speed > 15) CancelInvoke("IncreaseSpeed");
+        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("decreaseDelay") && spawnInterval < 0.1f) CancelInvoke("decreaseDelay");
     }
 
     void spawnRandomAsteroid()

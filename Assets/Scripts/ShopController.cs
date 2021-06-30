@@ -7,6 +7,7 @@ public class ShopController : MonoBehaviour
 {
     [System.Serializable] class ShopItem
     {
+        public int name;
         public Sprite image;
         public int price;
         public bool isPurchased = false;
@@ -18,7 +19,7 @@ public class ShopController : MonoBehaviour
     public GameObject controller;
     [SerializeField] Transform shopScrollView;
     [SerializeField] Animator noMoneyAnim;
-    Button buyBtt;
+    Button buyBtt, selBtt;
 
     public void ShowShopItems()
     {
@@ -31,8 +32,21 @@ public class ShopController : MonoBehaviour
             g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemsList[i].image;
             g.transform.GetChild(2).GetComponent<Text>().text = ShopItemsList[i].price.ToString();
             buyBtt = g.transform.GetChild(3).GetComponent<Button>();
-            buyBtt.interactable = !ShopItemsList[i].isPurchased;
+            selBtt = g.transform.GetChild(4).GetComponent<Button>();
+            buyBtt.interactable = !intToBool(PlayerPrefs.GetInt(ShopItemsList[i].name.ToString()));
             buyBtt.AddEventListener(i, OnShopItemBtnClicked);
+            selBtt.AddEventListener(i, OnSelectItemBtnClicked);
+            if (intToBool(PlayerPrefs.GetInt(ShopItemsList[i].name.ToString())) || ShopItemsList[i].isPurchased)
+            {
+                ShopItemsList[i].isPurchased = true;
+                selBtt.gameObject.SetActive(true);
+            }
+            if (ShopItemsList[i].name == PlayerPrefs.GetInt("ShipIndex"))
+            {
+                buyBtt.gameObject.SetActive(false);
+                selBtt.gameObject.SetActive(true);
+                selBtt.interactable = false;
+            }
         }
 
         Destroy(itemTemplate);
@@ -48,13 +62,29 @@ public class ShopController : MonoBehaviour
 
             ShopItemsList[itemIndex].isPurchased = true;
 
+            PlayerPrefs.SetInt(ShopItemsList[itemIndex].name.ToString(), boolToInt(ShopItemsList[itemIndex].isPurchased));
+
             shopScrollView.GetChild(itemIndex).GetChild(3).GetComponent<Button>().interactable = false;
+            shopScrollView.GetChild(itemIndex).GetChild(4).gameObject.SetActive(true);
         }
         else
         {
             noMoneyAnim.SetTrigger("NoMoney");
             Debug.Log("Not enough Money");
         }
+    }
+
+    void OnSelectItemBtnClicked(int itemIndex)
+    {
+        if (ShopItemsList[itemIndex].isPurchased)
+        {
+            shopScrollView.GetChild(PlayerPrefs.GetInt("ShipIndex")).GetChild(3).gameObject.SetActive(true);
+            shopScrollView.GetChild(PlayerPrefs.GetInt("ShipIndex")).GetChild(4).GetComponent<Button>().interactable = true;
+            shopScrollView.GetChild(itemIndex).GetChild(4).GetComponent<Button>().interactable = false;
+            shopScrollView.GetChild(itemIndex).GetChild(3).gameObject.SetActive(false);
+            PlayerPrefs.SetInt("ShipIndex", ShopItemsList[itemIndex].name);
+        }
+        else Debug.Log("Can`t Select");
     }
 
     private bool HasEnoughMoney(int price)
@@ -67,5 +97,17 @@ public class ShopController : MonoBehaviour
     {
         int tmp = PlayerPrefs.GetInt("Money");
         PlayerPrefs.SetInt("Money", tmp - price);
+    }
+
+    bool intToBool(int var)
+    {
+        if (var == 1) return true;
+        else return false;
+    }
+
+    int boolToInt(bool var)
+    {
+        if (var) return 1;
+        else return 0;
     }
 }

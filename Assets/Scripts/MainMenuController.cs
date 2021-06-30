@@ -19,7 +19,7 @@ public class MainMenuController : MonoBehaviour
     void Start()
     {
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
-        PlayerPrefs.SetInt("Money", moneyTest);
+        //PlayerPrefs.SetInt("Money", moneyTest);
         ShowMoney(moneyTxt);
         ÀuthenticationGoogle();
 
