@@ -14,12 +14,15 @@ public class MainMenuController : MonoBehaviour
     public GameObject levelLoader;
     public GameObject mainMenu, shopMenu, authorMenu;
     public GameObject swipeDetector, starPartclObject;
+    public int moneyTest;
 
     void Start()
     {
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
+        PlayerPrefs.SetInt("Money", moneyTest);
         ShowMoney(moneyTxt);
         ÀuthenticationGoogle();
+
     }
 
     void ÀuthenticationGoogle()
@@ -44,9 +47,10 @@ public class MainMenuController : MonoBehaviour
         levelLoader.GetComponent<LevelLoader>().LoadLevel(1);
     }
 
-    void ShowMoney(Text money)
+    public void ShowMoney(Text money)
     {
         money.text = "" + PlayerPrefs.GetInt("Money");
+        Debug.Log(PlayerPrefs.GetInt("Money"));
     }
 
     public void ShowLeaderBoard()
