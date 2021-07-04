@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GamePlayController : MonoBehaviour
 {
-    public int hp = 3;
+    private int hp = 1;
     public bool gameOverTrigger = false, pauseTrigger = false, endTrigger = false;
     public int score, money;
     public GameObject touchObject;
@@ -23,6 +23,7 @@ public class GamePlayController : MonoBehaviour
 
     void Start()
     {
+        engMaterial.color = DataBase.flameColors[Random.Range(0, DataBase.flameColors.Length)];
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelPos, transform.rotation);
         shield = player.transform.GetChild(0).gameObject;
@@ -47,14 +48,14 @@ public class GamePlayController : MonoBehaviour
 
             if (!touchObject.activeInHierarchy) touchObject.SetActive(true);
 
-            if (hp == 3) shield.GetComponent<SpriteRenderer>().color = DataBase.shieldColors[0];
+            //if (hp == 3) shield.GetComponent<SpriteRenderer>().color = DataBase.shieldColors[0];
 
-            if (hp == 2) shield.GetComponent<SpriteRenderer>().color = DataBase.shieldColors[1];
+            //if (hp == 2) shield.GetComponent<SpriteRenderer>().color = DataBase.shieldColors[1];
 
             if (hp == 1)
             {
                 if (!shield.GetComponent<SpriteRenderer>().enabled) shield.GetComponent<SpriteRenderer>().enabled = true;
-                shield.GetComponent<SpriteRenderer>().color = DataBase.shieldColors[2];
+                shield.GetComponent<SpriteRenderer>().color = DataBase.shieldColors[0];
             }
 
             if (hp == 0)
@@ -94,7 +95,7 @@ public class GamePlayController : MonoBehaviour
     public void CometTrailContact(Collision2D other)
     {
         money++;
-        if (hp < 3)
+        if (hp < 1)
         {
             hp++;
             shield.transform.GetChild(0).GetComponent<ParticleSystem>().Play();

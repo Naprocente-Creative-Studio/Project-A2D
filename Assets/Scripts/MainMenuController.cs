@@ -15,10 +15,12 @@ public class MainMenuController : MonoBehaviour
     public GameObject levelLoader;
     public GameObject mainMenu, shopMenu, authorMenu;
     public GameObject swipeDetector, starPartclObject;
+    public Material engMaterial;
     public int moneyTest;
 
     void Start()
     {
+        engMaterial.color = DataBase.flameColors[Random.Range(0, DataBase.flameColors.Length)];
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelMPos, transform.rotation);
         //PlayerPrefs.SetInt("Money", moneyTest);
