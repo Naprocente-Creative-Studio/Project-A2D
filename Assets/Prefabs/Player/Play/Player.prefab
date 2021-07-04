@@ -14676,7 +14676,7 @@ SpriteRenderer:
   m_Size: {x: 38.56, y: 41.476303}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4785020870831620524
@@ -14691,18 +14691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2af71b8703ecfb4998b30b93c137f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  gameIsOver: 0
-  score: 0
-  shield: {fileID: 4785020871218452633}
-  engineMat: {fileID: 2100000, guid: c2cc3248260be9d4daa0bd77f5d9789f, type: 2}
-  color3: {r: 0.2901961, g: 0.6039216, b: 0.5568628, a: 1}
-  color2: {r: 0.5764706, g: 0.6039216, b: 0.28627452, a: 1}
-  color1: {r: 0.6039216, g: 0.28627452, b: 0.32941177, a: 1}
-  partcl: {fileID: 4896373828683807368, guid: ed7b537bf65df4441b0e572c1e83f1a8, type: 3}
-  partcl2: {fileID: 2424829779814608368, guid: 2d8837af7f158c24285f080464c48514, type: 3}
-  money: 0
-  ship: 0
 --- !u!50 &4785020870831620522
 Rigidbody2D:
   serializedVersion: 4
@@ -14741,8 +14729,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 38.206993, y: 41.27}
-    newSize: {x: 38.56, y: 41.476303}
+    oldSize: {x: 6.84, y: 7.4}
+    newSize: {x: 6.84, y: 7.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
