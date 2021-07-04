@@ -7,4 +7,6 @@ public static class DataBase
     public const string adScreenID = "ca-app-pub-2619136704947934/2527301585";
     public static Vector4[] shieldColors = { new Vector4(0.2901961f, 0.6039216f, 0.5568628f, 1.0f), new Vector4(0.5764706f, 0.6039216f, 0.2862745f, 1.0f), new Vector4(0.6039216f, 0.2862745f, 0.3294118f, 1.0f) };
     public static Vector3 spawnPos = new Vector3(0, 2f, 0);
+    public static Vector3 levelPos = new Vector3(649.282104f, 1707.20801f, -829.773376f);
+    public static Vector3 levelMPos = new Vector3(649.282104f, 1702.16003f, -829.773376f);
 }

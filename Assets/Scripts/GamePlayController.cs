@@ -19,10 +19,12 @@ public class GamePlayController : MonoBehaviour
     public GameObject pauseMenu, gameMenu, endGameMenu, starfieldParticle;
     private GameObject player;
     public GameObject levelLoader;
+    public GameObject[] levelPrefabs;
 
     void Start()
     {
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
+        Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelPos, transform.rotation);
         shield = player.transform.GetChild(0).gameObject;
     }
 

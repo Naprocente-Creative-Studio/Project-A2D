@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject[] shipsPrefabs;
+    public GameObject[] levelPrefabs;
     public Text hiTxt, bestScoreTxt, rankTxt, moneyShopTxt, moneyTxt;
     public GameObject player;
     public GameObject levelLoader;
@@ -19,6 +20,7 @@ public class MainMenuController : MonoBehaviour
     void Start()
     {
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
+        Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelMPos, transform.rotation);
         //PlayerPrefs.SetInt("Money", moneyTest);
         ShowMoney(moneyTxt);
         ÀuthenticationGoogle();
