@@ -88,4 +88,24 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void OpenInst()
+    {
+        Application.OpenURL("https://www.instagram.com/interesi_studio/");
+    }
+
+    public void OpenLinkedIn()
+    {
+        Application.OpenURL("https://www.linkedin.com/company/interesi-studio/");
+    }
+
+    public void OpenEngSupport()
+    {
+        Application.OpenURL("https://forms.gle/3NueSkcmzyMvWUp79");
+    }
+
+    public void OpenRusSupport()
+    {
+        Application.OpenURL("https://forms.gle/pbcmLew8mXkpyPQG9");
+    }
 }
