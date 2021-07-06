@@ -8583,7 +8583,7 @@ MonoBehaviour:
     price: 1
     isPurchased: 0
   - name: 2
-    image: {fileID: 21300000, guid: d1f7e5e5151dd3649aaa320486e4a556, type: 3}
+    image: {fileID: 21300000, guid: c655d6901b547494b810206e4e686f55, type: 3}
     price: 2
     isPurchased: 0
   controller: {fileID: 314895483}
