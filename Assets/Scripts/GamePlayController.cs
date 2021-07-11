@@ -20,6 +20,8 @@ public class GamePlayController : MonoBehaviour
     private GameObject player;
     public GameObject levelLoader;
     public GameObject[] levelPrefabs;
+    public GameObject audioSource;
+    public AudioClip explAudio;
 
     void Start()
     {
@@ -108,6 +110,7 @@ public class GamePlayController : MonoBehaviour
     {
         Instantiate(explPrefabs[0], other.transform.position, other.transform.rotation);
         hp--;
+        audioSource.GetComponent<AudioSource>().PlayOneShot(explAudio);
         if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         if (hp < 0) Instantiate(explPrefabs[0], player.transform.position, player.transform.rotation);
         Destroy(other.gameObject);
@@ -116,6 +119,7 @@ public class GamePlayController : MonoBehaviour
     public void CometCollission(Collider2D other)
     {
         hp--;
+        audioSource.GetComponent<AudioSource>().PlayOneShot(explAudio);
         if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         if (hp < 0) Instantiate(explPrefabs[0], player.transform.position, player.transform.rotation);
         Instantiate(explPrefabs[0], other.transform.position, other.transform.rotation);

@@ -17,6 +17,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject swipeDetector, starPartclObject;
     public Material engMaterial;
     public int moneyTest;
+    public GameObject audioSource;
+    public AudioClip startAudio;
 
     void Start()
     {

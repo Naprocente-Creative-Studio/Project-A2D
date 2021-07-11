@@ -49,6 +49,7 @@ public class SwipeToStart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             arrows.SetActive(false);
+            controller.GetComponent<MainMenuController>().audioSource.GetComponent<AudioSource>().PlayOneShot(controller.GetComponent<MainMenuController>().startAudio);
             anim.Play("StartAnim");
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
