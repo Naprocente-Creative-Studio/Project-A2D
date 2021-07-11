@@ -8,7 +8,9 @@ public class ShopController : MonoBehaviour
     [System.Serializable] class ShopItem
     {
         public int name;
-        public Sprite image;
+        public Sprite notB;
+        public Sprite bought;
+        public Sprite selected;
         public int price;
         public bool isPurchased = false;
     }
@@ -16,7 +18,7 @@ public class ShopController : MonoBehaviour
     [SerializeField] List<ShopItem> ShopItemsList;
     GameObject itemTemplate;
     GameObject g;
-    public GameObject controller;
+    public MainMenuController controller;
     [SerializeField] Transform shopScrollView;
     [SerializeField] Animator noMoneyAnim;
     Button buyBtt, selBtt;
@@ -29,7 +31,7 @@ public class ShopController : MonoBehaviour
         for (int i = 0; i < len; i++)
         {
             g = Instantiate(itemTemplate, shopScrollView);
-            g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemsList[i].image;
+            g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemsList[i].notB;
             g.transform.GetChild(2).GetComponent<Text>().text = ShopItemsList[i].price.ToString();
             buyBtt = g.transform.GetChild(3).GetComponent<Button>();
             selBtt = g.transform.GetChild(4).GetComponent<Button>();
@@ -40,12 +42,14 @@ public class ShopController : MonoBehaviour
             {
                 ShopItemsList[i].isPurchased = true;
                 selBtt.gameObject.SetActive(true);
+                g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemsList[i].bought;
             }
             if (ShopItemsList[i].name == PlayerPrefs.GetInt("ShipIndex"))
             {
                 buyBtt.gameObject.SetActive(false);
                 selBtt.gameObject.SetActive(true);
                 selBtt.interactable = false;
+                g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemsList[i].selected;
             }
         }
 
@@ -54,15 +58,17 @@ public class ShopController : MonoBehaviour
 
     void OnShopItemBtnClicked(int itemIndex)
     {
+        controller.audioSource.PlayMenu();
         if (HasEnoughMoney(ShopItemsList[itemIndex].price))
         {
             UseMoney(ShopItemsList[itemIndex].price);
 
-            controller.GetComponent<MainMenuController>().ShowMoney(controller.GetComponent<MainMenuController>().moneyShopTxt);
+            controller.ShowMoney(controller.moneyShopTxt);
 
             ShopItemsList[itemIndex].isPurchased = true;
 
             PlayerPrefs.SetInt(ShopItemsList[itemIndex].name.ToString(), boolToInt(ShopItemsList[itemIndex].isPurchased));
+            shopScrollView.GetChild(itemIndex).GetChild(0).GetComponent<Image>().sprite = ShopItemsList[itemIndex].bought;
 
             shopScrollView.GetChild(itemIndex).GetChild(3).GetComponent<Button>().interactable = false;
             shopScrollView.GetChild(itemIndex).GetChild(4).gameObject.SetActive(true);
@@ -76,12 +82,15 @@ public class ShopController : MonoBehaviour
 
     void OnSelectItemBtnClicked(int itemIndex)
     {
+        controller.audioSource.PlayMenu();
         if (ShopItemsList[itemIndex].isPurchased)
         {
             shopScrollView.GetChild(PlayerPrefs.GetInt("ShipIndex")).GetChild(3).gameObject.SetActive(true);
             shopScrollView.GetChild(PlayerPrefs.GetInt("ShipIndex")).GetChild(4).GetComponent<Button>().interactable = true;
+            shopScrollView.GetChild(PlayerPrefs.GetInt("ShipIndex")).GetChild(0).GetComponent<Image>().sprite = ShopItemsList[PlayerPrefs.GetInt("ShipIndex")].bought;
             shopScrollView.GetChild(itemIndex).GetChild(4).GetComponent<Button>().interactable = false;
             shopScrollView.GetChild(itemIndex).GetChild(3).gameObject.SetActive(false);
+            shopScrollView.GetChild(itemIndex).GetChild(0).GetComponent<Image>().sprite = ShopItemsList[itemIndex].selected;
             PlayerPrefs.SetInt("ShipIndex", ShopItemsList[itemIndex].name);
         }
         else Debug.Log("Can`t Select");

@@ -4,14 +4,14 @@ using UnityEngine;
 public class SwipeToStart : MonoBehaviour
 {
     Vector2 starPos;
-    public GameObject controller;
+    public MainMenuController controller;
     private Animation anim;
     private GameObject arrows;
 
     private void Start()
     {
-        anim = controller.GetComponent<MainMenuController>().player.GetComponent<Animation>();
-        arrows = controller.GetComponent<MainMenuController>().player.transform.GetChild(0).gameObject;
+        anim = controller.player.GetComponent<Animation>();
+        arrows = controller.player.transform.GetChild(0).gameObject;
     }
 
     void Update()
@@ -32,37 +32,38 @@ public class SwipeToStart : MonoBehaviour
                     if (swipe.y > 0)
                     {
                         arrows.SetActive(false);
+                        controller.audioSource.PlayStart();
                         anim.Play("StartAnim");
                     }
                     if (swipe.y < 0)
                     {
-                        controller.GetComponent<MainMenuController>().OpenAuthors();
+                        controller.OpenAuthors();
                     }
                 }
                 else if (Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
                 {
-                    if (swipe.x > 0) controller.GetComponent<MainMenuController>().ShowLeaderBoard();
-                    if (swipe.x < 0) controller.GetComponent<MainMenuController>().OpenShop();
+                    if (swipe.x > 0) controller.ShowLeaderBoard();
+                    if (swipe.x < 0) controller.OpenShop();
                 }
             }
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             arrows.SetActive(false);
-            controller.GetComponent<MainMenuController>().audioSource.GetComponent<AudioSource>().PlayOneShot(controller.GetComponent<MainMenuController>().startAudio);
+            controller.audioSource.PlayStart();
             anim.Play("StartAnim");
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            controller.GetComponent<MainMenuController>().OpenAuthors();
+            controller.OpenAuthors();
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            controller.GetComponent<MainMenuController>().OpenShop();
+            controller.OpenShop();
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            controller.GetComponent<MainMenuController>().ShowLeaderBoard();
+            controller.ShowLeaderBoard();
         }
     }
 }

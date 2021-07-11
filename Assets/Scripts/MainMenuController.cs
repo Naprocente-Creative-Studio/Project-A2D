@@ -17,8 +17,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject swipeDetector, starPartclObject;
     public Material engMaterial;
     public int moneyTest;
-    public GameObject audioSource;
-    public AudioClip startAudio;
+    public AudioScript audioSource;
 
     void Start()
     {
@@ -61,11 +60,13 @@ public class MainMenuController : MonoBehaviour
 
     public void ShowLeaderBoard()
     {
+        audioSource.PlayMenu();
         Social.ShowLeaderboardUI();
     }
 
     public void OpenShop()
     {
+        audioSource.PlayMenu();
         mainMenu.SetActive(false);
         swipeDetector.SetActive(false);
         player.GetComponent<Animation>().Stop();
@@ -78,6 +79,7 @@ public class MainMenuController : MonoBehaviour
 
     public void OpenAuthors()
     {
+        audioSource.PlayMenu();
         mainMenu.SetActive(false);
         swipeDetector.SetActive(false);
         player.GetComponent<Animation>().Stop();
@@ -88,26 +90,31 @@ public class MainMenuController : MonoBehaviour
 
     public void MainMenu()
     {
+        audioSource.PlayMenu();
         SceneManager.LoadScene(0);
     }
 
     public void OpenInst()
     {
+        audioSource.PlayMenu();
         Application.OpenURL("https://www.instagram.com/interesi_studio/");
     }
 
     public void OpenLinkedIn()
     {
+        audioSource.PlayMenu();
         Application.OpenURL("https://www.linkedin.com/company/interesi-studio/");
     }
 
     public void OpenEngSupport()
     {
+        audioSource.PlayMenu();
         Application.OpenURL("https://forms.gle/3NueSkcmzyMvWUp79");
     }
 
     public void OpenRusSupport()
     {
+        audioSource.PlayMenu();
         Application.OpenURL("https://forms.gle/pbcmLew8mXkpyPQG9");
     }
 }

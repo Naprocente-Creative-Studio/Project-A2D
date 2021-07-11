@@ -292,8 +292,7 @@ MonoBehaviour:
   starPartclObject: {fileID: 1467564004}
   engMaterial: {fileID: 2100000, guid: c2cc3248260be9d4daa0bd77f5d9789f, type: 2}
   moneyTest: 100
-  audioSource: {fileID: 904775978}
-  startAudio: {fileID: 8300000, guid: 01df581e86a45ea468a720863ccd476e, type: 3}
+  audioSource: {fileID: 904775981}
 --- !u!4 &314895485
 Transform:
   m_ObjectHideFlags: 0
@@ -1501,6 +1500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 904775980}
   - component: {fileID: 904775979}
+  - component: {fileID: 904775981}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -1618,6 +1618,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904775981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904775978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9a4c80077b7c74b8cde9f74c02fcb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 64f2bf9339f2e3745bea131d8815ffb2, type: 3}
+  - {fileID: 8300000, guid: 01df581e86a45ea468a720863ccd476e, type: 3}
 --- !u!1 &926079534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,7 +1988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7500,7 +7515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.05882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7874,7 +7889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7933,8 +7948,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0000076294, y: -328}
-  m_SizeDelta: {x: 530.4739, y: 485.80457}
+  m_AnchoredPosition: {x: -0.0000076294, y: -306.41895}
+  m_SizeDelta: {x: 530, y: 530}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714275320
 MonoBehaviour:
@@ -8635,7 +8650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de32b30156dc5c4d8797ea08d6bf9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 314895483}
+  controller: {fileID: 314895484}
 --- !u!4 &1963963296
 Transform:
   m_ObjectHideFlags: 0
@@ -8704,18 +8719,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopItemsList:
   - name: 0
-    image: {fileID: 21300000, guid: 9cc7ba2a7fff2f44ab50d9324181337f, type: 3}
+    notB: {fileID: 21300000, guid: 2ed8e3acf38460b439e5d60031738357, type: 3}
+    bought: {fileID: 21300000, guid: 84106316312c94949b50b50ab889efde, type: 3}
+    selected: {fileID: 21300000, guid: 573d64f2d44005c40a47dbf5ffeb826c, type: 3}
     price: 0
     isPurchased: 1
   - name: 1
-    image: {fileID: 21300000, guid: 837d1d0041a1f1b4c9992b47277142e7, type: 3}
+    notB: {fileID: 21300000, guid: 6ae28092ae9170546a0b08da90365279, type: 3}
+    bought: {fileID: 21300000, guid: 90eab95e1440d4642ac912b6daee6f4e, type: 3}
+    selected: {fileID: 21300000, guid: 1e6b7a3b86868ee48903a7ac0704d007, type: 3}
     price: 1
     isPurchased: 0
   - name: 2
-    image: {fileID: 21300000, guid: c655d6901b547494b810206e4e686f55, type: 3}
+    notB: {fileID: 21300000, guid: 50caf7c5f5356d74b9038d5e611f56b9, type: 3}
+    bought: {fileID: 21300000, guid: dde53ab13737d2148b090dfeff5038af, type: 3}
+    selected: {fileID: 21300000, guid: 6e5f84ac8ca86094fb2c4e0dad660f71, type: 3}
     price: 2
     isPurchased: 0
-  controller: {fileID: 314895483}
+  controller: {fileID: 314895484}
   shopScrollView: {fileID: 1459279682}
   noMoneyAnim: {fileID: 1891606187}
 --- !u!1 &1980848694

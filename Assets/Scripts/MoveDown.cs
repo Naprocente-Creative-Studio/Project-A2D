@@ -11,14 +11,13 @@ public class MoveDown : MonoBehaviour
     private GamePlayController playController;
     private SpawnManager _spawnManager;
     public GameObject explPrefab;
-    public AudioClip explAudio;
-    public GameObject audioSource;
+    public AudioScript audioSource;
 
     private void Start()
     {
         playController = GameObject.Find("GameController").GetComponent<GamePlayController>();
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        audioSource = GameObject.Find("Audio Source");
+        audioSource = GameObject.Find("Audio Source").GetComponent<AudioScript>();
     }
 
     private void FixedUpdate()
@@ -37,7 +36,7 @@ public class MoveDown : MonoBehaviour
         if (other.gameObject.CompareTag("Asteroids") && !isSharp)
         {
             Instantiate(explPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            audioSource.GetComponent<AudioSource>().PlayOneShot(explAudio);
+            audioSource.PlayExpl();
             Destroy(gameObject);
             Destroy(other.gameObject);
             _spawnManager.SpawnShardsAsteroids(gameObject.transform.position);
