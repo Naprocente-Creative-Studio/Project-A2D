@@ -32,7 +32,7 @@ public class SwipeToStart : MonoBehaviour
                     if (swipe.y > 0)
                     {
                         arrows.SetActive(false);
-                        controller.audioSource.PlayStart();
+                        if (!controller.muteSound) controller.audioSource.PlayStart();
                         anim.Play("StartAnim");
                     }
                     if (swipe.y < 0)
@@ -50,7 +50,7 @@ public class SwipeToStart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             arrows.SetActive(false);
-            controller.audioSource.PlayStart();
+            if(!controller.muteSound) controller.audioSource.PlayStart();
             anim.Play("StartAnim");
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))

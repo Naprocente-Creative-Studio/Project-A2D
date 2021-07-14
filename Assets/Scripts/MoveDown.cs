@@ -36,7 +36,7 @@ public class MoveDown : MonoBehaviour
         if (other.gameObject.CompareTag("Asteroids") && !isSharp)
         {
             Instantiate(explPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            audioSource.PlayExpl();
+            if(!playController.muteSound) audioSource.PlayExpl();
             Destroy(gameObject);
             Destroy(other.gameObject);
             _spawnManager.SpawnShardsAsteroids(gameObject.transform.position);

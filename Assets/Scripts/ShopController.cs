@@ -58,7 +58,7 @@ public class ShopController : MonoBehaviour
 
     void OnShopItemBtnClicked(int itemIndex)
     {
-        controller.audioSource.PlayMenu();
+        if (!controller.muteSound) controller.audioSource.PlayMenu();
         if (HasEnoughMoney(ShopItemsList[itemIndex].price))
         {
             UseMoney(ShopItemsList[itemIndex].price);
@@ -82,7 +82,7 @@ public class ShopController : MonoBehaviour
 
     void OnSelectItemBtnClicked(int itemIndex)
     {
-        controller.audioSource.PlayMenu();
+        if(!controller.muteSound) controller.audioSource.PlayMenu();
         if (ShopItemsList[itemIndex].isPurchased)
         {
             shopScrollView.GetChild(PlayerPrefs.GetInt("ShipIndex")).GetChild(3).gameObject.SetActive(true);

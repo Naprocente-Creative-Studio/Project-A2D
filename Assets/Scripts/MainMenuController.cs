@@ -18,16 +18,19 @@ public class MainMenuController : MonoBehaviour
     public Material engMaterial;
     public int moneyTest;
     public AudioScript audioSource;
+    public bool muteSound;
+    public AudioSource mainMenuSound;
 
     void Start()
     {
         engMaterial.color = DataBase.flameColors[Random.Range(0, DataBase.flameColors.Length)];
+        muteSound = intToBool(PlayerPrefs.GetInt("Sound"));
+        if (muteSound) mainMenuSound.Stop();
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelMPos, transform.rotation);
         //PlayerPrefs.SetInt("Money", moneyTest);
         ShowMoney(moneyTxt);
         ÀuthenticationGoogle();
-
     }
 
     void ÀuthenticationGoogle()
@@ -60,13 +63,13 @@ public class MainMenuController : MonoBehaviour
 
     public void ShowLeaderBoard()
     {
-        audioSource.PlayMenu();
+        if (!muteSound) audioSource.PlayMenu();
         Social.ShowLeaderboardUI();
     }
 
     public void OpenShop()
     {
-        audioSource.PlayMenu();
+        if (!muteSound) audioSource.PlayMenu();
         mainMenu.SetActive(false);
         swipeDetector.SetActive(false);
         player.GetComponent<Animation>().Stop();
@@ -79,7 +82,7 @@ public class MainMenuController : MonoBehaviour
 
     public void OpenAuthors()
     {
-        audioSource.PlayMenu();
+        if (!muteSound) audioSource.PlayMenu();
         mainMenu.SetActive(false);
         swipeDetector.SetActive(false);
         player.GetComponent<Animation>().Stop();
@@ -90,31 +93,51 @@ public class MainMenuController : MonoBehaviour
 
     public void MainMenu()
     {
-        audioSource.PlayMenu();
+        if(!muteSound) audioSource.PlayMenu();
         SceneManager.LoadScene(0);
     }
 
     public void OpenInst()
     {
-        audioSource.PlayMenu();
+        if (!muteSound) audioSource.PlayMenu();
         Application.OpenURL("https://www.instagram.com/interesi_studio/");
     }
 
     public void OpenLinkedIn()
     {
-        audioSource.PlayMenu();
+        if (!muteSound) audioSource.PlayMenu();
         Application.OpenURL("https://www.linkedin.com/company/interesi-studio/");
     }
 
     public void OpenEngSupport()
     {
-        audioSource.PlayMenu();
+        if (!muteSound) audioSource.PlayMenu();
         Application.OpenURL("https://forms.gle/3NueSkcmzyMvWUp79");
     }
 
     public void OpenRusSupport()
     {
-        audioSource.PlayMenu();
+        if (!muteSound) audioSource.PlayMenu();
         Application.OpenURL("https://forms.gle/pbcmLew8mXkpyPQG9");
+    }
+
+    public void MuteSound()
+    {
+        muteSound = !muteSound;
+        if(muteSound) mainMenuSound.Stop();
+        if (!muteSound) mainMenuSound.Play();
+        PlayerPrefs.SetInt("Sound", boolToInt(muteSound));
+    }
+
+    bool intToBool(int var)
+    {
+        if (var == 1) return true;
+        else return false;
+    }
+
+    int boolToInt(bool var)
+    {
+        if (var) return 1;
+        else return 0;
     }
 }

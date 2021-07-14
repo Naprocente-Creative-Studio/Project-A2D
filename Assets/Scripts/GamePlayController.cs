@@ -21,9 +21,13 @@ public class GamePlayController : MonoBehaviour
     public GameObject levelLoader;
     public GameObject[] levelPrefabs;
     public AudioScript audioSource;
+    public AudioSource bgSound;
+    public bool muteSound;
 
     void Start()
     {
+        muteSound = intToBool(PlayerPrefs.GetInt("Sound"));
+        if (muteSound) bgSound.Stop();
         engMaterial.color = DataBase.flameColors[Random.Range(0, DataBase.flameColors.Length)];
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelPos, transform.rotation);
@@ -92,11 +96,11 @@ public class GamePlayController : MonoBehaviour
     public void CometTrailContact(Collision2D other)
     {
         money++;
+        if (!muteSound) audioSource.PlayShieldUp();
         if (hp < 1)
         {
             hp++;
             shield.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
-            audioSource.PlayShieldUp();
         }
         Instantiate(explPrefabs[1], other.transform.position, other.transform.rotation);
         Destroy(other.gameObject);
@@ -105,8 +109,8 @@ public class GamePlayController : MonoBehaviour
     public void AsteroidCollision(Collider2D other)
     {
         Instantiate(explPrefabs[0], other.transform.position, other.transform.rotation);
-        if(hp == 0) audioSource.PlayExpl();
-        if(hp > 0) audioSource.PlayShield();
+        if(hp == 0 && !muteSound) audioSource.PlayExpl();
+        if(hp > 0 && !muteSound) audioSource.PlayShield();
         hp--;
         if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         if (hp < 0) Instantiate(explPrefabs[0], player.transform.position, player.transform.rotation);
@@ -115,8 +119,8 @@ public class GamePlayController : MonoBehaviour
 
     public void CometCollission(Collider2D other)
     {
-        if (hp == 0) audioSource.PlayExpl();
-        if (hp > 0) audioSource.PlayShield();
+        if (hp == 0 && !muteSound) audioSource.PlayExpl();
+        if (hp > 0 && !muteSound) audioSource.PlayShield();
         hp--;
         if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         if (hp < 0) Instantiate(explPrefabs[0], player.transform.position, player.transform.rotation);
@@ -127,8 +131,8 @@ public class GamePlayController : MonoBehaviour
     public void SharpCollision(Collider2D other)
     {
         Instantiate(explPrefabs[0], other.transform.position, other.transform.rotation);
-        if (hp == 0) audioSource.PlayExpl();
-        if (hp > 0) audioSource.PlayShield();
+        if (hp == 0 && !muteSound) audioSource.PlayExpl();
+        if (hp > 0 && !muteSound) audioSource.PlayShield();
         hp--;
         if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         if (hp < 0) Instantiate(explPrefabs[0], player.transform.position, player.transform.rotation);
@@ -142,6 +146,7 @@ public class GamePlayController : MonoBehaviour
 
     public void Pause()
     {
+        if (!muteSound) audioSource.PlayMenu();
         pauseTrigger = true;
         starfieldParticle.GetComponent<ParticleSystem>().Pause();
         pauseMenu.SetActive(true);
@@ -150,6 +155,7 @@ public class GamePlayController : MonoBehaviour
 
     public void UnPause()
     {
+        if (!muteSound) audioSource.PlayMenu();
         pauseTrigger = false;
         starfieldParticle.GetComponent<ParticleSystem>().Play();
         spawnManager.GetComponent<SpawnManager>().ResumeSpawn();
@@ -168,11 +174,33 @@ public class GamePlayController : MonoBehaviour
     }
     public void Restart()
     {
+        if (!muteSound) audioSource.PlayMenu();
         levelLoader.GetComponent<LevelLoader>().LoadLevel(1);
     }
 
     public void MainMenu()
     {
+        if (!muteSound) audioSource.PlayMenu();
         levelLoader.GetComponent<LevelLoader>().LoadLevel(0);
+    }
+
+    public void MuteSound()
+    {
+        muteSound = !muteSound;
+        if (muteSound) bgSound.Stop();
+        if(!muteSound) bgSound.Play();
+        PlayerPrefs.SetInt("Sound", boolToInt(muteSound));
+    }
+
+    bool intToBool(int var)
+    {
+        if (var == 1) return true;
+        else return false;
+    }
+
+    int boolToInt(bool var)
+    {
+        if (var) return 1;
+        else return 0;
     }
 }

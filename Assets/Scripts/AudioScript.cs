@@ -8,17 +8,17 @@ public class AudioScript : MonoBehaviour
 
 	public void PlayExpl()
 	{
-		gameObject.GetComponent<AudioSource>().PlayOneShot(audioClips[0]);
+		gameObject.GetComponent<AudioSource>().PlayOneShot(audioClips[1]);
 	}
 
 	public void PlayShield()
 	{
-		gameObject.GetComponent<AudioSource>().PlayOneShot(audioClips[1]);
+		gameObject.GetComponent<AudioSource>().PlayOneShot(audioClips[2]);
 	}
 
 	public void PlayShieldUp()
 	{
-		gameObject.GetComponent<AudioSource>().PlayOneShot(audioClips[2]);
+		gameObject.GetComponent<AudioSource>().PlayOneShot(audioClips[3]);
 	}
 
 	public void PlayStart()
