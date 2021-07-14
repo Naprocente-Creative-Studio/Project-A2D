@@ -23,9 +23,15 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
-        engMaterial.color = DataBase.flameColors[Random.Range(0, DataBase.flameColors.Length)];
+        StartMainMenu();
+    }
+
+    void StartMainMenu()
+    {
         muteSound = intToBool(PlayerPrefs.GetInt("Sound"));
         if (muteSound) mainMenuSound.Stop();
+        mainMenu.SetActive(true);
+        engMaterial.color = DataBase.flameColors[Random.Range(0, DataBase.flameColors.Length)];
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelMPos, transform.rotation);
         //PlayerPrefs.SetInt("Money", moneyTest);
@@ -94,7 +100,7 @@ public class MainMenuController : MonoBehaviour
     public void MainMenu()
     {
         if(!muteSound) audioSource.PlayMenu();
-        SceneManager.LoadScene(0);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(0);
     }
 
     public void OpenInst()
