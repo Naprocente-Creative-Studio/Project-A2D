@@ -175,13 +175,13 @@ public class GamePlayController : MonoBehaviour
     public void Restart()
     {
         if (!muteSound) audioSource.PlayMenu();
-        levelLoader.GetComponent<LevelLoader>().LoadLevel(1);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(2);
     }
 
     public void MainMenu()
     {
         if (!muteSound) audioSource.PlayMenu();
-        levelLoader.GetComponent<LevelLoader>().LoadLevel(0);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(1);
     }
 
     public void MuteSound()

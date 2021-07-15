@@ -58,7 +58,7 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGame()
     {
-        levelLoader.GetComponent<LevelLoader>().LoadLevel(1);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(2);
     }
 
     public void ShowMoney(Text money)
@@ -100,7 +100,7 @@ public class MainMenuController : MonoBehaviour
     public void MainMenu()
     {
         if(!muteSound) audioSource.PlayMenu();
-        levelLoader.GetComponent<LevelLoader>().LoadLevel(0);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(1);
     }
 
     public void OpenInst()
