@@ -291,7 +291,6 @@ MonoBehaviour:
   swipeDetector: {fileID: 1963963294}
   starPartclObject: {fileID: 1467564004}
   engMaterial: {fileID: 2100000, guid: c2cc3248260be9d4daa0bd77f5d9789f, type: 2}
-  moneyTest: 100
   audioSource: {fileID: 904775981}
   muteSound: 0
   mainMenuSound: {fileID: 519420034}
@@ -8863,13 +8862,13 @@ MonoBehaviour:
     notB: {fileID: 21300000, guid: 6ae28092ae9170546a0b08da90365279, type: 3}
     bought: {fileID: 21300000, guid: 90eab95e1440d4642ac912b6daee6f4e, type: 3}
     selected: {fileID: 21300000, guid: 1e6b7a3b86868ee48903a7ac0704d007, type: 3}
-    price: 1
+    price: 30
     isPurchased: 0
   - name: 2
     notB: {fileID: 21300000, guid: 50caf7c5f5356d74b9038d5e611f56b9, type: 3}
     bought: {fileID: 21300000, guid: dde53ab13737d2148b090dfeff5038af, type: 3}
     selected: {fileID: 21300000, guid: 6e5f84ac8ca86094fb2c4e0dad660f71, type: 3}
-    price: 2
+    price: 50
     isPurchased: 0
   controller: {fileID: 314895484}
   shopScrollView: {fileID: 1459279682}

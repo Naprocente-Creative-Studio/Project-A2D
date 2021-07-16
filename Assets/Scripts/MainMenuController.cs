@@ -1,9 +1,7 @@
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
@@ -16,7 +14,6 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainMenu, shopMenu, authorMenu;
     public GameObject swipeDetector, starPartclObject;
     public Material engMaterial;
-    public int moneyTest;
     public AudioScript audioSource;
     public bool muteSound;
     public AudioSource mainMenuSound;
@@ -34,7 +31,6 @@ public class MainMenuController : MonoBehaviour
         engMaterial.color = DataBase.flameColors[Random.Range(0, DataBase.flameColors.Length)];
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelMPos, transform.rotation);
-        //PlayerPrefs.SetInt("Money", moneyTest);
         ShowMoney(moneyTxt);
         ÀuthenticationGoogle();
     }
@@ -43,17 +39,7 @@ public class MainMenuController : MonoBehaviour
     {
         PlayGamesPlatform.Activate();
         PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => { });
-        hiTxt.text = "Hi, " + Social.localUser.userName.ToString();
-        PlayGamesPlatform.Instance.LoadScores(
-             DataBase.leaderboardID,
-             LeaderboardStart.PlayerCentered,
-             1,
-             LeaderboardCollection.Public,
-             LeaderboardTimeSpan.AllTime,
-         (LeaderboardScoreData data) => {
-             bestScoreTxt.text = "Best score: " + data.PlayerScore.formattedValue;
-             rankTxt.text = "Rank: " + data.PlayerScore.rank;
-         });
+        StartCoroutine(StatsShow());
     }
 
     public void StartGame()
@@ -145,5 +131,21 @@ public class MainMenuController : MonoBehaviour
     {
         if (var) return 1;
         else return 0;
+    }
+
+    IEnumerator StatsShow()
+    {
+        yield return new WaitForSeconds(2f);
+        hiTxt.text = "Hi, " + Social.localUser.userName.ToString();
+        PlayGamesPlatform.Instance.LoadScores(
+             DataBase.leaderboardID,
+             LeaderboardStart.PlayerCentered,
+             1,
+             LeaderboardCollection.Public,
+             LeaderboardTimeSpan.AllTime,
+         (LeaderboardScoreData data) => {
+             bestScoreTxt.text = "Best score: " + data.PlayerScore.formattedValue;
+             rankTxt.text = "Rank: " + data.PlayerScore.rank;
+         });
     }
 }
