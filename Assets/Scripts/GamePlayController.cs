@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GamePlayController : MonoBehaviour
 {
     private int hp = 1;
-    public bool gameOverTrigger = false, pauseTrigger = false, endTrigger = false;
+    public bool gameOverTrigger = false, pauseTrigger = false, endTrigger = false, resumeTrigger = false;
     public int score, money;
     public GameObject touchObject;
     private GameObject shield;
@@ -14,6 +14,7 @@ public class GamePlayController : MonoBehaviour
     public GameObject[] explPrefabs;
     public Text moneyTxt, scoreTxt, bestScoreTxt, endScoreTxt, endMoneyTxt;
     public InterstitialAd interstitialAd;
+    public RewardedAd rewardedAd;
     public GameObject spawnManager;
     public GameObject[] shipsPrefabs;
     public GameObject pauseMenu, gameMenu, endGameMenu, starfieldParticle;
@@ -48,7 +49,7 @@ public class GamePlayController : MonoBehaviour
             if (hp < 0)
             {
                 gameOverTrigger = true;
-                Destroy(player);
+                player.gameObject.SetActive(false);
             }
 
             if (!touchObject.activeInHierarchy) touchObject.SetActive(true);
@@ -91,6 +92,18 @@ public class GamePlayController : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         interstitialAd.LoadAd(request);
         interstitialAd.OnAdLoaded += OnAddLoaded;
+    }
+
+    public void ResumeAd()
+    {
+        if (!resumeTrigger)
+        {
+            rewardedAd = new RewardedAd(DataBase.rewardIdAd);
+            AdRequest request = new AdRequest.Builder().Build();
+            rewardedAd.LoadAd(request);
+            rewardedAd.OnAdLoaded += OnAddLoaded;
+            Resume();
+        }
     }
 
     public void CometTrailContact(Collision2D other)
@@ -151,6 +164,21 @@ public class GamePlayController : MonoBehaviour
         starfieldParticle.GetComponent<ParticleSystem>().Pause();
         pauseMenu.SetActive(true);
         gameMenu.SetActive(false);
+    }
+
+    public void Resume()
+    {
+        if (!muteSound) audioSource.PlayMenu();
+        endTrigger = false;
+        gameOverTrigger = false;
+        starfieldParticle.GetComponent<ParticleSystem>().Play();
+        spawnManager.GetComponent<SpawnManager>().ResumeSpawn();
+        endGameMenu.SetActive(false);
+        gameMenu.SetActive(true);
+        player.gameObject.SetActive(true);
+        hp = 1;
+        money = 0;
+        resumeTrigger = true;
     }
 
     public void UnPause()

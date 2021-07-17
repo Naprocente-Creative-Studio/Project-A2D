@@ -242,9 +242,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: OpenSettings
+      - m_Target: {fileID: 1534353852}
+        m_TargetAssemblyTypeName: GamePlayController, Assembly-CSharp
+        m_MethodName: ResumeAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6621,6 +6621,7 @@ MonoBehaviour:
   gameOverTrigger: 0
   pauseTrigger: 0
   endTrigger: 0
+  resumeTrigger: 0
   score: 0
   money: 0
   touchObject: {fileID: 1018993412}
