@@ -135,7 +135,7 @@ public class MainMenuController : MonoBehaviour
 
     IEnumerator StatsShow()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         hiTxt.text = "Hi, " + Social.localUser.userName.ToString();
         PlayGamesPlatform.Instance.LoadScores(
              DataBase.leaderboardID,
