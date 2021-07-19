@@ -73,6 +73,7 @@ public class GamePlayController : MonoBehaviour
 
     void GameOverCycle()
     {
+        MobileAds.Initialize(initStatus => { });
         endTrigger = true;
         GameEndAd();
         int tmpmoney = PlayerPrefs.GetInt("Money", 0);
@@ -88,7 +89,7 @@ public class GamePlayController : MonoBehaviour
 
     void GameEndAd()
     {
-        interstitialAd = new InterstitialAd(DataBase.adScreenID);
+        interstitialAd = new InterstitialAd("ca-app-pub-2619136704947934/2527301585");
         AdRequest request = new AdRequest.Builder().Build();
         interstitialAd.LoadAd(request);
         interstitialAd.OnAdLoaded += OnAddLoaded;
