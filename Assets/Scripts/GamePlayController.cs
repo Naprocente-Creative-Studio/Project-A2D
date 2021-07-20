@@ -99,7 +99,7 @@ public class GamePlayController : MonoBehaviour
     {
         if (!resumeTrigger)
         {
-            rewardedAd = new RewardedAd(DataBase.rewardIdAd);
+            rewardedAd = new RewardedAd("ca-app-pub-2619136704947934/3301001205");
             AdRequest request = new AdRequest.Builder().Build();
             rewardedAd.LoadAd(request);
             rewardedAd.OnAdLoaded += OnAddLoaded;

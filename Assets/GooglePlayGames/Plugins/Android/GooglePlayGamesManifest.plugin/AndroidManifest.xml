@@ -22,6 +22,9 @@
 
         <activity android:name="com.google.games.bridge.NativeBridgeActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+      <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2619136704947934~9232310733"/>
     </application>
 </manifest>
 
