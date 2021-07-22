@@ -135,7 +135,6 @@ PolygonCollider2D:
       - {x: 1.8707795, y: 0.22261718}
       - {x: 1.5801376, y: 1.0230751}
       - {x: 1.1471775, y: 1.48776}
-      - {x: 0.79852605, y: 1.6963811}
       - {x: 0.29999998, y: 1.875}
       - {x: -0.5112841, y: 1.8245637}
       - {x: -1.294385, y: 1.3801731}
@@ -303,7 +302,6 @@ MonoBehaviour:
   isLight: 0
   speed: 3
   explPrefab: {fileID: 4896373828683807368, guid: ed7b537bf65df4441b0e572c1e83f1a8, type: 3}
-  explAudio: {fileID: 8300000, guid: e2886b409cd83884eaaecfccc53d8187, type: 3}
   audioSource: {fileID: 0}
 --- !u!50 &7016282771460224121
 Rigidbody2D:

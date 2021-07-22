@@ -899,7 +899,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 75
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -5277,7 +5277,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 29.231005, y: 28.76}
+    oldSize: {x: 29.23, y: 28.773281}
     newSize: {x: 38.56, y: 41.476303}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

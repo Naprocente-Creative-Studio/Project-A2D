@@ -33,6 +33,7 @@ public class GamePlayController : MonoBehaviour
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelPos, transform.rotation);
         shield = player.transform.GetChild(0).gameObject;
+        MobileAds.Initialize(initStatus => { });
     }
 
 
@@ -73,7 +74,6 @@ public class GamePlayController : MonoBehaviour
 
     void GameOverCycle()
     {
-        MobileAds.Initialize(initStatus => { });
         endTrigger = true;
         GameEndAd();
         int tmpmoney = PlayerPrefs.GetInt("Money", 0);
@@ -93,18 +93,6 @@ public class GamePlayController : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         interstitialAd.LoadAd(request);
         interstitialAd.OnAdLoaded += OnAddLoaded;
-    }
-
-    public void ResumeAd()
-    {
-        if (!resumeTrigger)
-        {
-            rewardedAd = new RewardedAd("ca-app-pub-2619136704947934/3301001205");
-            AdRequest request = new AdRequest.Builder().Build();
-            rewardedAd.LoadAd(request);
-            rewardedAd.OnAdLoaded += OnAddLoaded;
-            Resume();
-        }
     }
 
     public void CometTrailContact(Collision2D other)
@@ -165,21 +153,6 @@ public class GamePlayController : MonoBehaviour
         starfieldParticle.GetComponent<ParticleSystem>().Pause();
         pauseMenu.SetActive(true);
         gameMenu.SetActive(false);
-    }
-
-    public void Resume()
-    {
-        if (!muteSound) audioSource.PlayMenu();
-        endTrigger = false;
-        gameOverTrigger = false;
-        starfieldParticle.GetComponent<ParticleSystem>().Play();
-        spawnManager.GetComponent<SpawnManager>().ResumeSpawn();
-        endGameMenu.SetActive(false);
-        gameMenu.SetActive(true);
-        player.gameObject.SetActive(true);
-        hp = 1;
-        money = 0;
-        resumeTrigger = true;
     }
 
     public void UnPause()

@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cce7265f395e441a95a9d2dec1cb92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
   isSharp: 0
   isLight: 1
+  speed: 4
+  explPrefab: {fileID: 0}
+  audioSource: {fileID: 0}

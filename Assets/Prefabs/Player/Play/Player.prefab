@@ -10386,7 +10386,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -14729,7 +14729,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 37.88, y: 40.96}
+    oldSize: {x: 37.920002, y: 40.96}
     newSize: {x: 38.56, y: 41.476303}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -14743,13 +14743,6 @@ PolygonCollider2D:
       - {x: 11.655973, y: -19.58699}
       - {x: 9.957964, y: -20.616232}
       - {x: 4.2564316, y: -20.662918}
-      - {x: 2.5245767, y: -19.576637}
-      - {x: 0.6769949, y: -19.568098}
-      - {x: 0.5444323, y: -20.263624}
-      - {x: 0.03236761, y: -20.435825}
-      - {x: -0.44030315, y: -20.269127}
-      - {x: -0.6263935, y: -19.603962}
-      - {x: -2.626061, y: -19.70304}
       - {x: -4.211344, y: -20.696468}
       - {x: -9.865819, y: -20.701523}
       - {x: -11.680808, y: -19.529278}
@@ -15467,7 +15460,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:

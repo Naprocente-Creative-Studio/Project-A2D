@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
@@ -15,14 +16,16 @@ public class SpawnManager : MonoBehaviour
     public GameObject playController;
     public float speed;
     private int Ratio_Final = 0;
+    IEnumerator spawner;
 
     private void Start()
     {
+        spawner = spawnRandomAsteroid(startDelay);
         for (int i = 0; i < Ratio_Chances.Length; i++)
         {
             Ratio_Final += Ratio_Chances[i];
         }
-        InvokeRepeating("spawnRandomAsteroid", startDelay, spawnInterval);
+        StartCoroutine(spawner);
         InvokeRepeating("spawnLights", startDelayL, spawnIntervalL);
         InvokeRepeating("decreaseDelay", 10, 1);
         InvokeRepeating("IncreaseSpeed", 8, 10);
@@ -32,22 +35,27 @@ public class SpawnManager : MonoBehaviour
     {
         if (playController.GetComponent<GamePlayController>().gameOverTrigger || playController.GetComponent<GamePlayController>().pauseTrigger)
         {
-            CancelInvoke("spawnRandomAsteroid");
+            StopCoroutine(spawner);
             CancelInvoke("spawnLights");
             CancelInvoke("decreaseDelay");
             CancelInvoke("IncreaseSpeed");
         }
         if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("IncreaseSpeed") && speed > 15) CancelInvoke("IncreaseSpeed");
-        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("decreaseDelay") && spawnInterval < 0.1f) CancelInvoke("decreaseDelay");
+        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("decreaseDelay") && spawnInterval < 0.6f) CancelInvoke("decreaseDelay");
     }
 
-    void spawnRandomAsteroid()
+    IEnumerator spawnRandomAsteroid(float startDelay)
     {
-        int astIndex = RandomAst();
-        Vector2 spawnPos = new Vector2(spawnFixPosX[Random.Range(0, spawnFixPosX.Length)], spawnPosY);
+        yield return new WaitForSeconds(startDelay);
+        while (true)
+        {
+            int astIndex = RandomAst();
+            Vector2 spawnPos = new Vector2(spawnFixPosX[Random.Range(0, spawnFixPosX.Length)], spawnPosY);
 
-        GameObject ast = Instantiate(asteroidPrefabs[astIndex], spawnPos, asteroidPrefabs[astIndex].transform.rotation);
-        ast.GetComponent<MoveDown>().speed += speed;
+            GameObject ast = Instantiate(asteroidPrefabs[astIndex], spawnPos, asteroidPrefabs[astIndex].transform.rotation);
+            ast.GetComponent<MoveDown>().speed += speed;
+            yield return new WaitForSeconds(spawnInterval);
+        }
     }
 
     void spawnLights()
@@ -60,7 +68,7 @@ public class SpawnManager : MonoBehaviour
 
     public void ResumeSpawn()
     {
-        InvokeRepeating("spawnRandomAsteroid", startDelay, spawnInterval);
+        StartCoroutine(spawner);
         InvokeRepeating("spawnLights", startDelayL, spawnIntervalL);
         if (spawnInterval > 0.5f) InvokeRepeating("decreaseDelay", 10, 1);
         if (speed < 10) InvokeRepeating("IncreaseSpeed", 8, 10);

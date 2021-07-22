@@ -47,6 +47,7 @@ public class SwipeToStart : MonoBehaviour
                 }
             }
         }
+        #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             arrows.SetActive(false);
@@ -65,5 +66,6 @@ public class SwipeToStart : MonoBehaviour
         {
             controller.ShowLeaderBoard();
         }
+        #endif
     }
 }
