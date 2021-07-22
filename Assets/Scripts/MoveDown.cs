@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MoveDown : MonoBehaviour
+public class MoveDown : MonoBehaviour, SpawnFromPool
 {
     public bool isSharp;
     public bool isLight;
@@ -13,7 +13,7 @@ public class MoveDown : MonoBehaviour
     public GameObject explPrefab;
     public AudioScript audioSource;
 
-    private void Start()
+    private void Awake()
     {
         playController = GameObject.Find("GameController").GetComponent<GamePlayController>();
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
@@ -25,7 +25,7 @@ public class MoveDown : MonoBehaviour
         if (!playController.gameOverTrigger && !playController.pauseTrigger)
         {
             gameObject.transform.Translate(0, -speed * Time.deltaTime, 0);
-            if (gameObject.transform.position.y < downBorder && !isLight && !isSharp) Destroy(gameObject);
+            if (gameObject.transform.position.y < downBorder && !isLight && !isSharp) gameObject.SetActive(false);
             if (isSharp && (gameObject.transform.position.x > sideBorder || gameObject.transform.position.x < -sideBorder || gameObject.transform.position.y > upperBorder || gameObject.transform.position.y < downBorder)) Destroy(gameObject);
             if (isLight && gameObject.transform.position.y < downBorderL) Destroy(gameObject);
         }
@@ -33,13 +33,18 @@ public class MoveDown : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-        if (other.gameObject.CompareTag("Asteroids") && !isSharp)
+        if (other.gameObject.CompareTag("Asteroids") && !isSharp && !isLight)
         {
             Instantiate(explPrefab, gameObject.transform.position, gameObject.transform.rotation);
             if(!playController.muteSound) audioSource.PlayExpl();
-            Destroy(gameObject);
-            Destroy(other.gameObject);
+            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
             _spawnManager.SpawnShardsAsteroids(gameObject.transform.position);
         }
+    }
+
+    public void OnPoolSpawn()
+    {
+
     }
 }
