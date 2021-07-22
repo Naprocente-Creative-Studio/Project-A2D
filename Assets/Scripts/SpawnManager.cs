@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     private float[] spawnLightPosX = { -3f, 3f };
     private float spawnPosY = 11, spawnPosYL = 17;
     private float startDelay = 2, startDelayL = 8;
-    public float spawnInterval = 1.5f, spawnIntervalL = 18;
+    public float spawnInterval = 2f, spawnIntervalL = 18;
     public GameObject playController;
     public float speed;
     private int Ratio_Final = 0;
@@ -88,7 +88,7 @@ public class SpawnManager : MonoBehaviour
     }
     public void decreaseDelay()
     {
-        spawnInterval -= 0.01f;
+        spawnInterval -= 0.005f;
     }
 
     private void IncreaseSpeed()

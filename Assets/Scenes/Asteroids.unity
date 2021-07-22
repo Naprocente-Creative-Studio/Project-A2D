@@ -160,6 +160,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00024414062, y: 0.5004883}
   m_SizeDelta: {x: -0.0004, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &19442101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19442102}
+  - component: {fileID: 19442104}
+  - component: {fileID: 19442103}
+  m_Layer: 5
+  m_Name: HitTxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &19442102
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19442101}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2043505946}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.15200001, y: 0.84974146}
+  m_AnchorMax: {x: 0.85051626, y: 0.90700006}
+  m_AnchoredPosition: {x: -2.538025, y: 1.5}
+  m_SizeDelta: {x: -0.9975891, y: -5.0005035}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &19442103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19442101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6185475, g: 0.9433962, b: 0.9337552, a: 0.7607843}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a1b30aae85e1e6c4bb0cf72774122a78, type: 3}
+    m_FontSize: 90
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Hit the tail of comets to earn coins!
+--- !u!222 &19442104
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19442101}
+  m_CullTransparentMesh: 1
 --- !u!1 &123515308
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,7 +5440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.23710448, y: 0.3695131}
   m_AnchorMax: {x: 0.372, y: 0.44638488}
-  m_AnchoredPosition: {x: -1.9000244, y: 0.21032715}
+  m_AnchoredPosition: {x: -1.9001465, y: 0.21032715}
   m_SizeDelta: {x: -4.444397, y: -0.42053223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553494635
@@ -6503,6 +6582,7 @@ MonoBehaviour:
   endScoreTxt: {fileID: 1686104099}
   endMoneyTxt: {fileID: 725570344}
   spawnManager: {fileID: 2077213779}
+  hitTxt: {fileID: 19442101}
   shipsPrefabs:
   - {fileID: 4785020870831620513, guid: a45e6b0fafd98664da7a5a9674164b3a, type: 3}
   - {fileID: 7383996819763071969, guid: d55c796ced95c2c44bde7f8e4d76f52c, type: 3}
@@ -7612,6 +7692,7 @@ RectTransform:
   - {fileID: 1864654371}
   - {fileID: 2087453604}
   - {fileID: 10838942}
+  - {fileID: 19442102}
   m_Father: {fileID: 1666381372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7655,7 +7736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.61700004, y: 0.36524576}
   m_AnchorMax: {x: 0.763, y: 0.44638488}
-  m_AnchoredPosition: {x: 1.9200134, y: 1.4804077}
+  m_AnchoredPosition: {x: 1.920044, y: 1.4804688}
   m_SizeDelta: {x: -5.45697, y: -16.35846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049192804

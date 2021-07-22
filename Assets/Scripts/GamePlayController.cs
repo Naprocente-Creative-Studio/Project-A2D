@@ -1,4 +1,5 @@
 using GoogleMobileAds.Api;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class GamePlayController : MonoBehaviour
     public InterstitialAd interstitialAd;
     public RewardedAd rewardedAd;
     public GameObject spawnManager;
+    public GameObject hitTxt;
     public GameObject[] shipsPrefabs;
     public GameObject pauseMenu, gameMenu, endGameMenu, starfieldParticle;
     private GameObject player;
@@ -33,7 +35,8 @@ public class GamePlayController : MonoBehaviour
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelPos, transform.rotation);
         shield = player.transform.GetChild(0).gameObject;
-        MobileAds.Initialize(initStatus => { });
+		StartCoroutine(hitDelay());
+		MobileAds.Initialize(initStatus => { });
     }
 
 
@@ -204,5 +207,12 @@ public class GamePlayController : MonoBehaviour
     {
         if (var) return 1;
         else return 0;
+    }
+
+    IEnumerator hitDelay()
+    {
+        yield return new WaitForSeconds(6f);
+        hitTxt.SetActive(false);
+        StopCoroutine(hitDelay());
     }
 }
