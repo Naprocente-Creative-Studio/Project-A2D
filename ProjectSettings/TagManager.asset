@@ -10,6 +10,8 @@ TagManager:
   - Comet
   - addHp
   - touch
+  - Asteroids1
+  - Asteroids2
   layers:
   - Default
   - TransparentFX

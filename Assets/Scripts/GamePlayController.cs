@@ -108,7 +108,7 @@ public class GamePlayController : MonoBehaviour
             shield.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
         }
         Instantiate(explPrefabs[1], other.transform.position, other.transform.rotation);
-        Destroy(other.gameObject);
+        other.gameObject.SetActive(false);
     }
 
     public void AsteroidCollision(Collider2D other)
@@ -119,7 +119,7 @@ public class GamePlayController : MonoBehaviour
         hp--;
         if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         if (hp < 0) Instantiate(explPrefabs[0], player.transform.position, player.transform.rotation);
-        Destroy(other.gameObject);
+        other.gameObject.SetActive(false);
     }
 
     public void CometCollission(Collider2D other)
@@ -130,7 +130,7 @@ public class GamePlayController : MonoBehaviour
         if (hp >= 0) shield.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         if (hp < 0) Instantiate(explPrefabs[0], player.transform.position, player.transform.rotation);
         Instantiate(explPrefabs[0], other.transform.position, other.transform.rotation);
-        Destroy(other.gameObject);
+        other.gameObject.SetActive(false);
     }
 
     public void SharpCollision(Collider2D other)

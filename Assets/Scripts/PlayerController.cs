@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D other)
 	{
         if (other.gameObject.CompareTag("Asteroids")) playController.AsteroidCollision(other);
-        if (other.gameObject.CompareTag("Comet")) playController.CometCollission(other);
-        if (other.gameObject.CompareTag("SharpAst")) playController.SharpCollision(other);
+        else if (other.gameObject.CompareTag("Asteroids1")) playController.AsteroidCollision(other);
+        else if (other.gameObject.CompareTag("Asteroids2")) playController.AsteroidCollision(other);
+        else if (other.gameObject.CompareTag("Comet")) playController.CometCollission(other);
+        else if (other.gameObject.CompareTag("SharpAst")) playController.SharpCollision(other);
     }
 }

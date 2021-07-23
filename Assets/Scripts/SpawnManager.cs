@@ -49,11 +49,48 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(startDelay);
         while (true)
         {
-            int astIndex = RandomAst();
+            Debug.Log(RandomAst());
             Vector2 spawnPos = new Vector2(spawnFixPosX[Random.Range(0, spawnFixPosX.Length)], spawnPosY);
-
-            GameObject ast = Instantiate(asteroidPrefabs[astIndex], spawnPos, asteroidPrefabs[astIndex].transform.rotation);
-            ast.GetComponent<MoveDown>().speed += speed;
+            if (RandomAst() == 0)
+            {
+                GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids");
+                if (ast != null)
+                {
+                    ast.transform.position = spawnPos;
+                    ast.GetComponent<MoveDown>().speed += speed;
+                    ast.SetActive(true);
+                }
+            }
+            else if (RandomAst() == 1)
+            {
+                GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids1");
+                if (ast != null)
+                {
+                    ast.transform.position = spawnPos;
+                    ast.GetComponent<MoveDown>().speed += speed;
+                    ast.SetActive(true);
+                }
+            }
+            else if (RandomAst() == 2)
+            {
+                GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids2");
+                if (ast != null)
+                {
+                    ast.transform.position = spawnPos;
+                    ast.GetComponent<MoveDown>().speed += speed;
+                    ast.SetActive(true);
+                }
+            }
+            else if(RandomAst() == 3)
+            {
+                GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Comet");
+                if (ast != null)
+                {
+                    ast.transform.position = spawnPos;
+                    ast.GetComponent<MoveDown>().speed += speed;
+                    ast.SetActive(true);
+                }
+            }
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -105,4 +142,5 @@ public class SpawnManager : MonoBehaviour
         }
         return 0;
     }
+
 }

@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 1706281004873002670}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 549dc04d3c96da341aa34d16a1dfb530, type: 2}
+  m_Controller: {fileID: 9100000, guid: fd50adb95d97b7349a87b6fb878483d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 5470699001103272006}
   m_Layer: 0
   m_Name: AstPref3
-  m_TagString: Asteroids
+  m_TagString: Asteroids1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

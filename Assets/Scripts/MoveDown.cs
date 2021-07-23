@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MoveDown : MonoBehaviour, SpawnFromPool
+public class MoveDown : MonoBehaviour
 {
     public bool isSharp;
     public bool isLight;
@@ -33,7 +33,7 @@ public class MoveDown : MonoBehaviour, SpawnFromPool
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-        if (other.gameObject.CompareTag("Asteroids") && !isSharp && !isLight)
+        if ((other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("Asteroids1") || other.gameObject.CompareTag("Asteroids2")) && !isSharp && !isLight)
         {
             Instantiate(explPrefab, gameObject.transform.position, gameObject.transform.rotation);
             if(!playController.muteSound) audioSource.PlayExpl();
@@ -41,10 +41,5 @@ public class MoveDown : MonoBehaviour, SpawnFromPool
             other.gameObject.SetActive(false);
             _spawnManager.SpawnShardsAsteroids(gameObject.transform.position);
         }
-    }
-
-    public void OnPoolSpawn()
-    {
-
     }
 }

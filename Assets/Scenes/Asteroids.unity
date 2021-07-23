@@ -5673,63 +5673,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 8.17888}
   m_EdgeRadius: 0
---- !u!1 &844653607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 844653609}
-  - component: {fileID: 844653608}
-  m_Layer: 0
-  m_Name: Pooler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &844653608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844653607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4549dd7cd303aef4cb49b44894119595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemsToPool:
-  - objectToPool: {fileID: 1389319635581857324, guid: f02ce5ccd80d4794dad960ea8b366b5d, type: 3}
-    amountToPool: 3
-    shouldExpand: 0
-  - objectToPool: {fileID: 6009422155881944823, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
-    amountToPool: 3
-    shouldExpand: 0
-  - objectToPool: {fileID: 7619220688672708389, guid: 2906b0cdb2bc4fe4cb64ba315da09b94, type: 3}
-    amountToPool: 3
-    shouldExpand: 0
-  - objectToPool: {fileID: 3816029567257340068, guid: c66ec381e9c9aa847a20940d42e6c0c3, type: 3}
-    amountToPool: 3
-    shouldExpand: 0
-  pooledObjects: []
---- !u!4 &844653609
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844653607}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 579.93744, y: 2245.2007, z: -429.99097}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859238359
 GameObject:
   m_ObjectHideFlags: 0
@@ -5777,6 +5720,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &864810836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 864810838}
+  - component: {fileID: 864810837}
+  m_Layer: 0
+  m_Name: Pooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &864810837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864810836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676ca6b57096ed546976edf7947446a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToPool:
+  - objectToPool: {fileID: 1389319635581857324, guid: f02ce5ccd80d4794dad960ea8b366b5d, type: 3}
+    amountToPool: 4
+    shouldExpand: 0
+  - objectToPool: {fileID: 6009422155881944823, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
+    amountToPool: 2
+    shouldExpand: 0
+  - objectToPool: {fileID: 7619220688672708389, guid: 2906b0cdb2bc4fe4cb64ba315da09b94, type: 3}
+    amountToPool: 4
+    shouldExpand: 0
+  - objectToPool: {fileID: 3816029567257340068, guid: c66ec381e9c9aa847a20940d42e6c0c3, type: 3}
+    amountToPool: 4
+    shouldExpand: 0
+  pooledObjects: []
+--- !u!4 &864810838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864810836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 881.7929, y: 1662.3402, z: -465.0075}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882511443
 GameObject:
@@ -7933,7 +7933,7 @@ MonoBehaviour:
   - {fileID: 2589250801614149450, guid: 21df457bd62d13d429d7a99ed77bd463, type: 3}
   - {fileID: 6339770132154542731, guid: abbb8ea313ccdd845a6ec199af7d52b4, type: 3}
   - {fileID: 4095254954050804829, guid: efb13c82e4962764a8bf4cc3bd8479fd, type: 3}
-  Ratio_Chances: 280000000a0000003200000028000000
+  Ratio_Chances: 1e0000001e0000001e0000000a000000
   spawnInterval: 1.5
   spawnIntervalL: 18
   playController: {fileID: 1534353850}
