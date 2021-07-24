@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Asteroids.unity
     guid: 0caa92d6b7c2f4149a14bc7054bf4a21
-  - enabled: 0
-    path: Assets/Scenes/MapSystem.unity
-    guid: 4f7750d797e2f1c418554b615aa98114
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 7aa413a78e64b7e4f9a714b5769feb34, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c073e7f85d42e164ebebb452bd846758, type: 2}

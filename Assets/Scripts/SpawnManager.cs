@@ -11,7 +11,7 @@ public class SpawnManager : MonoBehaviour
     public int[] Ratio_Chances;
     private float[] spawnLightPosX = { -3f, 3f };
     private float spawnPosY = 11, spawnPosYL = 17;
-    private float startDelay = 2, startDelayL = 8;
+    private float startDelay = 1.8f, startDelayL = 8;
     public float spawnInterval = 2f, spawnIntervalL = 18;
     public GameObject playController;
     public float speed;
@@ -41,7 +41,7 @@ public class SpawnManager : MonoBehaviour
             CancelInvoke("IncreaseSpeed");
         }
         if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("IncreaseSpeed") && speed > 15) CancelInvoke("IncreaseSpeed");
-        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("decreaseDelay") && spawnInterval < 0.6f) CancelInvoke("decreaseDelay");
+        if (!playController.GetComponent<GamePlayController>().gameOverTrigger && !playController.GetComponent<GamePlayController>().pauseTrigger && IsInvoking("decreaseDelay") && spawnInterval < 0.4f) CancelInvoke("decreaseDelay");
     }
 
     IEnumerator spawnRandomAsteroid(float startDelay)
@@ -126,12 +126,12 @@ public class SpawnManager : MonoBehaviour
     }
     public void decreaseDelay()
     {
-        spawnInterval -= 0.005f;
+        spawnInterval -= 0.01f;
     }
 
     private void IncreaseSpeed()
     {
-        speed += 0.05f;
+        speed += 0.01f;
     }
 
     public int RandomAst()
