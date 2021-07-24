@@ -49,9 +49,10 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(startDelay);
         while (true)
         {
-            Debug.Log(RandomAst());
+            int astIndex = RandomAst();
+            Debug.Log(astIndex);
             Vector2 spawnPos = new Vector2(spawnFixPosX[Random.Range(0, spawnFixPosX.Length)], spawnPosY);
-            if (RandomAst() == 0)
+            if (astIndex == 0)
             {
                 GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids");
                 if (ast != null)
@@ -61,7 +62,7 @@ public class SpawnManager : MonoBehaviour
                     ast.SetActive(true);
                 }
             }
-            else if (RandomAst() == 1)
+            else if (astIndex == 1)
             {
                 GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids1");
                 if (ast != null)
@@ -71,7 +72,7 @@ public class SpawnManager : MonoBehaviour
                     ast.SetActive(true);
                 }
             }
-            else if (RandomAst() == 2)
+            else if (astIndex == 2)
             {
                 GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids2");
                 if (ast != null)
@@ -81,7 +82,7 @@ public class SpawnManager : MonoBehaviour
                     ast.SetActive(true);
                 }
             }
-            else if(RandomAst() == 3)
+            else if(astIndex == 3)
             {
                 GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Comet");
                 if (ast != null)

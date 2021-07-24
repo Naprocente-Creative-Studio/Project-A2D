@@ -5752,16 +5752,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsToPool:
   - objectToPool: {fileID: 1389319635581857324, guid: f02ce5ccd80d4794dad960ea8b366b5d, type: 3}
-    amountToPool: 4
+    amountToPool: 6
     shouldExpand: 0
   - objectToPool: {fileID: 6009422155881944823, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
-    amountToPool: 2
+    amountToPool: 3
     shouldExpand: 0
   - objectToPool: {fileID: 7619220688672708389, guid: 2906b0cdb2bc4fe4cb64ba315da09b94, type: 3}
-    amountToPool: 4
+    amountToPool: 6
     shouldExpand: 0
   - objectToPool: {fileID: 3816029567257340068, guid: c66ec381e9c9aa847a20940d42e6c0c3, type: 3}
-    amountToPool: 4
+    amountToPool: 6
     shouldExpand: 0
   pooledObjects: []
 --- !u!4 &864810838
@@ -5944,8 +5944,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 0
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresDepthTextureOption: 0
+  m_RequiresOpaqueTextureOption: 0
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: 0
@@ -5995,7 +5995,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -6009,9 +6009,9 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &962356823
