@@ -84,6 +84,36 @@ public class SpawnManager : MonoBehaviour
             }
             else if(astIndex == 3)
             {
+                GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids3");
+                if (ast != null)
+                {
+                    ast.transform.position = spawnPos;
+                    ast.GetComponent<MoveDown>().speed += speed;
+                    ast.SetActive(true);
+                }
+            }
+            else if (astIndex == 4)
+            {
+                GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids4");
+                if (ast != null)
+                {
+                    ast.transform.position = spawnPos;
+                    ast.GetComponent<MoveDown>().speed += speed;
+                    ast.SetActive(true);
+                }
+            }
+            else if (astIndex == 5)
+            {
+                GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Asteroids5");
+                if (ast != null)
+                {
+                    ast.transform.position = spawnPos;
+                    ast.GetComponent<MoveDown>().speed += speed;
+                    ast.SetActive(true);
+                }
+            }
+            else if (astIndex == 6)
+            {
                 GameObject ast = ObjectPooler.SharedInstance.GetPooledObject("Comet");
                 if (ast != null)
                 {

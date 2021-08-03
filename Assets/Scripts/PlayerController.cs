@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Asteroids")) playController.AsteroidCollision(other);
         else if (other.gameObject.CompareTag("Asteroids1")) playController.AsteroidCollision(other);
         else if (other.gameObject.CompareTag("Asteroids2")) playController.AsteroidCollision(other);
+        else if (other.gameObject.CompareTag("Asteroids3")) playController.AsteroidCollision(other);
+        else if (other.gameObject.CompareTag("Asteroids4")) playController.AsteroidCollision(other);
+        else if (other.gameObject.CompareTag("Asteroids5")) playController.AsteroidCollision(other);
         else if (other.gameObject.CompareTag("Comet")) playController.CometCollission(other);
         else if (other.gameObject.CompareTag("SharpAst")) playController.SharpCollision(other);
     }

@@ -5638,16 +5638,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsToPool:
   - objectToPool: {fileID: 1389319635581857324, guid: f02ce5ccd80d4794dad960ea8b366b5d, type: 3}
-    amountToPool: 6
-    shouldExpand: 0
-  - objectToPool: {fileID: 6009422155881944823, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
     amountToPool: 3
     shouldExpand: 0
   - objectToPool: {fileID: 7619220688672708389, guid: 2906b0cdb2bc4fe4cb64ba315da09b94, type: 3}
-    amountToPool: 6
+    amountToPool: 3
     shouldExpand: 0
   - objectToPool: {fileID: 3816029567257340068, guid: c66ec381e9c9aa847a20940d42e6c0c3, type: 3}
-    amountToPool: 6
+    amountToPool: 3
+    shouldExpand: 0
+  - objectToPool: {fileID: 3816029567257340068, guid: abc1d243d1b0ca040b92e47d0366979f, type: 3}
+    amountToPool: 3
+    shouldExpand: 0
+  - objectToPool: {fileID: 3816029567257340068, guid: a6bad6adf148a4a438ee821dc1b0544d, type: 3}
+    amountToPool: 3
+    shouldExpand: 0
+  - objectToPool: {fileID: 3816029567257340068, guid: 73617747a7b8e854ebd142de086587e5, type: 3}
+    amountToPool: 3
+    shouldExpand: 0
+  - objectToPool: {fileID: 6009422155881944823, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
+    amountToPool: 3
     shouldExpand: 0
   pooledObjects: []
 --- !u!4 &864810838
@@ -6382,6 +6391,10 @@ MonoBehaviour:
   - {fileID: 4785020870831620513, guid: a45e6b0fafd98664da7a5a9674164b3a, type: 3}
   - {fileID: 7383996819763071969, guid: d55c796ced95c2c44bde7f8e4d76f52c, type: 3}
   - {fileID: 7411621588296488425, guid: e4c9389d01fc98e488bf20da1fe248ff, type: 3}
+  - {fileID: 4785020870831620513, guid: 6ed7aaff14838584ea31ad29c306ef7d, type: 3}
+  - {fileID: 4785020870831620513, guid: 6fc964412e19d7b4499098794b58a0b2, type: 3}
+  - {fileID: 4785020870831620513, guid: f6a9398989eb1ac499d412e38b9b9d2f, type: 3}
+  - {fileID: 4785020870831620513, guid: f83f26cfcc663ae47a18032661e69f5a, type: 3}
   pauseMenu: {fileID: 996941441}
   gameMenu: {fileID: 2043505945}
   endGameMenu: {fileID: 1712565732}
@@ -7659,9 +7672,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidPrefabs:
   - {fileID: 1389319635581857324, guid: f02ce5ccd80d4794dad960ea8b366b5d, type: 3}
-  - {fileID: 6009422155881944823, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
   - {fileID: 7619220688672708389, guid: 2906b0cdb2bc4fe4cb64ba315da09b94, type: 3}
   - {fileID: 3816029567257340068, guid: c66ec381e9c9aa847a20940d42e6c0c3, type: 3}
+  - {fileID: 3816029567257340068, guid: abc1d243d1b0ca040b92e47d0366979f, type: 3}
+  - {fileID: 3816029567257340068, guid: a6bad6adf148a4a438ee821dc1b0544d, type: 3}
+  - {fileID: 3816029567257340068, guid: 73617747a7b8e854ebd142de086587e5, type: 3}
+  - {fileID: 6009422155881944823, guid: 717eae92129ae7a4f8857b5f51f9ba99, type: 3}
   asteroidShardsPrefabs:
   - {fileID: 1461258818646121323, guid: bb435c59ece982747b3769a178d08398, type: 3}
   - {fileID: 6554398139355407703, guid: 7ab2bb3b5a3ae374193c67502db767b4, type: 3}
@@ -7671,7 +7687,7 @@ MonoBehaviour:
   - {fileID: 2589250801614149450, guid: 21df457bd62d13d429d7a99ed77bd463, type: 3}
   - {fileID: 6339770132154542731, guid: abbb8ea313ccdd845a6ec199af7d52b4, type: 3}
   - {fileID: 4095254954050804829, guid: efb13c82e4962764a8bf4cc3bd8479fd, type: 3}
-  Ratio_Chances: 1e0000001e0000001e0000000a000000
+  Ratio_Chances: 0a0000000a0000000a0000000a0000000a0000000a00000002000000
   spawnInterval: 1.5
   spawnIntervalL: 18
   playController: {fileID: 1534353850}

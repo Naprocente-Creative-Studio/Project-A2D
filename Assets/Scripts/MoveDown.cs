@@ -33,7 +33,7 @@ public class MoveDown : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-        if ((other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("Asteroids1") || other.gameObject.CompareTag("Asteroids2")) && !isSharp && !isLight)
+        if ((other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("Asteroids1") || other.gameObject.CompareTag("Asteroids2") || other.gameObject.CompareTag("Asteroids3") || other.gameObject.CompareTag("Asteroids4") || other.gameObject.CompareTag("Asteroids5")) && !isSharp && !isLight)
         {
             Instantiate(explPrefab, gameObject.transform.position, gameObject.transform.rotation);
             if(!playController.muteSound) audioSource.PlayExpl();

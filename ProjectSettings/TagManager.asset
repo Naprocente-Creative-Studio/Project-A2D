@@ -12,6 +12,9 @@ TagManager:
   - touch
   - Asteroids1
   - Asteroids2
+  - Asteroids3
+  - Asteroids4
+  - Asteroids5
   layers:
   - Default
   - TransparentFX

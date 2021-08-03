@@ -32,14 +32,7 @@ public class MainMenuController : MonoBehaviour
         player = Instantiate(shipsPrefabs[PlayerPrefs.GetInt("ShipIndex", 0)], DataBase.spawnPos, transform.rotation);
         Instantiate(levelPrefabs[Random.Range(0, levelPrefabs.Length)], DataBase.levelMPos, transform.rotation);
         ShowMoney(moneyTxt);
-        ÀuthenticationGoogle();
-    }
-
-    void ÀuthenticationGoogle()
-    {
-        PlayGamesPlatform.Activate();
-        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => { });
-        StartCoroutine(StatsShow());
+        StatsShow();
     }
 
     public void StartGame()
@@ -133,9 +126,8 @@ public class MainMenuController : MonoBehaviour
         else return 0;
     }
 
-    IEnumerator StatsShow()
+    void StatsShow()
     {
-        yield return new WaitForSeconds(2f);
         hiTxt.text = "Hi, " + Social.localUser.userName.ToString();
         PlayGamesPlatform.Instance.LoadScores(
              DataBase.leaderboardID,
