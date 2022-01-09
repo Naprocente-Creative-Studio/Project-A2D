@@ -1,5 +1,5 @@
-lastUpgrade=01012
-proj.pluginVersion=0.10.12
+lastUpgrade=01014
+proj.pluginVersion=0.10.14
 proj.AppId=158836163179
 and.BundleId=com.NaprocenteCreativeStudio.BringSteveHome
 proj.classDir=Assets
