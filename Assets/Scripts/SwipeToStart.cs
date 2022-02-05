@@ -47,25 +47,5 @@ public class SwipeToStart : MonoBehaviour
                 }
             }
         }
-        #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            arrows.SetActive(false);
-            if(!controller.muteSound) controller.audioSource.PlayStart();
-            anim.Play("StartAnim");
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            controller.OpenAuthors();
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            controller.OpenShop();
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            controller.ShowLeaderBoard();
-        }
-        #endif
     }
 }
