@@ -133,9 +133,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 4.2
-  preloadedAssets:
-  - {fileID: 8430472513078630011, guid: 9f049fc96cf00ae43966a2348a0e74ad, type: 2}
-  - {fileID: 11400000, guid: 9a8fd467c1e4fcb42bdc2824c4c896d5, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -161,7 +159,7 @@ PlayerSettings:
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 27
   AndroidMinSdkVersion: 24
-  AndroidTargetSdkVersion: 30
+  AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
   aotOptions: 
   stripEngineCode: 1
@@ -693,7 +691,8 @@ PlayerSettings:
   gcIncremental: 1
   assemblyVersionValidation: 0
   gcWBarrierValidation: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Android: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: 2D_BuiltInRenderer
